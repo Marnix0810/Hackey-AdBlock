@@ -884,3 +884,8 @@ I am testing some things.
 ---------------------------------------------------------------------
 changelog for version 4/2019-05-23 21:21:25,17:
 I am changing the download location from Stackstorage to Github.
+
+
+---------------------------------------------------------------------
+changelog for version 5/2019-05-23 21:37:54,46:
+I dropped the ZeroNet support. ZeroNet is not ready to be used for this purpose yet.
