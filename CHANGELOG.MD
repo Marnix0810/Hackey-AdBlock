@@ -912,3 +912,12 @@ changelog for version 4/2019-05-25 13:22:35,65:
 - debugged autoupdate
 - updated interface
 - updated update distr. system
+
+
+---------------------------------------------------------------------
+changelog for version 5/2019-05-25 14:16:51,82:
+
+
+---------------------------------------------------------------------
+changelog for version 6/2019-05-25 14:28:36,46:
+routinal update
