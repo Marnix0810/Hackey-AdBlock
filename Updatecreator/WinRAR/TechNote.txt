@@ -1,0 +1,266 @@
+
+               RAR versie 4.01 - Technische informatie
+               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ HET HIERONDER BESCHREVEN ARCHIEFFORMAAT IS
+ ALLEEN GELDIG VOOR VERSIE 1.50 EN HOGER
+
+ =================================================
+            Bestandsformaat RAR-archief
+ =================================================
+
+   Een archief bestaat uit een variabel aantal blokken. De volgorde van deze
+   blokken kunnen varieren, maar het eerste blok moet een markeringsblok zijn, 
+   gevolgd door een archiefkop blok.
+
+   Elk blok begint met de volgende velden:
+
+HEAD_CRC       2 bytes     CRC van het totale blok of deel van het blok
+HEAD_TYPE      1 byte      Bloktype
+HEAD_FLAGS     2 bytes     Blokwaarden (flags)
+HEAD_SIZE      2 bytes     Blokgrootte
+ADD_SIZE       4 bytes     Optioneel veld - Toegevoegde blokgrootte
+
+   Het veld ADD_SIZE komt alleen voor als (HEAD_FLAGS & 0x8000) != 0
+
+   De totale blokgrootte is HEAD_SIZE indien (HEAD_FLAGS & 0x8000) == 0
+   en HEAD_SIZE+ADD_SIZE indien het veld ADD_SIZE aanwezig is - wanneer
+   (HEAD_FLAGS & 0x8000) != 0.
+
+   In elk blok hebben de volgende bits in HEAD_FLAGS dezelfde betekenis:*
+
+  0x4000 - indien gezet zullen oudere RAR versies het blok negeren
+           en zullen het verwijderen wanneer het archief vernieuwd wordt.
+           Indien niet gezet, zal het blok meegekopieerd worden wanneer
+           het archief vernieuwd wordt.
+
+  0x8000 - indien gezet, dan is ADD_SIZE aanwezig en de volledige blok-
+           grootte is HEAD_SIZE + ADD_SIZE.
+
+  Gedeclareerde bloktypes:
+
+HEAD_TYPE=0x72          blokmarkering
+HEAD_TYPE=0x73          archiefkop
+HEAD_TYPE=0x74          bestandskop
+HEAD_TYPE=0x75          commentaarkop (oude stijl)
+HEAD_TYPE=0x76          waarmerkinformatie (oude stijl)
+HEAD_TYPE=0x77          subblok (oude stijl)
+HEAD_TYPE=0x78          herstelbestand (oude stijl)
+HEAD_TYPE=0x79          waarmerkinformatie (oude stijl)
+HEAD_TYPE=0x7a          subblok
+
+   Het commentaarblok wordt gebruikt binnenin een ander blok en bestaat
+   dus niet alleen.
+
+   Archiefverwerking gebeurt op volgende wijze:
+
+1. Lees en controleer markeringblok
+2. Lees archiefkop
+3. Lees of laat over de HEAD_SIZE-grootte
+   van (MAIN_HEAD) bytes
+4. Indien einde van archief, beëindig dan de archiefverwerking,
+   indien niet, lees 7 bytes in het veld HEAD_CRC, HEAD_TYPE, HEAD_FLAGS,
+   HEAD_SIZE.
+5. Controleer HEAD_TYPE.
+   if HEAD_TYPE==0x74
+     Lees bestandskop (eerste 7 bytes die al ingelezen zijn)
+     Lees/Lees niet de HEAD_SIZE-grootte van MAIN_HEAD bytes
+     if (HEAD_FLAGS & 0x100)
+       Lees/Lees niet HIGH_PACK_SIZE*0x100000000+PACK_SIZE bytes
+     else
+       Lees/Lees niet PACK_SIZE bytes
+   else
+     Lees overeenkomende HEAD_TYPE blok:
+       Lees HEAD_SIZE-7 bytes
+       if (HEAD_FLAGS & 0x8000)
+         Lees ADD_SIZE bytes
+6. Ga terug naar stap 4.
+
+
+ ==========================================================================
+                              Blokformaten
+ ==========================================================================
+
+   Markeringsblok (MARK_HEAD)
+   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+HEAD_CRC        Altijd 0x6152
+2 bytes
+
+HEAD_TYPE       Koptype: 0x72
+1 byte
+
+HEAD_FLAGS      Altijd 0x1a21
+2 bytes
+
+HEAD_SIZE       blokgrootte 0x0007
+2 bytes
+
+   Het markeringsblok is eigenlijk een opeenvolging van bytes die een
+   constante waarde hebben: 0x52 0x61 0x72 0x21 0x1a 0x07 0x00
+
+   Archiefkop (MAIN_HEAD)
+   ~~~~~~~~~~~~~~~~~~~~~~   
+
+HEAD_CRC        CRC van de velden HEAD_TYPE tot RESERVED2
+2 bytes
+
+HEAD_TYPE       koptype: 0x73
+1 byte
+
+HEAD_FLAGS      Bitwaarden (flags):
+2 bytes
+                0x0001    - Volumeattribuut (archiefvolume)
+                0x0002    - Archiefcommentaar aanwezig RAR 3.x gebruikt een apart
+                            commentaarblok en gebruikt deze vlag niet.
+                0x0004    - Archiefvergrendelingsattribuut
+                0x0008    - Vergrendelingsattribuut (vergrendeld archive)
+                0x0010    - Nieuwe volume benamingsschema ('volumenaam.partN.rar')
+                0x0020    - Waarmerk informatie aanwezig. RAR 3.x gebruikt deze
+                            vlag niet.
+                0x0040    - Herstelbestand aanwezig
+                0x0080    - Blokkoppen zijn versleuteld.
+                0x0100    - Eerste volume (geplaatst door RAR 3.0 en hoger)
+
+                Andere bits in HEAD_FLAGS zijn voorbehouden voor intern gebruik.
+
+HEAD_SIZE       Totale grootte archiefkop, inclusief archiefcommentaar
+2 bytes
+
+RESERVED1       Gereserveerd
+2 bytes
+
+RESERVED2       Gereserveerd
+4 bytes
+
+   Bestandskop (Bestand in het archief)
+   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+HEAD_CRC        CRC van de velden HEAD_TYPE tot FILEATTR
+2 bytes         en bestandsnaam
+
+HEAD_TYPE       Type kop: 0x74
+1 byte
+
+HEAD_FLAGS      Bit waarden (flags):
+2 bytes
+                0x01 - bestand vervolgd in vorig volume
+                0x02 - bestand vervolgd in volgend volume
+                0x04 - bestand versleuteld met een wachtwoord
+                0x08 - bestandscommentaar aanwezig. RAR 3.x gebruikt een 
+                            apart commentaarblok en gebruikt deze vlag niet.
+
+                0x10 - informatie van het vorige bestand wordt gebruikt
+                           (compact parameter)(voor RAR 2.0 en later)
+
+                bits 7 6 5 (voor RAR 2.0 en later)
+
+                     0 0 0    - woordenboekgrootte   64 KB
+                     0 0 1    - woordenboekgrootte  128 KB
+                     0 1 0    - woordenboekgrootte  256 KB
+                     0 1 1    - woordenboekgrootte  512 KB
+                     1 0 0    - woordenboekgrootte 1024 KB
+                     1 0 1    - woordenboekgrootte 2048 KB
+                     1 1 0    - woordenboekgrootte 4096 KB
+                     1 1 1    - bestand is een map
+
+               0x100 - de velden HIGH_PACK_SIZE en HIGH_UNP_SIZE 
+                       zijn aanwezig. Deze velden worden alleen gebruikt
+                       voor hele grote bestanden (groter dan 2 GB),
+                       voor kleine bestanden zijn deze afwezig.
+
+               0x200 - FILE_NAME bevat zowel gewone als geëncodeerde
+                       Unicode naam, gescheiden door 0. In dit geval is
+                       het veld NAME_SIZE gelijk aan de lengte van de 
+                       gewone en geëncodeerde Unicode naam plus 1.
+	        
+	               Indien deze vlag aanwezig is, maar FILE_NAME bevat
+	               geen 0 bytes, dan wil dit zeggen dat de bestandsnaam
+	               is opgeslagen in het UTF-8-formaat.
+
+               0x400 - de kop bevat 8 extra bytes na de bestandsnaam,
+                       welke nodig zijn om de versleutelingsbeveiliging te 
+                       verhogen (zogenaamd 'salt').
+
+               0x800 - Versiewaarde. Indien het een oude bestandsversie is
+                       dan wordt het versienummer aan de bestandsnaam 
+                       toegevoegd als ';n'.
+
+              0x1000 - Uitgebreid tijdveld aanwezig.
+
+              0x8000 - Deze bit is altijd aanwezig, zodat de complete 
+                       blokgrootte HEAD_SIZE + PACK_SIZE (plus 
+                       HIGH_PACK_SIZE, indien bit 0x100 gezet is) is.
+
+HEAD_SIZE       Volledige grootte bestandskop inclusief bestandsnaam en 
+2 bytes         commentaar 
+
+PACK_SIZE       Ingepakte bestandsgrootte
+4 bytes
+
+UNP_SIZE        Uitgepakte bestandsgrootte
+4 bytes
+
+HOST_OS         Werkomgeving, gebruikt voor archivering
+1 byte                 0 - MS DOS
+                       1 - OS/2
+                       2 - Windows
+                       3 - Unix
+                       4 - Mac OS
+                       5 - BeOS
+
+FILE_CRC        Bestands-CRC
+4 bytes
+
+FTIME           Datum en tijd in MS DOS-formaat
+4 bytes
+
+UNP_VER         RAR-versie, nodig om het bestand uit te pakken.
+1 byte          Versienummer is in de vorm "10 * hoofdversie + subversie" opgeslagen.
+
+METHOD          Comprimeermethode
+1 byte
+	Comprimeermethoden:
+         0x30 - Opslaan
+         0x31 - Snelste
+         0x32 - Snel
+         0x33 - Normaal
+         0x34 - Goed
+         0x35 - Beste
+
+NAME_SIZE       Bestandsnaamlengte
+2 bytes
+
+ATTR            Bestandskenmerk
+4 bytes
+
+HIGH_PACK_SIZE  Hoge 4 bytes van een 64-bits waarde van de ingepakte bestandsgrootte.
+4 bytes         Optionele waarde, enkel aanwezig als bit 0x100 in HEAD_FLAGS is gezet.
+
+HIGH_UNP_SIZE   Hoge 4 bytes van een 64-bits waarde van de uitgepakte bestandsgrootte.
+4 bytes         Optionele waarde, enkel aanwezig als bit 0x100 in HEAD_FLAGS is gezet.
+
+FILE_NAME       Bestandsnaam - tekenreeks van NAME_SIZE bytes groot
+
+SALT            aanwezig indien (HEAD_FLAGS & 0x400) != 0
+8 bytes
+
+EXT_TIME        aanwezig indien (HEAD_FLAGS & 0x1000) != 0
+variabele grootte
+
+Nieuwe velden kunnen hier worden toegevoegd.
+
+ ==========================================================================
+                 Opmerkingen ten behoeve van de toepassing
+ ==========================================================================
+
+   1. Om een SFX-archief te verwerken, moet men het SFX-module zoeken over-
+      slaan voor de markeringsblok in het archief. Er is geen markeringsblok- 
+      combinatie (0x52 0x61 0x72 0x21 0x1a 0x07 0x00) in de SFX-module zelf.
+
+   2. De CRC wordt berekend, gebruikmakend van de standaardpolynomiaal 
+      0xEDB88320. Indien de grootte van de CRC kleiner dan 4 bytes is, worden 
+      alleen de 'low order bytes' gebruikt.
+
+
+(c) 2011 RAR Benelux

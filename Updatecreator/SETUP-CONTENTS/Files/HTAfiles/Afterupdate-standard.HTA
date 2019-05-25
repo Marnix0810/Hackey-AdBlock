@@ -1,0 +1,30 @@
+<HTA:APPLICATION
+  APPLICATIONNAME="Hackey - Welcome to Hackey"
+  ID="Hackey.cmd"
+  INNERBORDER="no"
+  MINIMIZEBUTTON="no"
+  ICON="..\..\icon.ico"
+  SINGLEINSTANCE="yes"
+  WINDOWSTATE="maximize"
+  CONTEXTMENU="no"
+  SELECTION="no"/>
+  
+<SCRIPT LANGUAGE="VBScript">
+
+    Sub ExitProgram
+
+        window.close()
+
+    End Sub
+
+</SCRIPT>
+<BODY  bgcolor="#767676" text="#aaeaec">
+  <TITLE>Welcome to Hackey AdBlock</title>
+  <b>Close this screen to continue.</b><input id=runbutton type="button" value="Exit" onClick="ExitProgram">
+  <h2>Welcome to Hackey AdBlock</h2>
+  Welcome to hackey version: <iframe src="..\..\hackey-install-version.txt" FRAMEBORDER="0" width="100%" noScrolling>unknown version</iframe><br></br>
+  <h3>What's new?</h3>
+  <iframe src="..\..\changelog.txt" FRAMEBORDER="0" border="0" width="100%">Loading...</iframe><br></br>
+  <h3>License Agreements</h3>
+  By using Hackey, you agree with the following licenses, which you can read <a href="https://marnix0810.wordpress.com/marnix0810s-hackey-adblock/license/" target="_blank">Here</a>.
+  </BODY>
