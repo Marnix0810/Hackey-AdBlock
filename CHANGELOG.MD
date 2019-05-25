@@ -889,3 +889,19 @@ I am changing the download location from Stackstorage to Github.
 ---------------------------------------------------------------------
 changelog for version 5/2019-05-23 21:37:54,46:
 I dropped the ZeroNet support. ZeroNet is not ready to be used for this purpose yet.
+
+
+---------------------------------------------------------------------
+changelog for version 1/2019-05-25 12:18:36,11:
+- Added autoupdate function
+- Updated ad-blocking list: +tpc.googlesyndication.com
+
+
+---------------------------------------------------------------------
+changelog for version 2/2019-05-25 12:23:01,54:
+sorry, interuption in my update distribution system, see the changelog of version 1/2019-05-25 12:18:36,11 to read what's changed.
+
+
+---------------------------------------------------------------------
+changelog for version 3/2019-05-25 12:31:07,67:
+Bugfixes on my side.
