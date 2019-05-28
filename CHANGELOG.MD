@@ -1,3 +1,4 @@
+# Changelog for the Marnix0810's Hackey-AdBlock Project
 ---------------------------------------------------------------------
 changelog for version 22335/2019-03-21 18:18:53,69:
 - unblocked some false-positive hosts
@@ -939,3 +940,8 @@ changelog for version 1/2019-05-26 20:40:36,57:
 ---------------------------------------------------------------------
 changelog for version 1/2019-05-27 17:56:49,36:
 updated ad list.
+
+
+---------------------------------------------------------------------
+changelog for version 1/2019-05-28 16:41:04,28:
+Weekly update
