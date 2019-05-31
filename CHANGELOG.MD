@@ -969,3 +969,7 @@ Hackey-AdBlock's list will now be more accurate than ever because the adlists go
 
 ## changelog for version 5/2019-05-31 12:24:49,10:
 the changelog in the 7-zip file is now an internet shortcut
+
+
+## changelog for version 6/2019-05-31 13:22:58,83:
+- updated shortcuts
