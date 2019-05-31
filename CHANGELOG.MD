@@ -989,3 +989,7 @@ the changelog in the 7-zip file is now an internet shortcut
 
 ## changelog for version 11/2019-05-31 13:58:48,59:
 Small bugfix.
+
+
+## changelog for version 12/2019-05-31 14:14:55,46:
+another bug fix
