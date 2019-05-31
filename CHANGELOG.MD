@@ -973,3 +973,11 @@ the changelog in the 7-zip file is now an internet shortcut
 
 ## changelog for version 6/2019-05-31 13:22:58,83:
 - updated shortcuts
+
+
+## changelog for version 7/2019-05-31 13:39:28,98:
+
+
+## changelog for version 9/2019-05-31 13:45:57,46:
+- updated shortcuts
+- This update contains a patch that tries to remove the old shortcuts.
