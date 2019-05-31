@@ -955,3 +955,8 @@ Implemented a 32-bit version of Python into Hackey: It is not neccessary anymore
 ---------------------------------------------------------------------
 ## changelog for version 2/2019-05-31 10:42:31,86:
 Routinal update.
+
+
+---------------------------------------------------------------------
+## changelog for version 3/2019-05-31 11:22:49,12:
+- The implementable version of Python is now compatible with both 64 bit and 32 bit!!!
