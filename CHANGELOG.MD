@@ -981,3 +981,7 @@ the changelog in the 7-zip file is now an internet shortcut
 ## changelog for version 9/2019-05-31 13:45:57,46:
 - updated shortcuts
 - This update contains a patch that tries to remove the old shortcuts.
+
+
+## changelog for version 10/2019-05-31 13:51:47,73:
+- fixed bug when opening changelog from menu: Now links to online changelog.
