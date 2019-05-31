@@ -9,6 +9,7 @@ evidon.nl
 hackey_works_ok
 hackeytester-if-this-doesnt-load-hackeys-not-active.hello
 images-prod.powerinboxedge.com
+outbrain.com
 ovc2-ustokyyneikyfasnm.stackpathdns.com
 popup.taboola.com
 pubpress.net
@@ -18,5 +19,6 @@ tpc.googlesyndication.com
 trafficjunky.com
 trc.taboola.com
 vz-cdn.trafficjunky.net
+www.outbrain.com
 www.trafficjunky.com
 www.trafficjunky.net

@@ -960,3 +960,8 @@ Routinal update.
 ---------------------------------------------------------------------
 ## changelog for version 3/2019-05-31 11:22:49,12:
 - The implementable version of Python is now compatible with both 64 bit and 32 bit!!!
+
+
+---------------------------------------------------------------------
+## changelog for version 4/2019-05-31 12:09:34,95:
+Hackey-AdBlock's list will now be more accurate than ever because the adlists got their own update system.
