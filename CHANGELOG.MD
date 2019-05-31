@@ -948,5 +948,5 @@ Weekly update
 
 
 ---------------------------------------------------------------------
-##changelog for version 1/2019-05-31 10:19:27,32:
+## changelog for version 1/2019-05-31 10:19:27,32:
 Implemented a 32-bit version of Python into Hackey: It is not neccessary anymore to have Python installed on your computer. Altough it is still recommended.
