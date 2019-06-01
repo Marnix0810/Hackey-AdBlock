@@ -1004,3 +1004,7 @@ another bug fix
 ## changelog for version 2/2019-06-01 21:52:23,11:
 - Fixed the comeback of Zone. (read the montly post for more info)
 The HackeyPrivacy function is now functional again.
+
+
+## changelog for version 3/2019-06-01 21:56:48,75:
+- Added the same online-list functions for Ad list for Privacy list.
