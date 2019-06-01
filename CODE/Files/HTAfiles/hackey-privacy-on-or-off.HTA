@@ -1,0 +1,35 @@
+<HTML>
+<HEAD>
+<HTA:APPLICATION
+  APPLICATIONNAME="Hackey-Menu HackeyPrivacy on off"
+  ID="Hackey.cmd"
+  SYSMENU="no"
+  ICON="..\..\..\icon.ico"
+  SCROLL="no"
+  SINGLEINSTANCE="yes"
+  WINDOWSTATE="maximize"
+  CONTEXTMENU="no"
+  SELECTION="no"/>
+
+<TITLE>Hackey Menu - HackeyPrivacy</TITLE>
+<SCRIPT language="JavaScript">
+var reply = "All";
+function closeHTA(){
+   var fso = new ActiveXObject("Scripting.FileSystemObject");
+   fso.GetStandardStream(1).WriteLine(reply);
+   window.close();
+}
+
+</SCRIPT>
+</HEAD>
+<BODY bgcolor="#767676" text="#aaeaec">
+<hr>
+<CENTER><p>Turn HackeyPrivacy on or off?</P></CENTER>
+<HR>
+HackeyPrivacy is a function to keep certain tracking services from following your online activity.<br></br>
+<label><input type="radio" name="option" onclick="reply=this.value" value="on">Turn HackeyPrivacy on</label><br>
+<label><input type="radio" name="option" onclick="reply=this.value" value="off">Turn HackeyPrivacy off</label><br>
+<br><br>
+<button onclick="closeHTA();">Save</button>
+</BODY>
+</HTML>
