@@ -996,3 +996,11 @@ another bug fix
 
 
 ## changelog for version 13/2019-05-31 14:18:41,65:
+
+
+## changelog for version 1/2019-06-01 21:29:38,52:
+
+
+## changelog for version 2/2019-06-01 21:52:23,11:
+- Fixed the comeback of Zone. (read the montly post for more info)
+The HackeyPrivacy function is now functional again.
