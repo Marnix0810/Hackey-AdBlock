@@ -1012,3 +1012,33 @@ The HackeyPrivacy function is now functional again.
 
 ## changelog for version 4/2019-06-01 22:16:59,44:
 minor bugfix
+
+
+## changelog for version 5/2019-06-01 23:13:51,57:
+
+
+## changelog for version 6/2019-06-01 23:14:01,15:
+- updated some interface screens.
+
+
+## changelog for version 7/2019-06-01 23:37:27,12:
+a bugfix
+
+
+## changelog for version 8/2019-06-01 23:39:18,28:
+
+
+## changelog for version 9/2019-06-01 23:42:31,80:
+
+
+## changelog for version 10/2019-06-01 23:42:55,48:
+
+
+## changelog for version 11/2019-06-01 23:44:10,37:
+
+
+## changelog for version 12/2019-06-01 23:48:30,72:
+
+
+## changelog for version 13/2019-06-01 23:52:53,71:
+Sorry. Had some trouble on my side.
