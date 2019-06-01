@@ -1008,3 +1008,7 @@ The HackeyPrivacy function is now functional again.
 
 ## changelog for version 3/2019-06-01 21:56:48,75:
 - Added the same online-list functions for Ad list for Privacy list.
+
+
+## changelog for version 4/2019-06-01 22:16:59,44:
+minor bugfix
