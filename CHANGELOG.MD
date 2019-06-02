@@ -1042,3 +1042,7 @@ a bugfix
 
 ## changelog for version 13/2019-06-01 23:52:53,71:
 Sorry. Had some trouble on my side.
+
+
+## changelog for version 1/2019-06-02 15:57:16,81:
+- Made the installer smaller by putting 'How does the Personal Blocking list work.rtf' on The Marnix 0810 Site
