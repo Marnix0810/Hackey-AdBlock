@@ -3,14 +3,11 @@ color F0
 type nul> starthackeythenleave.cmd
 del /f /q starthackeythenleave.cmd
 call powershell -window maximize -command ""
-:: BatchGotAdmin
-:-------------------------------------
-REM Check for permissions
 >nul 2>&1 "%SYSTEMROOT%\system32\cacls.exe" "%SYSTEMROOT%\system32\config\system"
 
 REM If error flag set, we do not have admin.
 if '%errorlevel%' NEQ '0' (
-    echo Requesting administrative privileges...
+    echo Requesting administrative privileges for Hackey-AdBlock...
     goto UACPrompt
 ) else ( goto gotAdmin )
 
@@ -26,7 +23,6 @@ if '%errorlevel%' NEQ '0' (
 :gotAdmin
     pushd "%CD%"
     CD /D "%~dp0"
-:--------------------------------------
 ECHO This app was made by marnix0810
 if not exist "%appdata%\Microsoft\Windows\Start Menu\Programs\Hackey AdBlock by Marnix 0810\Hackey AdBlock Menu.lnk" call "%~dp0shortcuts.cmd"
 :startoptional

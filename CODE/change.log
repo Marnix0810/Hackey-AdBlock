@@ -1061,3 +1061,7 @@ Some updates on my side.
 
 ## changelog for version 7/2019-06-02 17:06:45,77:
 Updated the AutoTest screen, added 'view license' to it.
+
+
+## changelog for version 8/2019-06-02 22:19:04,22:
+Updated menu
