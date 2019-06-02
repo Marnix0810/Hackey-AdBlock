@@ -1,5 +1,5 @@
-googletagmanager.com
-www.cloudfront.net
 d7x5nblzs94me.cloudfront.net
-www.facebook.net
+googletagmanager.com
 pixel.wp.com
+www.cloudfront.net
+www.facebook.net

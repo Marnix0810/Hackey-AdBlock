@@ -1046,3 +1046,7 @@ Sorry. Had some trouble on my side.
 
 ## changelog for version 1/2019-06-02 15:57:16,81:
 - Made the installer smaller by putting 'How does the Personal Blocking list work.rtf' on The Marnix 0810 Site
+
+
+## changelog for version 4/2019-06-02 16:28:09,88:
+Now flexabilized the setup builder to move the origin of code to Github
