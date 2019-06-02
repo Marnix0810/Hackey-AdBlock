@@ -3,3 +3,4 @@ googletagmanager.com
 pixel.wp.com
 www.cloudfront.net
 www.facebook.net
+ssl.google-analytics.com
