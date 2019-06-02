@@ -1050,3 +1050,10 @@ Sorry. Had some trouble on my side.
 
 ## changelog for version 4/2019-06-02 16:28:09,88:
 Now flexabilized the setup builder to move the origin of code to Github
+
+
+## changelog for version 5/2019-06-02 16:44:26,77:
+
+
+## changelog for version 6/2019-06-02 16:45:56,31:
+Some updates on my side.
