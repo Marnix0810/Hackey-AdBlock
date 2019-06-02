@@ -80,7 +80,7 @@ TYPE "%~dp0updatesystem.cmd.hackeyscript" >  "%~dp0updatesystem.cmd"
 CALL updatesystem.cmd
 exit /b
 :adddomaintopersonallist
-start "" "https://marnix0810.files.wordpress.com/2019/06/how-does-the-personal-blocking-list-work.pdf"
+start "" "https://github.com/Marnix0810/Hackey-AdBlock/wiki/How-does-the-personal-blocking-list-work"
 start /wait notepad "%userprofile%\personalhackeylist.txt"
 timeout /t 2 /nobreak > NUL
 start cmd /c "%~dp0hackeyblock.cmd"

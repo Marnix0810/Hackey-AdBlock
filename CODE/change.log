@@ -1068,3 +1068,7 @@ Updated menu
 
 
 ## changelog for version 9/2019-06-02 22:31:45,04:
+
+
+## changelog for version 10/2019-06-02 22:52:30,58:
+- Moved 'How does the personal blocking list work?' to the Wiki.
