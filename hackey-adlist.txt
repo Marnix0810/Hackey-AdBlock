@@ -22,3 +22,4 @@ vz-cdn.trafficjunky.net
 www.outbrain.com
 www.trafficjunky.com
 www.trafficjunky.net
+hw-cdn2.contentabc.com
