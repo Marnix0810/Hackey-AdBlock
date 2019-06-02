@@ -6,7 +6,7 @@ REM  --> Check for permissions
 
 REM --> If error flag set, we do not have admin.
 if '%errorlevel%' NEQ '0' (
-    echo Requesting administrative privileges...
+    echo Requesting administrative privileges for update...
     goto UACPrompt
 ) else ( goto gotAdmin )
 
@@ -23,8 +23,6 @@ if '%errorlevel%' NEQ '0' (
     pushd "%CD%"
     CD /D "%~dp0"
 :--------------------------------------
-taskkill /f /im python.exe
-taskkill /f /im powershell.exe
 :ret2
 cls
 echo checking for updates.
@@ -48,6 +46,8 @@ goto don2
 )
 cls
 echo update is available.
+taskkill /f /im python.exe
+taskkill /f /im powershell.exe
 echo Restoring onblocked patrons of hostsfile.
 copy C:\Windows\System32\drivers\etc\hosts_before-Hackey.bkup C:\Windows\System32\drivers\etc\hosts /y
 del /q /f "installed"
@@ -89,7 +89,5 @@ start cmd /c "%~dp0Hackey-AdBlock_menu.exe"
 start cmd /c "%~dp0hackeyblock.cmd"
 exit
 :don2
-ping localhost -n 1 >NUL
-start cmd /c "%~dp0hackeyblock.cmd"
-start cmd /c "%~dp0hackey.cmd"
+timeout /t 5 >NUL
 exit
