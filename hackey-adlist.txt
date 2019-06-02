@@ -8,6 +8,7 @@ evidon.com
 evidon.nl
 hackey_works_ok
 hackeytester-if-this-doesnt-load-hackeys-not-active.hello
+hw-cdn2.contentabc.com
 images-prod.powerinboxedge.com
 outbrain.com
 ovc2-ustokyyneikyfasnm.stackpathdns.com
@@ -22,4 +23,3 @@ vz-cdn.trafficjunky.net
 www.outbrain.com
 www.trafficjunky.com
 www.trafficjunky.net
-hw-cdn2.contentabc.com

@@ -1057,3 +1057,7 @@ Now flexabilized the setup builder to move the origin of code to Github
 
 ## changelog for version 6/2019-06-02 16:45:56,31:
 Some updates on my side.
+
+
+## changelog for version 7/2019-06-02 17:06:45,77:
+Updated the AutoTest screen, added 'view license' to it.
