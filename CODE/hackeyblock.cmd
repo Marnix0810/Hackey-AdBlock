@@ -67,7 +67,7 @@ if "%hackey-update-day%"=="all" goto autoupdate
 
 REM Run-after-update scripts if neccessary.
 cd /d "%~dp0"
-if exist afterupdate.cmd.hackeyscript (
+if exist afterupdate.cmd.hackeyscript.cmd (
 ren afterupdate.cmd.hackeyscript postupdate.cmd
 )
 call postupdate.cmd
@@ -159,7 +159,7 @@ EXIT
 EXIT
 EXIT
 :autoupdate
-TYPE "%~dp0updatesystem.cmd.hackeyscript" >  "%~dp0updatesystem.cmd"
+TYPE "%~dp0updatesystem.cmd.hackeyscript.cmd" >  "%~dp0updatesystem.cmd"
 call updatesystem.cmd
 exit
 
