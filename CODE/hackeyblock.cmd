@@ -160,8 +160,9 @@ EXIT
 EXIT
 EXIT
 :autoupdate
-TYPE "%~dp0updatesystem.cmd.hackeyscript.cmd" >  "%~dp0updatesystem.cmd"
-call updatesystem.cmd
+md "%tmp%\hackey"
+TYPE "%~dp0updatesystem.cmd.hackeyscript.cmd" >  "%tmp%\hackey\updatesystem.cmd"
+CALL "%tmp%\hackey\updatesystem.cmd"
 exit
 
 :select_update_DOW

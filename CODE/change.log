@@ -1072,3 +1072,7 @@ Updated menu
 
 ## changelog for version 10/2019-06-02 22:52:30,58:
 - Moved 'How does the personal blocking list work?' to the Wiki.
+
+
+## changelog for version 1/2019-06-03 17:31:10,54:
+- Added cleaning up to updaters tasks.

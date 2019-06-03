@@ -76,8 +76,9 @@ for /F "delims=" %%a in ('mshta.exe "%~dp0files\HTAfiles\setstartuptimeout.HTA"'
 setx Hackeyonstartup-timeout %Hackeyonstartup-timeout%
 exit /b
 :force_NOW_update
-TYPE "%~dp0updatesystem.cmd.hackeyscript.cmd" >  "%~dp0updatesystem.cmd"
-CALL updatesystem.cmd
+md "%tmp%\hackey"
+TYPE "%~dp0updatesystem.cmd.hackeyscript.cmd" >  "%tmp%\hackey\updatesystem.cmd"
+CALL "%tmp%\hackey\updatesystem.cmd"
 exit /b
 :adddomaintopersonallist
 start "" "https://github.com/Marnix0810/Hackey-AdBlock/wiki/How-does-the-personal-blocking-list-work"

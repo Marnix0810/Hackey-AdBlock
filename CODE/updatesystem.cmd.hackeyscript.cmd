@@ -21,8 +21,11 @@ if '%errorlevel%' NEQ '0' (
 
 :gotAdmin
     pushd "%CD%"
-    CD /D "%~dp0"
+    CD /D "%Toinstallationfolder%"
 :--------------------------------------
+set Toinstallationfolder=%ProgramFiles%\marnix0810\Hackey-AdBlock\
+if not "%ProgramFiles(x86)%"=="" set Toinstallationfolder=%ProgramFiles(x86)%\marnix0810\Hackey-AdBlock\
+CD /D "%Toinstallationfolder%"
 :ret2
 cls
 echo checking for updates.
@@ -52,7 +55,7 @@ echo Restoring onblocked patrons of hostsfile.
 copy C:\Windows\System32\drivers\etc\hosts_before-Hackey.bkup C:\Windows\System32\drivers\etc\hosts /y
 del /q /f "installed"
 (
-echo TYPE "%~dp0updatesystem.cmd.hackeyscript" ^>  "%~dp0updatesystem.cmd"
+echo TYPE "%Toinstallationfolder%updatesystem.cmd.hackeyscript" ^>  "%Toinstallationfolder%updatesystem.cmd"
 echo CALL updatesystem.cmd
 echo exit /b
 )> hackeyblock.cmd
@@ -61,11 +64,13 @@ cls
 echo Downloading the update, please wait...
 call powershell -command "iwr -outf updatesfx.exe https://raw.githubusercontent.com/Marnix0810/Hackey-AdBlock/master/updatesfx.exe"
 cls
+echo deleting old version.
+del /f /q /s "%Toinstallationfolder%*.*"
 echo installing update.
-start /wait updatesfx.exe -o"%~dp0" -y
+start /wait updatesfx.exe -o"%Toinstallationfolder%" -y
 cls
 Echo checking if update went well...
-if not exist "%~dp0installed" (
+if not exist "%Toinstallationfolder%installed" (
 echo E: unknown error while updating.
 echo retry is needed, files are deleted and to make sure Hackey keeps working, you should install the update... sorry!
 goto ret1
@@ -75,7 +80,7 @@ echo Update went well!
 :don1
 cls
 echo please wait...
-call "%~dp0shortcuts.cmd"
+call "%Toinstallationfolder%shortcuts.cmd"
 cls
 echo hello and welcome to hackey!
 Echo:
@@ -85,8 +90,8 @@ pause
 echo finished update!
 ping localhost -n 1 >NUL
 type NUL > "%~s0"
-start cmd /c "%~dp0Hackey-AdBlock_menu.exe"
-start cmd /c "%~dp0hackeyblock.cmd"
+start cmd /c "%Toinstallationfolder%Hackey-AdBlock_menu.exe"
+start cmd /c "%Toinstallationfolder%hackeyblock.cmd"
 exit
 :don2
 timeout /t 5 >NUL
