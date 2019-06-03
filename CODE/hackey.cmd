@@ -28,7 +28,7 @@ if not exist "%appdata%\Microsoft\Windows\Start Menu\Programs\Hackey AdBlock by 
 :startoptional
 REM Run-after-update scripts if neccessary.
 cd /d "%~dp0"
-if exist afterupdate.cmd.hackeyscript (
+if exist afterupdate.cmd.hackeyscript.cmd (
 ren afterupdate.cmd.hackeyscript postupdate.cmd
 )
 call postupdate.cmd
@@ -76,7 +76,7 @@ for /F "delims=" %%a in ('mshta.exe "%~dp0files\HTAfiles\setstartuptimeout.HTA"'
 setx Hackeyonstartup-timeout %Hackeyonstartup-timeout%
 exit /b
 :force_NOW_update
-TYPE "%~dp0updatesystem.cmd.hackeyscript" >  "%~dp0updatesystem.cmd"
+TYPE "%~dp0updatesystem.cmd.hackeyscript.cmd" >  "%~dp0updatesystem.cmd"
 CALL updatesystem.cmd
 exit /b
 :adddomaintopersonallist
