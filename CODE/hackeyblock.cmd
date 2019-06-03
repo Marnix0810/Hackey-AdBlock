@@ -136,7 +136,7 @@ set /a blockedsitescounter+=1
 powershell -command "& { (New-Object Net.WebClient).DownloadFile('http://www.malwaredomainlist.com/hostslist/hosts.txt', 'mdmhostlist.txt') }"
 type mdmhostlist.txt >> "%temp%\hosts.edit.tmp"
 del /f /q "%~dp0mdmhostlist.txt"
-cd /d "%userprofile%"
+CD /D "%userprofile%"
 for /F "eol=; tokens=*" %%A in (personalhackeylist.txt) do (
 ECHO # Hackey Personal Blocking Rule >> "%temp%\hosts.edit.tmp"
 ECHO 127.0.0.1 %%A >> "%temp%\hosts.edit.tmp"
@@ -144,6 +144,7 @@ cls
 echo added %%A to blocklist.
 set /a blockedsitescounter+=1
 )
+CD /D "%~dp0"
 if not "%hackey-privacy-on-or-off%"=="off" call :Hackeyprivacy
 
 cd /d "%~dp0"
