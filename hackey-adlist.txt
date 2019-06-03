@@ -2,6 +2,7 @@
 5cc9d5c68b504aa2fe70-1fcff0a84bcdea5a9b63ebb4caea7fcf.ssl.cf6.rackcdn.com
 65vk1fba34.com
 adclick.g.doubleclick.net
+googleads.g.doubleclick.net
 ads.bing.com
 ads.google.com
 ads.pubmatic.com
