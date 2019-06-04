@@ -54,7 +54,7 @@ if "%HTAreply%"=="5" (
 start cmd /c "%~dp0stop-hackey.cmd"
 exit
 )
-if "%HTAreply%"=="6" start "" "http://hackeytester-if-this-doesnt-load-hackeys-not-active.hello:3803/AutoTest"
+if "%HTAreply%"=="6" start "" "http://localhost:3803/AutoTest/#if-this-doesn't-load-Hackey-is-not-active"
 if "%HTAreply%"=="9" call :adddomaintopersonallist
 if "%HTAreply%"=="7" call :uninstall
 if "%HTAreply%"=="8" exit
