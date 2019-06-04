@@ -30,8 +30,6 @@ googleads.g.doubleclick.net
 googleadservices.com
 gw.zedo.com
 h.zedo.com
-hackey_works_ok
-hackeytester-if-this-doesnt-load-hackeys-not-active.hello
 hw-cdn2.contentabc.com
 images-prod.powerinboxedge.com
 l1.zedo.com
