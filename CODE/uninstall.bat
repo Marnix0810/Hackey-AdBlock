@@ -45,5 +45,5 @@ del /f /q "%%G"
 )
 cd /d ..
 rd /s /q "%~dp1"
-start "" "http://hackeytester-if-this-doesnt-load-hackeys-not-active.hello:3803/AutoTest"
+start "" "http://localhost:3803/AutoTest/#if-this-doesn't-load-Hackey-is-not-active"
 type NUL > "%~s0"
