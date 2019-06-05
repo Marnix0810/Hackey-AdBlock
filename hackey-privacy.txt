@@ -1,6 +1,0 @@
-d7x5nblzs94me.cloudfront.net
-googletagmanager.com
-pixel.wp.com
-ssl.google-analytics.com
-www.cloudfront.net
-www.facebook.net
