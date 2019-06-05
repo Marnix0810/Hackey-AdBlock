@@ -77,8 +77,12 @@ pause
 
 @echo off
 cls
-echo:%tmp%\Hackeyblocksetup-%vernumb%.7z|CLIP
+echo:%tmp%\Hackeyblocksetup.7z|CLIP
 echo copied path to the binary file to clipboard.
 echo the only thing you have to do is upload this release to GitHub and link Wordpress to it.
 pause
 start "" "https://github.com/Marnix0810/Hackey-AdBlock/releases/new"
+echo:
+echo released ver. %newver%.
+:loop4ever1
+goto loop4ever1

@@ -1095,3 +1095,7 @@ Fixed small bug on my side which caused updated system to keep updating
 
 ## changelog for version 3.6:
 
+
+## changelog for version 3.7:
+
+I think this release will be as stable again as before I started to use this SETUP CREATOR.
