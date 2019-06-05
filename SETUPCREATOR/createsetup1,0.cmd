@@ -1,9 +1,11 @@
 @echo off
 
 REM Get version number
-set /p "numb1="<"%~dp0..\latest-version.txt"
-set /a numb1+=1
-set /a vernumb=%numb1%
+set /p "numb2="<"%~dp0numb2.txt"
+set /a numb2+=1
+echo:%numb2%>"%~dp0numb2.txt"
+set /p "numb1="<"%~dp0numb1.txt"
+set /a vernumb=%numb1%.%numb2%
 
 REM Organize Ad-list
 type "%userprofile%\Github\Hackey-AdBlock\hackey-adlist.txt">"%~dp0addomainlist.txt"
