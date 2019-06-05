@@ -1,10 +1,10 @@
 @echo on
 
 REM Get version number
-set /p "numb2="<"%~dp0numb2.txt"
+set /p "numb2="<"%userprofile%\OneDrive\Documenten\Programmeren\Programmaprojecten\4. Stable-active\The Hackey-AdBlock project\numb2.txt"
 set /a numb2+=1
-echo:%numb2%>"%~dp0numb2.txt"
-set /p "numb1="<"%~dp0numb1.txt"
+echo:%numb2%>"%userprofile%\OneDrive\Documenten\Programmeren\Programmaprojecten\4. Stable-active\The Hackey-AdBlock project\numb2.txt"
+set /p "numb1="<"%userprofile%\OneDrive\Documenten\Programmeren\Programmaprojecten\4. Stable-active\The Hackey-AdBlock project\numb1.txt"
 set vernumb=%numb1%.%numb2%
 set newver=%vernumb%
 echo:%vernumb%>"%~dp0..\latest-release.txt"
@@ -72,7 +72,7 @@ call "%~dp0Assets\Bat_To_Exe_Converter\Bat_To_Exe_Converter_(x64).exe" /bat "%~d
 ren "%~dp0SETUP\hackeyfilesextractor.exe" updatesfx.exe
 move /y "%~dp0SETUP\updatesfx.exe" "%~dp0..\"
 call "%~dp0Assets\7-Zip\7z.exe" a "%tmp%\Hackeyblocksetup.7z" "%userprofile%\OneDrive\Documenten\Programmeren\Programmaprojecten\4. Stable-active\The Hackey-AdBlock project\Setups\Hackeyblocksetup-%vernumb%.exe"
-call "%~dp0Assets\7-Zip\7z.exe" a "%tmp%\Hackeyblocksetup.7z" "%~dp0Changelog for Hackey-AdBlock.url"
+call "%~dp0Assets\7-Zip\7z.exe" a "%tmp%\Hackeyblocksetup.7z" "%userprofile%\OneDrive\Documenten\Programmeren\Programmaprojecten\4. Stable-active\The Hackey-AdBlock project\Changelog for Hackey-AdBlock.url"
 pause
 
 @echo off
