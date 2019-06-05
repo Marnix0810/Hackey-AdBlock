@@ -1078,4 +1078,6 @@ Updated menu
 - Added cleaning up to updaters tasks.
 
 ## changelog for version 3.1
-The setup numbering system and setup creation script have been replaced.
+The setup numbering system and setup creation script have been replaced.## changelog for version 3.2
+
+-- beginning trouble -- Fixed a small bug in the setup creation system.
