@@ -1088,3 +1088,10 @@ I am having some trouble with this!
 
 ## changelog for version 3.5:
 
+
+## changelog for version 3.6:
+
+Fixed small bug on my side which caused updated system to keep updating
+
+## changelog for version 3.6:
+

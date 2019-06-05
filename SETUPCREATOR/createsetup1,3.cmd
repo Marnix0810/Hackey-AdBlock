@@ -8,7 +8,8 @@ set /p "numb1="<"%~dp0numb1.txt"
 set vernumb=%numb1%.%numb2%
 set newver=%vernumb%
 echo:%vernumb%>"%~dp0..\latest-release.txt"
-pause
+type "%~dp0..\latest-release.txt" > "%~dp0..\CODE\hackey-install-version.txt"
+
 REM Organize Ad-list
 type "%~dp0..\hackey-adlist.txt">"%~dp0addomainlist.txt"
 type addomainlist.txt | findstr /v # | findstr /v \/ | findstr /v = > addomainlist.txt.new
@@ -70,10 +71,14 @@ call "%~dp0Assets\7-Zip\7z.exe" a -r -sfx7z.sfx -mx1 "%~dp0SETUP\hackeyfilesextr
 call "%~dp0Assets\Bat_To_Exe_Converter\Bat_To_Exe_Converter_(x64).exe" /bat "%~dp0\SETUP\installationextraction.cmd" /exe "%userprofile%\OneDrive\Documenten\Programmeren\Programmaprojecten\4. Stable-active\The Hackey-AdBlock project\Setups\Hackeyblocksetup-%vernumb%.exe" /icon "%~dp0logos\hackeylogo.ico" /overwrite /include "%~dp0SETUP\hackeyfilesextractor.exe" /workdir 1 /extractdir 1 /uac-admin /company "marnix0810.wordpress.com" /trademarks "By Marnix 0810" /copyright "By Marnix 0810" /productname "Hackey-AdBlock" /productversion "%verd%" /display /description "Hackey AdBlock's installer by Marnix 0810" /comments "Official Hackey AdBlock installer by Marnix0810" /privatebuild "%newver%" /specialbuild "%newver%" 
 ren "%~dp0SETUP\hackeyfilesextractor.exe" updatesfx.exe
 move /y "%~dp0SETUP\updatesfx.exe" "%~dp0..\"
+call "%~dp0Assets\7-Zip\7z.exe" a "%tmp%\Hackeyblocksetup.7z" "%userprofile%\OneDrive\Documenten\Programmeren\Programmaprojecten\4. Stable-active\The Hackey-AdBlock project\Setups\Hackeyblocksetup-%vernumb%.exe"
+call "%~dp0Assets\7-Zip\7z.exe" a "%tmp%\Hackeyblocksetup.7z" "%~dp0Changelog for Hackey-AdBlock.url"
 pause
 
 @echo off
+cls
+echo:%tmp%\Hackeyblocksetup-%vernumb%.7z|CLIP
+echo copied path to the binary file to clipboard.
 echo the only thing you have to do is upload this release to GitHub and link Wordpress to it.
 pause
-start explorer "%userprofile%\OneDrive\Documenten\Programmeren\Programmaprojecten\4. Stable-active\The Hackey-AdBlock project\Setups\"
 start "" "https://github.com/Marnix0810/Hackey-AdBlock/releases/new"
