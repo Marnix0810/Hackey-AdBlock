@@ -1076,3 +1076,6 @@ Updated menu
 
 ## changelog for version 1/2019-06-03 17:31:10,54:
 - Added cleaning up to updaters tasks.
+
+## changelog for version 3.1
+The setup numbering system and setup creation script have been replaced.

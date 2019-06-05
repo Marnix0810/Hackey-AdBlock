@@ -1,14 +1,14 @@
-@echo off
+@echo on
 
 REM Get version number
 set /p "numb2="<"%~dp0numb2.txt"
 set /a numb2+=1
 echo:%numb2%>"%~dp0numb2.txt"
 set /p "numb1="<"%~dp0numb1.txt"
-set /a vernumb=%numb1%.%numb2%
+set vernumb=%numb1%.%numb2%
 set newver=%vernumb%
 echo:%vernumb%>"%~dp0..\latest-release.txt"
-
+pause
 REM Organize Ad-list
 type "%~dp0..\hackey-adlist.txt">"%~dp0addomainlist.txt"
 type addomainlist.txt | findstr /v # | findstr /v \/ | findstr /v = > addomainlist.txt.new
@@ -33,20 +33,20 @@ del /f /q "%~dp0trackerlist.txt"
 
 REM Display the lists
 cls
-echo Ads:
-echo:
-type "%~dp0..\hackey-adlist.txt"
-echo:
-echo Trackers:
-echo:
-type "%~dp0..\hackey-privacy.txt"
-echo everything okay?
+@echo Ads:
+@echo:
+@type "%~dp0..\hackey-adlist.txt"
+@echo:
+@echo Trackers:
+@echo:
+@type "%~dp0..\hackey-privacy.txt"
+@echo everything okay?
 pause
 
 REM Display the changelog
-type "%~dp0..\CHANGELOG.MD" > "%~dp0..\CODE\change.log"
-type "%~dp0..\CODE\change.log"
-echo everything okay?
+@type "%~dp0..\CHANGELOG.MD" > "%~dp0..\CODE\change.log"
+@type "%~dp0..\CODE\change.log"
+@echo everything okay?
 pause
 
 
