@@ -1081,3 +1081,10 @@ Updated menu
 The setup numbering system and setup creation script have been replaced.## changelog for version 3.2
 
 -- beginning trouble -- Fixed a small bug in the setup creation system.
+
+## changelog for version 3.4:
+
+I am having some trouble with this!
+
+## changelog for version 3.5:
+
