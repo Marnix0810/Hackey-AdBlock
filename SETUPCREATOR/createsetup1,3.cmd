@@ -43,6 +43,20 @@ cls
 @echo everything okay?
 pause
 
+REM Update the changelog
+@ECHO off
+type "%~dp0..\CHANGELOG.MD"
+ECHO:
+echo changelog for version %newver%: ^(typecon^)
+ECHO:
+(
+ECHO:
+echo ## changelog for version %newver%:
+ECHO:
+TYPE CON
+) >> "%~dp0..\CHANGELOG.MD"
+echo submitted!
+
 REM Display the changelog
 @type "%~dp0..\CHANGELOG.MD" > "%~dp0..\CODE\change.log"
 @type "%~dp0..\CODE\change.log"
