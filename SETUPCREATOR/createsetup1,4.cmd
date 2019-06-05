@@ -9,7 +9,7 @@ set vernumb=%numb1%.%numb2%
 set newver=%vernumb%
 echo:%vernumb%>"%~dp0..\latest-release.txt"
 type "%~dp0..\latest-release.txt" > "%~dp0..\CODE\hackey-install-version.txt"
-
+type "%~dp0..\LICENSE" > "%~dp0..\CODE\License.txt"
 REM Organize Ad-list
 type "%~dp0..\hackey-adlist.txt">"%~dp0addomainlist.txt"
 type addomainlist.txt | findstr /v # | findstr /v \/ | findstr /v = > addomainlist.txt.new
