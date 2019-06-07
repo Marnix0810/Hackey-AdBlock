@@ -28,7 +28,6 @@ g.zedo.com
 gads.pubmatic.com
 googleads.g.doubleclick.net
 googleadservices.com
-tpc.googlesyndication.com
 gw.zedo.com
 h.zedo.com
 hw-cdn2.contentabc.com
