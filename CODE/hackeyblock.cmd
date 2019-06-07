@@ -125,6 +125,8 @@ REM update redirections.
 TYPE "C:\Windows\System32\drivers\etc\hosts" > "%temp%\hosts.edit.tmp"
 set "blockedsitescounter="
 if not "%hackey-adblocking-on-or-off%"=="off" call :Hackeyadblock
+if not "%hackey-privacy-on-or-off%"=="off" call :Hackeyprivacy
+if not "%hackey-adultblock-on-or-off%"=="off" call :Hackeyadultblock
 
 powershell -command "& { (New-Object Net.WebClient).DownloadFile('http://www.malwaredomainlist.com/hostslist/hosts.txt', 'mdmhostlist.txt') }"
 type mdmhostlist.txt >> "%temp%\hosts.edit.tmp"
@@ -137,8 +139,6 @@ cls
 echo added %%A to blocklist.
 set /a blockedsitescounter+=1
 )
-CD /D "%~dp0"
-if not "%hackey-privacy-on-or-off%"=="off" call :Hackeyprivacy
 
 cd /d "%~dp0"
 TYPE "%temp%\hosts.edit.tmp" > "C:\Windows\System32\drivers\etc\hosts"
@@ -184,6 +184,18 @@ if "%_os_bitness%"=="32" start "" "%~dp0python-sfx.7z.exe" -o"%~dp0" -y
 if "%_os_bitness%"=="64" start "" "%~dp0python64bit-sfx.7z.exe" -o"%~dp0" -y
 exit /b
 :Hackeyadblock
+del /f /q hackey-adlist.txt
+powershell -command "& { (New-Object Net.WebClient).DownloadFile('https://raw.githubusercontent.com/Marnix0810/Hackey-AdBlock/master/hackey-adlist.txt', 'hackey-adlist.txt') }"
+for /F "eol=; tokens=*" %%A in (hackey-adlist.txt) do (
+ECHO # Hackey AdBlock Rule >> "%temp%\hosts.edit.tmp"
+ECHO 127.0.0.1 %%A >> "%temp%\hosts.edit.tmp"
+cls
+echo added %%A to blocklist.
+set /a blockedsitescounter+=1
+)
+exit /b
+
+:Hackeyadultblock
 del /f /q hackey-adlist.txt
 powershell -command "& { (New-Object Net.WebClient).DownloadFile('https://raw.githubusercontent.com/Marnix0810/Hackey-AdBlock/master/hackey-adlist.txt', 'hackey-adlist.txt') }"
 for /F "eol=; tokens=*" %%A in (hackey-adlist.txt) do (

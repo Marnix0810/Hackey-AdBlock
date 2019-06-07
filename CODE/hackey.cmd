@@ -45,8 +45,11 @@ set "HTAreply="
 for /F "delims=" %%a in ('mshta.exe "%~dp0files\HTAfiles\MENU-HOME.HTA"') do set "HTAreply=%%a"
 powershell -window minimized -command ""
 if "%HTAreply%"=="License" start "" "https://github.com/Marnix0810/Hackey-AdBlock/blob/master/LICENSE"
-if "%HTAreply%"=="Privacy" call :turn-privacy-on-or-off
-if "%HTAreply%"=="Adblock" call :turn-adblock-on-or-off
+if "%HTAreply%"=="Privacy.list" call :turn-privacy-on-or-off
+if "%HTAreply%"=="Adblock.list" call :turn-adblock-on-or-off
+if "%HTAreply%"=="Adult.list" call :turn-adultblock-on-or-off
+
+
 if "%HTAreply%"=="1" call :set_update_freq
 if "%HTAreply%"=="2" call :set_startup_timeout
 if "%HTAreply%"=="3" call :force_NOW_update
@@ -100,6 +103,13 @@ set "hackey-adblock-on-or-off="
 powershell -window hidden -command ""
 for /F "delims=" %%a in ('mshta.exe "%~dp0files\HTAfiles\hackey-adblock-on-or-off.HTA"') do set "hackey-adblock-on-or-off=%%a"
 setx hackey-adblock-on-or-off %hackey-privacy-on-or-off%
+exit /b
+:turn-adultblock-on-or-off
+setx hackey-adultblock-on-or-off ""
+set "hackey-adultblock-on-or-off="
+powershell -window hidden -command ""
+for /F "delims=" %%a in ('mshta.exe "%~dp0files\HTAfiles\hackey-adblock-on-or-off.HTA"') do set "hackey-adultblock-on-or-off=%%a"
+setx hackey-adultblock-on-or-off %hackey-privacy-on-or-off%
 exit /b
 :uninstall
 md "%tmp%\hackey"
