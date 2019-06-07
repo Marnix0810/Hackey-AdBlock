@@ -1103,3 +1103,7 @@ I think this release will be as stable again as before I started to use this SET
 ## changelog for version 3.8:
 
 From now on, you can use Hackeyprivacy without blocking ads, you can turn off ad-blocking now.
+
+## changelog for version 3.9:
+
+added an adult blocking list function. Tis oes not yet cover much but will enchance as people report new domains.
