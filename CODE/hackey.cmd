@@ -93,6 +93,13 @@ powershell -window hidden -command ""
 for /F "delims=" %%a in ('mshta.exe "%~dp0files\HTAfiles\hackey-privacy-on-or-off.HTA"') do set "hackey-privacy-on-or-off=%%a"
 setx hackey-privacy-on-or-off %hackey-privacy-on-or-off%
 exit /b
+:turn-adblock-on-or-off
+setx hackey-adblock-on-or-off ""
+set "hackey-adblock-on-or-off="
+powershell -window hidden -command ""
+for /F "delims=" %%a in ('mshta.exe "%~dp0files\HTAfiles\hackey-adblock-on-or-off.HTA"') do set "hackey-adblock-on-or-off=%%a"
+setx hackey-adblock-on-or-off %hackey-privacy-on-or-off%
+exit /b
 :uninstall
 md "%tmp%\hackey"
 xcopy uninstall.bat "%tmp%\hackey\" /y
