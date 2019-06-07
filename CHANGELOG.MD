@@ -1106,4 +1106,4 @@ From now on, you can use Hackeyprivacy without blocking ads, you can turn off ad
 
 ## changelog for version 3.9:
 
-added an adult blocking list function. Tis oes not yet cover much but will enchance as people report new domains.
+Added an adult blocking list function. This does not yet cover much but will enchance as people report new domains.
