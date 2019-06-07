@@ -1099,3 +1099,7 @@ Fixed small bug on my side which caused updated system to keep updating
 ## changelog for version 3.7:
 
 I think this release will be as stable again as before I started to use this SETUP CREATOR.
+
+## changelog for version 3.8:
+
+From now on, you can use Hackeyprivacy without blocking ads, you can turn off ad-blocking now.
