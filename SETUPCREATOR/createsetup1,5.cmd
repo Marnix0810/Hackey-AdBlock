@@ -32,6 +32,18 @@ move /y trackerlist.txt.new hackey-privacy.txt >nul
 move hackey-privacy.txt "%~dp0..\" >nul
 del /f /q "%~dp0trackerlist.txt"
 
+REM Organize Adult-content list
+type "%~dp0..\Adult-content-host-list.txt">"%~dp0adultcontentlist.txt"
+type adultcontentlist.txt | findstr /v # | findstr /v \/ | findstr /v = > adultcontentlist.txt.new
+move /y adultcontentlist.txt.new adultcontentlist.txt >nul
+xcopy "%~dp0\Assets\jsort.bat" "%~dp0"
+call jsort.bat adultcontentlist.txt /u >adultcontentlist.txt.new
+del /f /q "%~dp0jsort.bat"
+move /y adultcontentlist.txt.new Adult-content-host-list.txt >nul
+move Adult-content-host-list.txt "%~dp0..\" >nul
+del /f /q "%~dp0adultcontentlist.txt"
+
+
 REM Display the lists
 cls
 @echo Ads:
@@ -41,6 +53,9 @@ cls
 @echo Trackers:
 @echo:
 @type "%~dp0..\hackey-privacy.txt"
+@echo Adult sites:
+@echo:
+@type "%~dp0..\Adult-content-host-list.txt"
 @echo everything okay?
 pause
 
