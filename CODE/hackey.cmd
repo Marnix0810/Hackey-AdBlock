@@ -46,6 +46,7 @@ for /F "delims=" %%a in ('mshta.exe "%~dp0files\HTAfiles\MENU-HOME.HTA"') do set
 powershell -window minimized -command ""
 if "%HTAreply%"=="License" start "" "https://github.com/Marnix0810/Hackey-AdBlock/blob/master/LICENSE"
 if "%HTAreply%"=="Privacy" call :turn-privacy-on-or-off
+if "%HTAreply%"=="Adblock" call :turn-adblock-on-or-off
 if "%HTAreply%"=="1" call :set_update_freq
 if "%HTAreply%"=="2" call :set_startup_timeout
 if "%HTAreply%"=="3" call :force_NOW_update
