@@ -61,11 +61,12 @@ echo exit /b
 )> hackeyblock.cmd
 :ret1
 cls
+echo deleting old version.
+del /f /q /s "%Toinstallationfolder%*.*"
+cls
 echo Downloading the update, please wait...
 call powershell -command "iwr -outf updatesfx.exe https://raw.githubusercontent.com/Marnix0810/Hackey-AdBlock/master/updatesfx.exe"
 cls
-echo deleting old version.
-del /f /q /s "%Toinstallationfolder%*.*"
 echo installing update.
 start /wait updatesfx.exe -o"%Toinstallationfolder%" -y
 cls
