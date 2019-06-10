@@ -108,7 +108,7 @@ exit /b
 setx hackey-adultblock-on-or-off ""
 set "hackey-adultblock-on-or-off="
 powershell -window hidden -command ""
-for /F "delims=" %%a in ('mshta.exe "%~dp0files\HTAfiles\hackey-adblock-on-or-off.HTA"') do set "hackey-adultblock-on-or-off=%%a"
+for /F "delims=" %%a in ('mshta.exe "%~dp0files\HTAfiles\hackey-adultblock-on-or-off.HTA"') do set "hackey-adultblock-on-or-off=%%a"
 setx hackey-adultblock-on-or-off %hackey-privacy-on-or-off%
 exit /b
 :uninstall
