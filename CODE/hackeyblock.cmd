@@ -196,7 +196,7 @@ exit /b
 del /f /q hackey-adlist.txt
 powershell -command "& { (New-Object Net.WebClient).DownloadFile('https://raw.githubusercontent.com/Marnix0810/Hackey-AdBlock/master/hackey-adlist.txt', 'hackey-adlist.txt') }"
 for /F "eol=; tokens=*" %%A in (hackey-adlist.txt) do (
-ECHO # Hackey AdBlock Rule >> "%temp%\hosts.edit.tmp"
+ECHO # Hackey rule: this site hosts adult content >> "%temp%\hosts.edit.tmp"
 ECHO 127.0.0.1 %%A >> "%temp%\hosts.edit.tmp"
 cls
 echo added %%A to blocklist.
