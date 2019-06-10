@@ -2,11 +2,8 @@
 color F0
 call powershell -window maximize -command ""
 :: BatchGotAdmin
-:-------------------------------------
-REM  --> Check for permissions
 >nul 2>&1 "%SYSTEMROOT%\system32\cacls.exe" "%SYSTEMROOT%\system32\config\system"
 
-REM --> If error flag set, we do not have admin.
 if '%errorlevel%' NEQ '0' (
     echo Requesting administrative privileges...
     goto UACPrompt
@@ -126,7 +123,7 @@ TYPE "C:\Windows\System32\drivers\etc\hosts" > "%temp%\hosts.edit.tmp"
 set "blockedsitescounter="
 if not "%hackey-adblocking-on-or-off%"=="off" call :Hackeyadblock
 if not "%hackey-privacy-on-or-off%"=="off" call :Hackeyprivacy
-if not "%hackey-adultblock-on-or-off%"=="off" call :Hackeyadultblock
+if "%hackey-adultblock-on-or-off%"=="on" call :Hackeyadultblock
 
 powershell -command "& { (New-Object Net.WebClient).DownloadFile('http://www.malwaredomainlist.com/hostslist/hosts.txt', 'mdmhostlist.txt') }"
 type mdmhostlist.txt >> "%temp%\hosts.edit.tmp"
