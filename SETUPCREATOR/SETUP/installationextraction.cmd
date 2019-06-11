@@ -32,7 +32,7 @@
 ::
 ::
 ::978f952a14a936cc963da21a135fa983
-set Toinstallationfolder=%ProgramFiles%\marnix0810\Hackey-AdBlock
-if not "%ProgramFiles(x86)%"=="" set Toinstallationfolder=%ProgramFiles(x86)%\marnix0810\Hackey-AdBlock
+set Toinstallationfolder=%ProgramFiles%\marnix0810\HackeyBlock
+if not "%ProgramFiles(x86)%"=="" set Toinstallationfolder=%ProgramFiles(x86)%\marnix0810\HackeyBlock
 start /wait /max hackeyfilesextractor.exe -o"%Toinstallationfolder%" -y
 start /b cmd /c "%Toinstallationfolder%\starthackeythenleave.cmd"
