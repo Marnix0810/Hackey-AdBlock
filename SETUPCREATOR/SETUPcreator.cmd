@@ -1,4 +1,4 @@
-@echo on
+@echo off
 
 REM Get version number
 set /p "numb2="<"%userprofile%\OneDrive\Documenten\Programmeren\Programmaprojecten\4. Stable-active\The Hackey-AdBlock project\numb2.txt"
@@ -59,6 +59,7 @@ cls
 @echo Trackers:
 @echo:
 @type "%~dp0..\hackey-privacy.txt"
+@echo:
 @echo Adult sites:
 @echo:
 @type "%~dp0..\Adult-content-host-list.txt"
