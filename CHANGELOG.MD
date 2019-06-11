@@ -1112,3 +1112,7 @@ Added an adult blocking list function. This does not yet cover much but will enc
 
 - Interface updates
 - Updated shortcuts
+
+## changelog for version 3.11:
+
+- updated the name
