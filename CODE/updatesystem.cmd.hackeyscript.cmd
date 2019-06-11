@@ -23,8 +23,8 @@ if '%errorlevel%' NEQ '0' (
     pushd "%CD%"
     CD /D "%Toinstallationfolder%"
 :--------------------------------------
-set Toinstallationfolder=%ProgramFiles%\marnix0810\Hackey-AdBlock\
-if not "%ProgramFiles(x86)%"=="" set Toinstallationfolder=%ProgramFiles(x86)%\marnix0810\Hackey-AdBlock\
+set Toinstallationfolder=%ProgramFiles%\marnix0810\HackeyBlock\
+if not "%ProgramFiles(x86)%"=="" set Toinstallationfolder=%ProgramFiles(x86)%\marnix0810\HackeyBlock\
 CD /D "%Toinstallationfolder%"
 :ret2
 cls
@@ -39,12 +39,12 @@ echo ... no internet connection found. Update system needs internet.
 goto ret2
 )
 del /f /q latest-version.txt >NUL
-call powershell -command "iwr -outf latest-version.txt https://raw.githubusercontent.com/Marnix0810/Hackey-AdBlock/master/latest-release.txt"
+call powershell -command "iwr -outf latest-version.txt https://raw.githubusercontent.com/Marnix0810/HackeyBlock/master/latest-release.txt"
 set /p "latestver="<"latest-version.txt"
-set /p "installedver="<"hackey-install-version.txt"
+set /p "installedver="<"Hackey-install-version.txt"
 if "%latestver%"=="%installedver%" (
 echo Hackey is up-to-date. Installed version: 
-type hackey-install-version.txt
+type Hackey-install-version.txt
 goto don2
 )
 cls
@@ -55,17 +55,17 @@ echo Restoring onblocked patrons of hostsfile.
 copy C:\Windows\System32\drivers\etc\hosts_before-Hackey.bkup C:\Windows\System32\drivers\etc\hosts /y
 del /q /f "installed"
 (
-echo TYPE "%Toinstallationfolder%updatesystem.cmd.hackeyscript" ^>  "%Toinstallationfolder%updatesystem.cmd"
+echo TYPE "%Toinstallationfolder%updatesystem.cmd.Hackeyscript" ^>  "%Toinstallationfolder%updatesystem.cmd"
 echo CALL updatesystem.cmd
 echo exit /b
-)> hackeyblock.cmd
+)> Hackeyblock.cmd
 :ret1
 cls
 echo deleting old version.
 del /f /q /s "%Toinstallationfolder%*.*"
 cls
 echo Downloading the update, please wait...
-call powershell -command "iwr -outf updatesfx.exe https://raw.githubusercontent.com/Marnix0810/Hackey-AdBlock/master/updatesfx.exe"
+call powershell -command "iwr -outf updatesfx.exe https://raw.githubusercontent.com/Marnix0810/HackeyBlock/master/updatesfx.exe"
 cls
 echo installing update.
 start /wait updatesfx.exe -o"%Toinstallationfolder%" -y
@@ -83,7 +83,7 @@ cls
 echo please wait...
 call "%Toinstallationfolder%shortcuts.cmd"
 cls
-echo hello and welcome to hackey!
+echo hello and welcome to Hackey!
 Echo:
 Echo Hackey will start automatically. to go to it's menu, you will find a shortcut in start menu --^> programs --^> Marnix 0810
 echo:
@@ -91,8 +91,8 @@ pause
 echo finished update!
 ping localhost -n 1 >NUL
 type NUL > "%~s0"
-start cmd /c "%Toinstallationfolder%Hackey-AdBlock_menu.exe"
-start cmd /c "%Toinstallationfolder%hackeyblock.cmd"
+start cmd /c "%Toinstallationfolder%HackeyBlock_menu.exe"
+start cmd /c "%Toinstallationfolder%Hackeyblock.cmd"
 exit
 :don2
 timeout /t 5 >NUL

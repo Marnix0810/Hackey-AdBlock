@@ -39,10 +39,10 @@ REM programmer.marxin0810@gmail.com
 
 
 REM Clean the mess up that was made previously
-del /f /q "%tmp%\hackeyredirectfromads.cmd"
+del /f /q "%tmp%\Hackeyredirectfromads.cmd"
 del /f /q "%~dp0updatesystem.cmd"
 del /f /q "%~dp0mdmhostlist.txt"
-del /f /q "%~dp0extracthackeyforinstaller.bat"
+del /f /q "%~dp0extractHackeyforinstaller.bat"
 taskkill /f /im powershell.exe
 taskkill /f /im python.exe
 echo copying the unblocked patrons...
@@ -52,27 +52,27 @@ cls
 
 
 REM check 4 updates
-if "%hackey-update-day%"=="" call :select_update_DOW
-if "%hackey-last-update%"=="%date%" goto updateisdone
+if "%Hackey-update-day%"=="" call :select_update_DOW
+if "%Hackey-last-update%"=="%date%" goto updateisdone
 echo controleren of er updates moeten worden gedownload...
 call :getdow
-if "%hackey-update-day%"=="%dayofweek%" goto autoupdate
-if "%hackey-update-day%"=="all" goto autoupdate
+if "%Hackey-update-day%"=="%dayofweek%" goto autoupdate
+if "%Hackey-update-day%"=="all" goto autoupdate
 :updateisdone
 
 
 
 REM Run-after-update scripts if neccessary.
 cd /d "%~dp0"
-if exist afterupdate.cmd.hackeyscript.cmd (
-ren afterupdate.cmd.hackeyscript postupdate.cmd
+if exist afterupdate.cmd.Hackeyscript.cmd (
+ren afterupdate.cmd.Hackeyscript postupdate.cmd
 )
 call postupdate.cmd
 if exist postupdate.cmd (
 del postupdate.cmd
 )
 REM       make sure to not be too loud
-REM choice /m "Should hackey go to background?" /c YN /d Y /t 10
+REM choice /m "Should Hackey go to background?" /c YN /d Y /t 10
 REM if "%errorlevel%"=="1" (
 powershell -window hidden -command ""
 REM )
@@ -94,12 +94,12 @@ echo @echo off
 echo echo server started. ^> "%~dp0servstatus.log" 
 echo :retry
 echo cd /D "%~dp0"
-echo python -m http.server 3803 --directory "%~dp0hackeyredirectfromads"
+echo python -m http.server 3803 --directory "%~dp0Hackeyredirectfromads"
 echo goto retry
-) > "%tmp%\hackeyredirectfromads.cmd"
+) > "%tmp%\Hackeyredirectfromads.cmd"
 :startserv
-copy "%~dp0icon.ico" "%~dp0hackeyredirectfromads\favicon.ico"
-start /min powershell -window hidden -command "cmd /c %tmp%\hackeyredirectfromads.cmd"
+copy "%~dp0icon.ico" "%~dp0Hackeyredirectfromads\favicon.ico"
+start /min powershell -window hidden -command "cmd /c %tmp%\Hackeyredirectfromads.cmd"
 :waitserv
 cls
 echo setting up catchpages . . .
@@ -121,15 +121,15 @@ type C:\Windows\System32\drivers\etc\hosts_before-Hackey.bkup > C:\hosts_before-
 REM update redirections.
 TYPE "C:\Windows\System32\drivers\etc\hosts" > "%temp%\hosts.edit.tmp"
 set "blockedsitescounter="
-if not "%hackey-adblocking-on-or-off%"=="off" call :Hackeyadblock
-if not "%hackey-privacy-on-or-off%"=="off" call :Hackeyprivacy
-if "%hackey-adultblock-on-or-off%"=="on" call :Hackeyadultblock
+if not "%HackeyBlocking-on-or-off%"=="off" call :Hackeyadblock
+if not "%Hackey-privacy-on-or-off%"=="off" call :Hackeyprivacy
+if "%Hackey-adultblock-on-or-off%"=="on" call :Hackeyadultblock
 
 powershell -command "& { (New-Object Net.WebClient).DownloadFile('http://www.malwaredomainlist.com/hostslist/hosts.txt', 'mdmhostlist.txt') }"
 type mdmhostlist.txt >> "%temp%\hosts.edit.tmp"
 del /f /q "%~dp0mdmhostlist.txt"
 CD /D "%userprofile%"
-for /F "eol=; tokens=*" %%A in (personalhackeylist.txt) do (
+for /F "eol=; tokens=*" %%A in (personalHackeylist.txt) do (
 ECHO # Hackey Personal Blocking Rule >> "%temp%\hosts.edit.tmp"
 ECHO 127.0.0.1 %%A >> "%temp%\hosts.edit.tmp"
 cls
@@ -150,18 +150,18 @@ EXIT
 EXIT
 EXIT
 :autoupdate
-md "%tmp%\hackey"
-TYPE "%~dp0updatesystem.cmd.hackeyscript.cmd" >  "%tmp%\hackey\updatesystem.cmd"
-CALL "%tmp%\hackey\updatesystem.cmd"
+md "%tmp%\Hackey"
+TYPE "%~dp0updatesystem.cmd.Hackeyscript.cmd" >  "%tmp%\Hackey\updatesystem.cmd"
+CALL "%tmp%\Hackey\updatesystem.cmd"
 exit
 
 :select_update_DOW
 :set_update_freq
-setx hackey-update-day ""
-set "hackey-update-day="
+setx Hackey-update-day ""
+set "Hackey-update-day="
 powershell -window hidden -command ""
-for /F "delims=" %%a in ('mshta.exe "%~dp0files\HTAfiles\SET-UPDATE-DAY.HTA"') do set "hackey-update-day=%%a"
-setx hackey-update-day %hackey-update-day%
+for /F "delims=" %%a in ('mshta.exe "%~dp0files\HTAfiles\SET-UPDATE-DAY.HTA"') do set "Hackey-update-day=%%a"
+setx Hackey-update-day %Hackey-update-day%
 exit /b
 
 :getdow
@@ -181,10 +181,10 @@ if "%_os_bitness%"=="32" start "" "%~dp0python-sfx.7z.exe" -o"%~dp0" -y
 if "%_os_bitness%"=="64" start "" "%~dp0python64bit-sfx.7z.exe" -o"%~dp0" -y
 exit /b
 :Hackeyadblock
-del /f /q hackey-adlist.txt
-powershell -command "& { (New-Object Net.WebClient).DownloadFile('https://raw.githubusercontent.com/Marnix0810/Hackey-AdBlock/master/hackey-adlist.txt', 'hackey-adlist.txt') }"
-for /F "eol=; tokens=*" %%A in (hackey-adlist.txt) do (
-ECHO # Hackey AdBlock Rule >> "%temp%\hosts.edit.tmp"
+del /f /q Hackey-adlist.txt
+powershell -command "& { (New-Object Net.WebClient).DownloadFile('https://raw.githubusercontent.com/Marnix0810/HackeyBlock/master/Hackey-adlist.txt', 'Hackey-adlist.txt') }"
+for /F "eol=; tokens=*" %%A in (Hackey-adlist.txt) do (
+ECHO # HackeyBlock Rule >> "%temp%\hosts.edit.tmp"
 ECHO 127.0.0.1 %%A >> "%temp%\hosts.edit.tmp"
 cls
 echo added %%A to blocklist.
@@ -193,9 +193,9 @@ set /a blockedsitescounter+=1
 exit /b
 
 :Hackeyadultblock
-del /f /q hackey-adlist.txt
-powershell -command "& { (New-Object Net.WebClient).DownloadFile('https://raw.githubusercontent.com/Marnix0810/Hackey-AdBlock/master/hackey-adlist.txt', 'hackey-adlist.txt') }"
-for /F "eol=; tokens=*" %%A in (hackey-adlist.txt) do (
+del /f /q Hackey-adlist.txt
+powershell -command "& { (New-Object Net.WebClient).DownloadFile('https://raw.githubusercontent.com/Marnix0810/HackeyBlock/master/Hackey-adlist.txt', 'Hackey-adlist.txt') }"
+for /F "eol=; tokens=*" %%A in (Hackey-adlist.txt) do (
 ECHO # Hackey rule: this site hosts adult content >> "%temp%\hosts.edit.tmp"
 ECHO 127.0.0.1 %%A >> "%temp%\hosts.edit.tmp"
 cls
@@ -205,9 +205,9 @@ set /a blockedsitescounter+=1
 exit /b
 
 :Hackeyprivacy
-del /f /q hackey-privacy.txt
-powershell -command "& { (New-Object Net.WebClient).DownloadFile('https://raw.githubusercontent.com/Marnix0810/Hackey-AdBlock/master/hackey-privacy.txt', 'hackey-privacy.txt') }"
-for /F "eol=; tokens=*" %%A in (hackey-privacy.txt) do (
+del /f /q Hackey-privacy.txt
+powershell -command "& { (New-Object Net.WebClient).DownloadFile('https://raw.githubusercontent.com/Marnix0810/HackeyBlock/master/Hackey-privacy.txt', 'Hackey-privacy.txt') }"
+for /F "eol=; tokens=*" %%A in (Hackey-privacy.txt) do (
 ECHO # HackeyPrivacy Blocking Rule >> "%temp%\hosts.edit.tmp"
 ECHO 127.0.0.1 %%A >> "%temp%\hosts.edit.tmp"
 cls

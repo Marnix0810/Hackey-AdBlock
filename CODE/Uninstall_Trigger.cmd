@@ -1,3 +1,3 @@
-md "%tmp%\hackey"
-xcopy uninstall.bat "%tmp%\hackey\" /y
-call "%tmp%\hackey\uninstall.bat" "%~dp0"
+md "%tmp%\Hackey"
+xcopy uninstall.bat "%tmp%\Hackey\" /y
+call "%tmp%\Hackey\uninstall.bat" "%~dp0"

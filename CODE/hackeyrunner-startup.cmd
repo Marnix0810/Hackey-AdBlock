@@ -6,7 +6,7 @@ call powershell -window maximize -command ""
 >nul 2>&1 "%SYSTEMROOT%\system32\cacls.exe" "%SYSTEMROOT%\system32\config\system"
 
 if '%errorlevel%' NEQ '0' (
-    echo Requesting administrative privileges for Hackey-AdBlock...
+    echo Requesting administrative privileges for HackeyBlock...
     goto UACPrompt
 ) else ( goto gotAdmin )
 
@@ -22,7 +22,7 @@ if '%errorlevel%' NEQ '0' (
 :gotAdmin
     pushd "%CD%"
     CD /D "%~dp0"
-title hackey@startup
+title Hackey@startup
 if not "%Hackeyonstartup-timeout%"=="" (
     if not "%Hackeyonstartup-timeout%"=="off" (
         powershell -window hidden -command ""
@@ -31,4 +31,4 @@ if not "%Hackeyonstartup-timeout%"=="" (
     )
 
 )
-call "%~dp0hackeyblock.cmd" /referencestartup
+call "%~dp0Hackeyblock.cmd" /referencestartup

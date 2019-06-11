@@ -30,5 +30,5 @@ taskkill /f /im python.exe
 taskkill /f /im powershell.exe
 echo Ongeblokkeerde patronen terugzetten...
 copy C:\Windows\System32\drivers\etc\hosts_before-Hackey.bkup C:\Windows\System32\drivers\etc\hosts /y
-start "" "http://hackeytester-if-this-doesnt-load-hackeys-not-active.hello:3803/AutoTest"
+start "" "http://Hackeytester-if-this-doesnt-load-Hackeys-not-active.hello:3803/AutoTest"
 start taskkill /f /im cmd.exe

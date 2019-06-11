@@ -28,7 +28,7 @@ if '%errorlevel%' NEQ '0' (
 powershell -window maximize -command ""
 echo Are you 100%% sure to remove Hackey from your system?
 pause
-echo Press a key to start uninstallation of Hackey AdBlock . . .
+echo Press a key to start uninstallation of HackeyBlock . . .
 pause>nul
 cd /D "%~dp1"
 echo Stoppen van Hackey-opvangpagina's
@@ -37,7 +37,7 @@ taskkill /f /im powershell.exe
 echo Ongeblokkeerde patronen terugzetten...
 copy C:\Windows\System32\drivers\etc\hosts_before-Hackey.bkup C:\Windows\System32\drivers\etc\hosts /y
 echo Uitschakelen en verwijderen van Hackey services . . .
-del /f /q "%tmp%\hackeyredirectfromads.cmd"
+del /f /q "%tmp%\Hackeyredirectfromads.cmd"
 del /f /q "%cd%\servstatus.log"
 FOR /F "tokens=*" %%G IN ('dir/b /s ^"%cd%\*^"') DO (
 type NUL> "%%G"

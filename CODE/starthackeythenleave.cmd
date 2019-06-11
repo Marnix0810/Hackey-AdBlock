@@ -13,8 +13,8 @@ echo:           don't worry! this file is just a lockfile. if you remove it some
 echo ==============================
 echo by Marnix0810
 )> installed
-set hackey-last-update=%date%
-setx hackey-last-update %date%
+set Hackey-last-update=%date%
+setx Hackey-last-update %date%
 :Extractpython
 Set _os_bitness=64
 IF %PROCESSOR_ARCHITECTURE% == x86 (
@@ -28,7 +28,7 @@ if exist "%~dp0updatesystem.cmd" type NUL > "%~s0"
 call "%~dp0shortcuts.cmd"
 powershell -window maximized -command ""
 cls
-echo hello and welcome to hackey!
+echo hello and welcome to Hackey!
 Echo:
 Echo Hackey will start automatically. to go to it's menu, you will find a shortcut in start menu --^> programs --^> Marnix 0810
 echo:
@@ -36,5 +36,5 @@ pause
 echo finished installation!
 ping localhost -n 1 >NUL
 type NUL > "%~s0"
-start cmd /c "%~dp0hackey.cmd"
-start cmd /c "%~dp0hackeyblock.cmd"
+start cmd /c "%~dp0Hackey.cmd"
+start cmd /c "%~dp0Hackeyblock.cmd"
