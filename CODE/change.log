@@ -1,4 +1,4 @@
-# Changelog for the Marnix0810's Hackey-AdBlock Project
+# Changelog for the Marnix0810's HackeyBlock Project
 
 ## changelog for version 22335/2019-03-21 18:18:53,69:
 - unblocked some false-positive hosts
@@ -19,7 +19,7 @@
 
 ## changelog for version 13625/2019-03-21 19:26:16,99:
 - Enchanced system to copy unblocked patrons
-- Page 'blocked by hackey' updated
+- Page 'blocked by Hackey' updated
 
 
 
@@ -67,14 +67,14 @@ Just some minor bugfixes.
 
 
 ## changelog for version 7898/2019-03-30  9:12:33,71:
-- Changed the settings menu into the hackey menu
+- Changed the settings menu into the Hackey menu
 - Added 'Uninstall Hackey' option in menu
 
 
 
 ## changelog for version 10240/2019-03-30  9:24:31,56:
 - Fixed bug with updates that caused the update system to disable itself forever
-- Fixed bug that caused to ask to remove hackey when exiting the menu
+- Fixed bug that caused to ask to remove Hackey when exiting the menu
 
 
 
@@ -409,7 +409,7 @@ see the changelog for 13/2019-04-30 23:40:16,88. the system crashed so the execu
 
 ## changelog for version 3/2019-05-01 12:18:36,64:
 - synced malware domain list from http://www.malwaredomainlist.com/hostslist/hosts.txt 
-- made Hackey-AdBlock smaller by compressing its assets.
+- made HackeyBlock smaller by compressing its assets.
 
 
 
@@ -418,7 +418,7 @@ see the changelog for 13/2019-04-30 23:40:16,88. the system crashed so the execu
 
 
 ## changelog for version 5/2019-05-01 12:37:02,38:
-- compressed parts even further, now including ad list and hackey-stopper.
+- compressed parts even further, now including ad list and Hackey-stopper.
 
 
 
@@ -543,7 +543,7 @@ see the changelog for 13/2019-04-30 23:40:16,88. the system crashed so the execu
 
 
 ## changelog for version 2/2019-05-02 12:02:57,00:
-- added functionality to hackey to update itself with http://www.malwaredomainlist.com/hostslist/hosts.txt, the adlist will still get updated by me.
+- added functionality to Hackey to update itself with http://www.malwaredomainlist.com/hostslist/hosts.txt, the adlist will still get updated by me.
 - added 'manually' to the list of frequencies of updates.
 
 
@@ -678,7 +678,7 @@ see the changelog for 13/2019-04-30 23:40:16,88. the system crashed so the execu
 
 
 ## changelog for version 2/2019-05-06 20:34:16,07:
-- Fixed bug that caused hackey to start and restart, start and restart, etc. after installation.
+- Fixed bug that caused Hackey to start and restart, start and restart, etc. after installation.
 
 
 
@@ -782,7 +782,7 @@ Replaced Hackey Zone with HackeyPrivacy: HackeyPrivacy blocks domains which are 
 
 
 ## changelog for version 13/2019-05-18 21:08:12,88:
-Hope i fixed the freeze while extracting hackey.
+Hope i fixed the freeze while extracting Hackey.
 
 
 
@@ -964,7 +964,7 @@ Routinal update.
 
 
 ## changelog for version 4/2019-05-31 12:09:34,95:
-Hackey-AdBlock's list will now be more accurate than ever because the adlists got their own update system.
+HackeyBlock's list will now be more accurate than ever because the adlists got their own update system.
 
 
 ## changelog for version 5/2019-05-31 12:24:49,10:
