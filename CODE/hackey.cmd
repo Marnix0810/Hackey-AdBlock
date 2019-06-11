@@ -85,7 +85,7 @@ TYPE "%~dp0updatesystem.cmd.Hackeyscript.cmd" >  "%tmp%\Hackey\updatesystem.cmd"
 CALL "%tmp%\Hackey\updatesystem.cmd"
 exit /b
 :adddomaintopersonallist
-start "" "https://github.com/Marnix0810/HackeyBlock/wiki/How-does-the-personal-blocking-list-work"
+start "" "https://github.com/Marnix0810/HackeyBlock/wiki/How-does-the-personal-blocking-list-work%3F"
 start /wait notepad "%userprofile%\personalHackeylist.txt"
 timeout /t 2 /nobreak > NUL
 start cmd /c "%~dp0Hackeyblock.cmd"
