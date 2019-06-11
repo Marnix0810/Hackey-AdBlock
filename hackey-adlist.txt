@@ -50,7 +50,6 @@ pubpress.net
 r1.zedo.com
 securepubads.g.doubleclick.net
 simg.zedo.com
-spclient.wg.spotify.com
 ss1.zedo.com
 ss2.zedo.com
 ss7.zedo.com
