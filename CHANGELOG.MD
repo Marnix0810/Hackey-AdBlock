@@ -1120,3 +1120,9 @@ Added an adult blocking list function. This does not yet cover much but will enc
 ## changelog for version 3.12:
 
 Minor changes
+
+## changelog for version 3.12.1:
+
+- Numbering updated
+- Shortcuts updated
++ more small updates.
