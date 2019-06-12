@@ -8,6 +8,7 @@ ads.pubmatic.com
 ads.taboola.com
 ads.zedo.com
 advertising.com
+s0.2mdn.net
 branding.revenuestripe.com
 c.evidon.com
 c1.zedo.com
