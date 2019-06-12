@@ -8,7 +8,6 @@ ads.pubmatic.com
 ads.taboola.com
 ads.zedo.com
 advertising.com
-s0.2mdn.net
 branding.revenuestripe.com
 c.evidon.com
 c1.zedo.com
@@ -33,6 +32,7 @@ googleadservices.com
 gw.zedo.com
 h.zedo.com
 hw-cdn2.contentabc.com
+iex.blueconic.net
 images-prod.powerinboxedge.com
 l1.zedo.com
 l2.zedo.com
@@ -49,6 +49,7 @@ popup.taboola.com
 pubads.g.doubleclick.net
 pubpress.net
 r1.zedo.com
+s0.2mdn.net
 securepubads.g.doubleclick.net
 simg.zedo.com
 ss1.zedo.com
@@ -60,7 +61,6 @@ tpc.googlesyndication.com
 trafficjunky.com
 trc.taboola.com
 vz-cdn.trafficjunky.net
-iex.blueconic.net
 www.googletagservices.com
 www.outbrain.com
 www.trafficjunky.com
