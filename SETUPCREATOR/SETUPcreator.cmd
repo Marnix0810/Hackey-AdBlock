@@ -94,8 +94,7 @@ REM create setup.
 call "%userprofile%\OneDrive\Documenten\Programmeren\Programmaprojecten\4. Stable-active\The Hackey-AdBlock project\Assets\Winrar\WinRAR.exe" a SETUPnew.exe * -r -sfx -ilog -iimg"%~dp0logos\hackeylogo.bmp" -iico"%~dp0logos\hackeylogo.ico" -z"%~dp0files-for-setup\xfs.conf"
 move SETUPnew.exe "%userprofile%\Onedrive\Documenten\Programmeren\Programmaprojecten\4. Stable-active\The Hackey-AdBlock project\Setups\SETUPnew.exe"
 ren "%userprofile%\Onedrive\Documenten\Programmeren\Programmaprojecten\4. Stable-active\The Hackey-AdBlock project\Setups\SETUPnew.exe" Hackeyblocksetup-%vernumb%.exe
-REM create update.
-call "%userprofile%\OneDrive\Documenten\Programmeren\Programmaprojecten\4. Stable-active\The Hackey-AdBlock project\Assets\7-Zip\7z.exe" a -r -sfx7z.sfx -mx1 "%~dp0..\updatesfx.exe" *
+
 type NUL > "%tmp%\Hackeyblocksetup.7z"
 del /f /q "%tmp%\Hackeyblocksetup.7z"
 pause
@@ -108,6 +107,10 @@ echo the only thing you have to do is upload this release to GitHub and link Wor
 pause
 start "" "https://github.com/Marnix0810/Hackey-AdBlock/releases/new"
 echo:
+cls
+echo enter direct download link to the setup file.
+set /p updurl=Url: 
+echo:%updurl%>"%~dp0..\updurl.txt"
 echo released ver. %newver%.
 :loop4ever1
 goto loop4ever1
