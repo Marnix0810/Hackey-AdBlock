@@ -1,0 +1,51 @@
+LICENTIEOVEREENKOMST VOOR EINDGEBRUIKERS
+
+De volgende overeenkomst heeft betrekking op het archiefprogramma RAR (en de Windows-versie - WinRAR), hierna de "software" genoemd, en wordt gesloten tussen win.rar GmbH, hierna de "licentiegever" genoemd, en iedere persoon die de software installeert, hiertoe toegang verkrijgt of op een andere manier de software gebruikt, hierna de "gebruiker" genoemd.
+
+1. De auteur en houder van de auteursrechten van de software is Alexander L. Roshal. De licentiegever en bijgevolg uitgever van de licentie en houder van de wereldwijde exclusieve gebruiksrechten, waaronder de rechten om de software te reproduceren, te verspreiden, en openbaar te maken in welke vorm dan ook, is win.rar GmbH, Marienstr. 12, 10117 Berlijn, Duitsland.
+
+2. De software wordt verspreid als 'try before you buy'. Dat betekent dat iedereen de software mag gebruiken gedurende een proefperiode van maximaal 40 dagen zonder enige kosten. Na deze proefperiode moet de gebruiker een licentie kopen om de software te blijven gebruiken.
+
+3. De proefversie van de software mag vrij worden verspreid, mits inachtneming van de uitzonderingen die hieronder zijn vermeld, op voorwaarde dat het distributiepakket op geen enkele manier wordt gewijzigd.
+
+  a. Niemand mag afzonderlijke onderdelen van het pakket verspreiden, met uitzondering van de UnRAR-onderdelen, zonder schriftelijke toestemming.
+
+  b. De proefversie zonder licentie van de software mag niet worden verspreid als onderdeel van een ander softwarepakket zonder schriftelijke toestemming. De software moet in het originele en ongewijzigde installatiebestand blijven zonder enige hindernis en voorwaarden voor de gebruiker, zoals het innen van een vergoeding voor het downloaden of het downloaden afhankelijk maken van de opgave van contactgegevens door de gebruiker.
+
+  c. Het ongewijzigd installatiebestand van WinRAR moet zuiver worden aangeboden, zonder extra bestanden. Elke vorm van bundeling is verboden. In het bijzonder is het gebruik van installatie- of downloadsoftware die een downloadbundel aanbiedt verboden, tenzij win.rar GmbH hiermee schriftelijk instemt.
+  d. Zogenaamde hacks/cracks, sleutels of sleutelgenerators mogen niet in het pakket worden opgenomen, en de verspreider van de proefversie mag er niet naar verwijzen.
+  e. Bij een schending van de voorgaande voorwaarden, vervalt de toestemming voor distributie onmiddellijk en automatisch.
+
+  4. De proefversie van de software kan een dialoogvenster weergeven met een registratieherinnering. Afhankelijk van de softwareversie en -configuratie kan dit dialoogvenster vooraf gedefinieerde tekst en koppelingen bevatten die lokaal worden geladen of een webpagina die via het internet wordt geladen. Deze webpagina kan licentie-instructies of andere materialen bevatten naar goeddunken van de licentiegever, waaronder ook reclame. Bij het openen van een webpagina draagt de software alleen de parameters over die technisch vereist zijn voor het HTTP-protocol om een webpagina in een browser te openen.
+
+  5. De software wordt verspreid in de staat waarin deze zich bevindt. Er wordt geen enkele expliciete of impliciet garantie gegeven. U gebruikt de software op eigen risico. Noch de auteur of de licentiegever, noch de vertegenwoordigers van de licentiegever zijn aansprakelijk voor gegevensverlies, schade, winstderving of elke andere vorm van verlies bij het gebruik of misbruik van deze software.
+
+  6. Er zijn 2 basislicentietypen die voor de software worden verleend, nl.:
+  
+     a. Een gebruikslicentie voor een enkele computer. De gebruiker koopt een licentie om de software op één computer te gebruiken.
+
+        Thuisgebruikers mogen hun gebruikslicentie voor één computer op alle computers en mobiele apparaten gebruiken (USB-station, externe harde schijf, enz.) die eigendom zijn van de eigenaar van de licentie.
+
+        Zakelijke gebruikers hebben een licentie nodig voor elke computer of mobiel apparaat waarop de software wordt geïnstalleerd.
+
+     b. Een licentie voor meerdere gebruikers. De gebruiker koopt een aantal gebruikslicenties voor gebruik door de koper of de werknemers van de koper op een zelfde aantal computers.
+
+In een netwerkomgeving (server/client) moet de gebruiker een licentiekopie aankopen voor elke afzonderlijke client (werkstation) waarop de software wordt geïnstalleerd, gebruikt of geopend. Voor elke client (werkstation) is een afzonderlijke licentie vereist, onafhankelijk van het feit of de clients (werkstations) de software tegelijkertijd of op verschillende momenten gebruiken. Indien u bijvoorbeeld 9 verschillende clients (werkstations) in uw netwerk wilt hebben met toegang tot RAR, dan dient u 9 licenties te kopen.
+
+Een gebruiker die een licentie heeft gekocht, verkrijgt een niet-exclusief recht om de software voor elk wettelijk doel te gebruiken op zoveel computers als is vermeld in de bovenstaande licentievoorwaarden op basis van het aantal gekochte licenties.
+
+  7. Naast de prijs van de licentie, zijn er geen extra licentiekosten verbonden aan het maken en verspreiden van RAR-archieven, -volumes, zelfuitpakkende archieven of zelfuitpakkende volumes. Eigenaren van een licentie mogen hun exemplaren van de software gebruiken om archieven en zelfuitpakkende archieven te maken en om deze archieven royaltyvrij te verspreiden.
+
+  8. De in licentie gegeven software mag niet worden verhuurd of geleased, maar mag als geheel permanent worden overdragen indien de ontvangende partij akkoord gaat met de voorwaarden van deze licentie.
+
+  9. Lees het bestand ‘order.htm’ dat bij de software is geleverd voor meer informatie over het kopen van een licentie.
+
+ 10. U mag de in licentie gegeven software, of een deel ervan, niet gebruiken, kopiëren, emuleren, klonen, verhuren, leasen, verkopen, wijzigen, decompileren, disassembleren, overdragen of op een andere wijze 'reverse engineering' toepassen, tenzij anders vermeld in deze overeenkomst. Elk onbevoegd gebruik leidt tot onmiddellijke en automatische beëindiging van deze licentie en kan strafrechtelijk en/of civielrechtelijk worden vervolgd.
+
+Noch de binaire code van RAR, de binaire code van WinRAR of de broncode van UnRAR, noch de binaire code van UnRAR mag worden gebruikt of aan 'reverse engineering' worden onderworpen om het gepatenteerde RAR-compressiealgoritme opnieuw samen te stellen zonder schriftelijke toestemming.
+
+De software maakt mogelijk gebruik van onderdelen die zijn ontwikkeld door derden en/of waarop derden het auteursrecht bezitten. Lees voor meer informatie het onderwerp "Erkenningen" in het WinRAR-helpbestand, of het tekstbestand acknow.txt voor andere RAR-versies.
+
+ 11. Deze licentieovereenkomst wordt uitsluitend en exclusief naar Duits recht geïnterpreteerd. Indien u een handelaar bent, dan zijn de rechtbanken bij de maatschappelijke zetel van win.rar GmbH in Berlijn/Duitsland exclusief bevoegd voor alle geschillen die optreden in verband met deze licentieovereenkomst of de geldigheid ervan.
+
+ 12. Door de software te installeren en te gebruiken, stemt u in met de licentievoorwaarden. Indien u niet akkoord gaat met de voorwaarden van deze licentie, dan dient u alle softwarebestanden van uw opslagapparaten te verwijderen en het gebruik van de software stop te zetten.

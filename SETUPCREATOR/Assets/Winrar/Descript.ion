@@ -1,0 +1,24 @@
+7zxa.dll        Bibliotheek om 7z-archieven uit te pakken
+Default.SFX     Grafische SFX-module voor RAR
+Default64.SFX   64-bits grafische SFX-module voor RAR
+Descript.ion    Beschrijving bestandssoorten
+License.txt     Licentie voor gebruik en distributie
+Order.htm       Registratie-informatie
+Rar.exe         Console RAR
+Rar.txt         Console RAR-handleiding
+RarLng.dll      Taalbronnen
+RarExt.dll      WinRAR-shelluitbreiding
+RarExt32.dll    WinRAR-shelluitbreiding voor 32-bits Windows-versies
+RarExt64.dll    WinRAR-shelluitbreiding voor 64-bits Windows-versies
+RarFiles.lst    Sorteervolgorde voor compacte archieven
+ReadMe.txt      Kort overzicht van WinRAR
+Uninstall.exe   Verwijderprogramma
+Uninstall.lst   Lijstbestand voor deïnstallatie
+UnRAR.exe       Gratis programma om RAR-archieven uit te pakken
+WhatsNew.txt    Wat is nieuw in deze versie
+WinCon.SFX      Console RAR-SFX-module
+WinRAR.exe      WinRAR
+WinRAR.chm      WinRAR helpbestand
+Zip.SFX         Grafische SFX-module voor ZIP
+Zip64.SFX       64-bits grafische SFX-module voor ZIP
+RarExt64.dll    WinRAR-shelluitbreiding voor 64-bits Windows-versies
