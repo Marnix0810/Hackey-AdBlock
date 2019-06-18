@@ -1134,3 +1134,7 @@ Minor changes
 ## changelog for version first-winrarred-version_3.12.2:
 
 - think I have the use of winrar sfx's in stead of F2KO Bat2Exe files for setups stable
+
+## changelog for version 3.12.4:
+
+- updated update system, sorry. It will not run smooth untill I can make it better, I just have no time to perfect it now.
