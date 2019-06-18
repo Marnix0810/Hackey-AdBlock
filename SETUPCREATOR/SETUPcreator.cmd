@@ -16,38 +16,6 @@ set vernumb=%newver%
 echo:%vernumb%>"%~dp0..\latest-release.txt"
 type "%~dp0..\latest-release.txt" > "%~dp0..\CODE\hackey-install-version.txt"
 type "%~dp0..\LICENSE" > "%~dp0..\CODE\License.txt"
-REM Organize Ad-list
-type "%~dp0..\hackey-adlist.txt">"%~dp0addomainlist.txt"
-type addomainlist.txt | findstr /v # | findstr /v \/ | findstr /v = > addomainlist.txt.new
-move /y addomainlist.txt.new addomainlist.txt >nul
-xcopy "%~dp0\Assets\jsort.bat" "%~dp0"
-call jsort.bat addomainlist.txt /u >addomainlist.txt.new
-del /f /q "%~dp0jsort.bat"
-move /y addomainlist.txt.new hackey-adlist.txt >nul
-move hackey-adlist.txt "%~dp0..\" >nul
-del /f /q "%~dp0addomainlist.txt"
-
-REM Organize Privacy-list
-type "%~dp0..\hackey-privacy.txt">"%~dp0trackerlist.txt"
-type trackerlist.txt | findstr /v # | findstr /v \/ | findstr /v = > trackerlist.txt.new
-move /y trackerlist.txt.new trackerlist.txt >nul
-xcopy "%~dp0\Assets\jsort.bat" "%~dp0"
-call jsort.bat trackerlist.txt /u >trackerlist.txt.new
-del /f /q "%~dp0jsort.bat"
-move /y trackerlist.txt.new hackey-privacy.txt >nul
-move hackey-privacy.txt "%~dp0..\" >nul
-del /f /q "%~dp0trackerlist.txt"
-
-REM Organize Adult-content list
-type "%~dp0..\Adult-content-host-list.txt">"%~dp0adultcontentlist.txt"
-type adultcontentlist.txt | findstr /v # | findstr /v \/ | findstr /v = > adultcontentlist.txt.new
-move /y adultcontentlist.txt.new adultcontentlist.txt >nul
-xcopy "%~dp0\Assets\jsort.bat" "%~dp0"
-call jsort.bat adultcontentlist.txt /u >adultcontentlist.txt.new
-del /f /q "%~dp0jsort.bat"
-move /y adultcontentlist.txt.new Adult-content-host-list.txt >nul
-move Adult-content-host-list.txt "%~dp0..\" >nul
-del /f /q "%~dp0adultcontentlist.txt"
 
 
 REM Display the lists
@@ -106,11 +74,12 @@ echo copied path to the binary file to clipboard.
 echo the only thing you have to do is upload this release to GitHub and link Wordpress to it.
 pause
 start "" "https://github.com/Marnix0810/Hackey-AdBlock/releases/new"
-echo:
 cls
 echo enter direct download link to the setup file.
 set /p updurl=Url: 
 echo:%updurl%>"%~dp0..\updurl.txt"
+cls
+echo:
 echo released ver. %newver%.
 :loop4ever1
 goto loop4ever1
