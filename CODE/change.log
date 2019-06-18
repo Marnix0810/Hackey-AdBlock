@@ -1126,3 +1126,7 @@ Minor changes
 - Numbering updated
 - Shortcuts updated
 + more small updates.
+
+## changelog for version First-winrarred-version_3.12.5:
+
+- testing the use of winrar sfx's in stead of F2KO Bat2Exe files for setups.
