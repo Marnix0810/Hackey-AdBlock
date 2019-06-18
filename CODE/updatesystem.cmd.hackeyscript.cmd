@@ -64,11 +64,12 @@ cls
 echo deleting old version.
 del /f /q /s "%Toinstallationfolder%*.*"
 cls
-echo Downloading the update, please wait...
-call powershell -command "iwr -outf updatesfx.exe https://raw.githubusercontent.com/Marnix0810/HackeyBlock/master/updatesfx.exe"
-cls
-echo installing update.
-start /wait updatesfx.exe -o"%Toinstallationfolder%" -y
+echo locating installer for HackeyBlock
+call powershell -command "iwr -outf updurl.txt https://raw.githubusercontent.com/Marnix0810/HackeyBlock/master/updurl.txt"
+set /p "updurl="<"updurl.txt"
+echo downloading updater for HackeyBlock.
+call powershell -command "iwr -outf Hackeyupdate.exe %updurl%"
+start /wait Hackeyupdate.exe
 cls
 Echo checking if update went well...
 if not exist "%Toinstallationfolder%installed" (
