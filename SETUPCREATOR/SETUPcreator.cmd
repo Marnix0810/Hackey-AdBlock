@@ -59,7 +59,7 @@ REM Start file editings.
 cd /d "%~dp0..\CODE"
 
 REM create setup.
-call "%userprofile%\OneDrive\Documenten\Programmeren\Programmaprojecten\4. Stable-active\The Hackey-AdBlock project\Assets\Winrar\WinRAR.exe" a SETUPnew.exe * -r -sfx -ilog -iimg"%~dp0logos\hackeylogo.bmp" -iico"%~dp0logos\hackeylogo.ico" -z"%~dp0files-for-setup\xfs.conf"
+call "%userprofile%\OneDrive\Documenten\Programmeren\Programmaprojecten\4. Stable-active\The Hackey-AdBlock project\Assets\Winrar\WinRAR.exe" a SETUPnew.exe * -r -sfx -ilog -iimg"%~dp0logos\hackeylogo.bmp" -z"%~dp0files-for-setup\xfs.conf"
 move SETUPnew.exe "%userprofile%\Onedrive\Documenten\Programmeren\Programmaprojecten\4. Stable-active\The Hackey-AdBlock project\Setups\SETUPnew.exe"
 ren "%userprofile%\Onedrive\Documenten\Programmeren\Programmaprojecten\4. Stable-active\The Hackey-AdBlock project\Setups\SETUPnew.exe" Hackeyblocksetup-%vernumb%.exe
 
