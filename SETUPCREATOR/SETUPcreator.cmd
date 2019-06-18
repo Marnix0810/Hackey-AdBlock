@@ -91,11 +91,11 @@ REM Start file editings.
 cd /d "%~dp0..\CODE"
 
 REM create setup.
-call "%~dp0Assets\Winrar\WinRAR.exe" a SETUPnew.exe * -r -sfx -ilog -iimg"%~dp0logos\hackeylogo.bmp" -iico"%~dp0logos\hackeylogo.ico" -z"%~dp0files-for-setup\xfs.conf"
+call "%userprofile%\OneDrive\Documenten\Programmeren\Programmaprojecten\4. Stable-active\The Hackey-AdBlock project\Assets\Winrar\WinRAR.exe" a SETUPnew.exe * -r -sfx -ilog -iimg"%~dp0logos\hackeylogo.bmp" -iico"%~dp0logos\hackeylogo.ico" -z"%~dp0files-for-setup\xfs.conf"
 move SETUPnew.exe "%userprofile%\Onedrive\Documenten\Programmeren\Programmaprojecten\4. Stable-active\The Hackey-AdBlock project\Setups\SETUPnew.exe"
 ren "%userprofile%\Onedrive\Documenten\Programmeren\Programmaprojecten\4. Stable-active\The Hackey-AdBlock project\Setups\SETUPnew.exe" Hackeyblocksetup-%vernumb%.exe
 REM create update.
-call "%~dp0Assets\7-Zip\7z.exe" a -r -sfx7z.sfx -mx1 "%~dp0..\updatesfx.exe" *
+call "%userprofile%\OneDrive\Documenten\Programmeren\Programmaprojecten\4. Stable-active\The Hackey-AdBlock project\Assets\7-Zip\7z.exe" a -r -sfx7z.sfx -mx1 "%~dp0..\updatesfx.exe" *
 type NUL > "%tmp%\Hackeyblocksetup.7z"
 del /f /q "%tmp%\Hackeyblocksetup.7z"
 pause
