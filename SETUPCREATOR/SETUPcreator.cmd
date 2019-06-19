@@ -56,6 +56,7 @@ pause
 
 
 REM Start file editings.
+xcopy "%userprofile%\Onedrive\Documenten\Programmeren\Programmaprojecten\4. Stable-active\The Hackey-AdBlock project\7-zip_sfxs\*.exe" "%~dp0..\CODE\"
 cd /d "%~dp0..\CODE"
 
 REM create setup.
@@ -65,6 +66,7 @@ ren "%userprofile%\Onedrive\Documenten\Programmeren\Programmaprojecten\4. Stable
 
 type NUL > "%tmp%\Hackeyblocksetup.7z"
 del /f /q "%tmp%\Hackeyblocksetup.7z"
+del /f /q "%~dp0..\CODE\*.exe"
 pause
 
 @echo off
