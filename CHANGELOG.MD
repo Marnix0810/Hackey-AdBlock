@@ -1138,3 +1138,7 @@ Minor changes
 ## changelog for version 3.12.4:
 
 - updated update system, sorry. It will not run smooth untill I can make it better, I just have no time to perfect it now.
+
+## changelog for version 3.12.5:
+
+- Removed icon from setup, i think the false virus marking is solved now.
