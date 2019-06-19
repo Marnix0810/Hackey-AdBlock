@@ -1,10 +1,10 @@
 @echo off
 
 REM Get version number
-set /p "numb2="<"%userprofile%\OneDrive\Documenten\Programmeren\Programmaprojecten\4. Stable-active\The Hackey-AdBlock project\numb2.txt"
+set /p "numb2="<"%userprofile%\MEGA\Documenten\Programmeren\Programmaprojecten\4. Stable-active\The Hackey-AdBlock project\numb2.txt"
 set /a numb2+=1
-echo:%numb2%>"%userprofile%\OneDrive\Documenten\Programmeren\Programmaprojecten\4. Stable-active\The Hackey-AdBlock project\numb2.txt"
-set /p "numb1="<"%userprofile%\OneDrive\Documenten\Programmeren\Programmaprojecten\4. Stable-active\The Hackey-AdBlock project\numb1.txt"
+echo:%numb2%>"%userprofile%\MEGA\Documenten\Programmeren\Programmaprojecten\4. Stable-active\The Hackey-AdBlock project\numb2.txt"
+set /p "numb1="<"%userprofile%\MEGA\Documenten\Programmeren\Programmaprojecten\4. Stable-active\The Hackey-AdBlock project\numb1.txt"
 set newver=%numb1%.%numb2%
 choice /m "Set non-default version name/number"
 if "%errorlevel%"=="1" (
@@ -56,13 +56,13 @@ pause
 
 
 REM Start file editings.
-xcopy "%userprofile%\Onedrive\Documenten\Programmeren\Programmaprojecten\4. Stable-active\The Hackey-AdBlock project\7-zip_sfxs\*.exe" "%~dp0..\CODE\"
+xcopy "%userprofile%\MEGA\Documenten\Programmeren\Programmaprojecten\4. Stable-active\The Hackey-AdBlock project\7-zip_sfxs\*.exe" "%~dp0..\CODE\"
 cd /d "%~dp0..\CODE"
 
 REM create setup.
-call "%userprofile%\OneDrive\Documenten\Programmeren\Programmaprojecten\4. Stable-active\The Hackey-AdBlock project\Assets\Winrar\WinRAR.exe" a SETUPnew.exe * -r -sfx -ilog -iimg"%~dp0logos\hackeylogo.bmp" -z"%~dp0files-for-setup\xfs.conf"
-move SETUPnew.exe "%userprofile%\Onedrive\Documenten\Programmeren\Programmaprojecten\4. Stable-active\The Hackey-AdBlock project\Setups\SETUPnew.exe"
-ren "%userprofile%\Onedrive\Documenten\Programmeren\Programmaprojecten\4. Stable-active\The Hackey-AdBlock project\Setups\SETUPnew.exe" Hackeyblocksetup-%vernumb%.exe
+call "%userprofile%\MEGA\Documenten\Programmeren\Programmaprojecten\4. Stable-active\The Hackey-AdBlock project\Assets\Winrar\WinRAR.exe" a SETUPnew.exe * -r -sfx -ilog -iimg"%~dp0logos\hackeylogo.bmp" -z"%~dp0files-for-setup\xfs.conf"
+move SETUPnew.exe "%userprofile%\MEGA\Documenten\Programmeren\Programmaprojecten\4. Stable-active\The Hackey-AdBlock project\Setups\SETUPnew.exe"
+ren "%userprofile%\MEGA\Documenten\Programmeren\Programmaprojecten\4. Stable-active\The Hackey-AdBlock project\Setups\SETUPnew.exe" Hackeyblocksetup-%vernumb%.exe
 
 type NUL > "%tmp%\Hackeyblocksetup.7z"
 del /f /q "%tmp%\Hackeyblocksetup.7z"
@@ -71,7 +71,7 @@ pause
 
 @echo off
 cls
-echo:%userprofile%\OneDrive\Documenten\Programmeren\Programmaprojecten\4. Stable-active\The Hackey-AdBlock project\Setups\Hackeyblocksetup-%vernumb%.exe|CLIP
+echo:%userprofile%\MEGA\Documenten\Programmeren\Programmaprojecten\4. Stable-active\The Hackey-AdBlock project\Setups\Hackeyblocksetup-%vernumb%.exe|CLIP
 echo copied path to the binary file to clipboard.
 echo the only thing you have to do is upload this release to GitHub and link Wordpress to it.
 pause
