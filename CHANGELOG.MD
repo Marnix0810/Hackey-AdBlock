@@ -1154,3 +1154,7 @@ Minor changes
 ## changelog for version 3.13.6:
 
 - I have added support for messages per version. This is experimental and possibly buggy. The function will improve soon.
+
+## changelog for version 3.13.7:
+
+- Added HackeyProtect, this blocking function blocks site that the mdmlist don't. It will also block domains that send you to dangerous sites, these were blocked as ads before.
