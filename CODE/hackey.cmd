@@ -24,6 +24,7 @@ if '%errorlevel%' NEQ '0' (
     pushd "%CD%"
     CD /D "%~dp0"
 ECHO This app was made by marnix0810
+echo Preparing to show menu... please wait.
 if not exist "%appdata%\Microsoft\Windows\Start Menu\Programs\HackeyBlock by Marnix 0810\HackeyBlock Menu.lnk" call "%~dp0shortcuts.cmd"
 :startoptional
 REM Run-after-update scripts if neccessary.
@@ -35,10 +36,20 @@ call postupdate.cmd
 if exist postupdate.cmd (
 del postupdate.cmd
 )
+
 if not exist "%userprofile%\personalHackeylist.txt" (
 type NUL > "%userprofile%\personalHackeylist.txt"
 )
 cd /d "%~dp0"
+set /p "installedver="<"Hackey-install-version.txt"
+del /f /q "%~dp0versionmessage-%installedver%.txt"
+set "vermessage_o=https://raw.githubusercontent.com/Marnix0810/HackeyBlock/master/versionmessages/%installedver%.txt"
+call powershell -command "iwr -outf versionmessage-%installedver%.txt %vermessage_o%"
+set "vermessage_l=%~dp0versionmessage-%installedver%.txt"
+if not exist "%vermessage_l%" (
+echo No messages. >"%vermessage_l%"
+)
+type "%vermessage_l%">vermessage-installed.txt
 :settings.home
 powershell -window hidden -command ""
 set "HTAreply="
