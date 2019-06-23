@@ -1,0 +1,3 @@
+The new function (Hackeyprotect) is automatically turned on, it has the same priority as the mdm list so you can't really turn it off.
+
+-- If you disagree with this policy, go to the hackey ontact form on The Marnix 0810 Site or ad it to the Github issues board. --
