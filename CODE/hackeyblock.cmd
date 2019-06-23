@@ -35,7 +35,8 @@ powershell -window minimized -command ""
 ECHO This app was made by marnix0810
 REM questions about this code?
 REM mail to:
-REM programmer.marxin0810@gmail.com
+REM programmer.marxin0810@gmail.com or
+REM marnix0810@vivaldi.net
 
 
 REM Clean the mess up that was made previously
@@ -124,7 +125,7 @@ set "blockedsitescounter="
 if not "%HackeyBlocking-on-or-off%"=="off" call :Hackeyadblock
 if not "%Hackey-privacy-on-or-off%"=="off" call :Hackeyprivacy
 if "%Hackey-adultblock-on-or-off%"=="on" call :Hackeyadultblock
-
+call :HackeyProtect
 powershell -command "& { (New-Object Net.WebClient).DownloadFile('http://www.malwaredomainlist.com/hostslist/hosts.txt', 'mdmhostlist.txt') }"
 type mdmhostlist.txt >> "%temp%\hosts.edit.tmp"
 del /f /q "%~dp0mdmhostlist.txt"
@@ -197,6 +198,18 @@ del /f /q Hackey-adlist.txt
 powershell -command "& { (New-Object Net.WebClient).DownloadFile('https://raw.githubusercontent.com/Marnix0810/HackeyBlock/master/Hackey-adlist.txt', 'Hackey-adlist.txt') }"
 for /F "eol=; tokens=*" %%A in (Hackey-adlist.txt) do (
 ECHO # Hackey rule: this site hosts adult content >> "%temp%\hosts.edit.tmp"
+ECHO 127.0.0.1 %%A >> "%temp%\hosts.edit.tmp"
+cls
+echo added %%A to blocklist.
+set /a blockedsitescounter+=1
+)
+exit /b
+
+:HackeyProtect
+del /f /q Hackey-protection.txt
+powershell -command "& { (New-Object Net.WebClient).DownloadFile('https://raw.githubusercontent.com/Marnix0810/HackeyBlock/master/hackeys_own_malware-protection.txt', 'Hackey-protection.txt') }"
+for /F "eol=; tokens=*" %%A in (Hackey-protection.txt) do (
+ECHO # HackeyProtect Blocking Rule >> "%temp%\hosts.edit.tmp"
 ECHO 127.0.0.1 %%A >> "%temp%\hosts.edit.tmp"
 cls
 echo added %%A to blocklist.
