@@ -64,9 +64,9 @@ call "%userprofile%\MEGA\Documents\Programmeren\Programmaprojecten\4. Stable-act
 move SETUPnew.exe "%userprofile%\MEGA\Documents\Programmeren\Programmaprojecten\4. Stable-active\The Hackey-AdBlock project\Setups\SETUPnew.exe"
 ren "%userprofile%\MEGA\Documents\Programmeren\Programmaprojecten\4. Stable-active\The Hackey-AdBlock project\Setups\SETUPnew.exe" Hackeyblocksetup-%vernumb%.exe
 
-type NUL > "%tmp%\Hackeyblocksetup.7z"
-del /f /q "%tmp%\Hackeyblocksetup.7z"
+del /f /q "%~dp0..\CODE\hackey-install-version.txt"
 del /f /q "%~dp0..\CODE\*.exe"
+
 pause
 
 @echo off
