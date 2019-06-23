@@ -55,7 +55,7 @@ cls
 REM check 4 updates
 if "%Hackey-update-day%"=="" call :select_update_DOW
 if "%Hackey-last-update%"=="%date%" goto updateisdone
-echo controleren of er updates moeten worden gedownload...
+echo Checking for permission to check for update...
 call :getdow
 if "%Hackey-update-day%"=="%dayofweek%" goto autoupdate
 if "%Hackey-update-day%"=="all" goto autoupdate
