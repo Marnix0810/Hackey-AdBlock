@@ -1142,3 +1142,15 @@ Minor changes
 ## changelog for version 3.12.5:
 
 - Removed icon from setup, i think the false virus marking is solved now.
+
+## changelog for version .1:
+
+- I have added support for messages per version. This is experimental and possibly buggy. The function will improve soon.
+
+## changelog for version .1:
+
+- I have added support for messages per version. This is experimental and possibly buggy. The function will improve soon.
+
+## changelog for version 3.13.6:
+
+- I have added support for messages per version. This is experimental and possibly buggy. The function will improve soon.
