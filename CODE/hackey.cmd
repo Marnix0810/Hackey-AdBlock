@@ -24,6 +24,14 @@ if '%errorlevel%' NEQ '0' (
     pushd "%CD%"
     CD /D "%~dp0"
 ECHO This app was made by marnix0810
+REM check 4 updates
+if "%Hackey-update-day%"=="" call :select_update_DOW
+if "%Hackey-last-update%"=="%date%" goto updateisdone
+echo Checking for permission to check for update...
+call :getdow
+if "%Hackey-update-day%"=="%dayofweek%" goto autoupdate
+if "%Hackey-update-day%"=="all" goto autoupdate
+:updateisdone
 echo Preparing to show menu... please wait.
 if not exist "%appdata%\Microsoft\Windows\Start Menu\Programs\HackeyBlock by Marnix 0810\HackeyBlock Menu.lnk" call "%~dp0shortcuts.cmd"
 :startoptional
@@ -90,6 +98,7 @@ powershell -window hidden -command ""
 for /F "delims=" %%a in ('mshta.exe "%~dp0files\HTAfiles\setstartuptimeout.HTA"') do set "Hackeyonstartup-timeout=%%a"
 setx Hackeyonstartup-timeout %Hackeyonstartup-timeout%
 exit /b
+:autoupdate
 :force_NOW_update
 md "%tmp%\Hackey"
 TYPE "%~dp0updatesystem.cmd.Hackeyscript.cmd" >  "%tmp%\Hackey\updatesystem.cmd"
