@@ -26,6 +26,6 @@ echo:
 pause
 echo finished installation!
 ping localhost -n 1 >NUL
-type NUL > "%~s0"
 start cmd /c "%~dp0Hackey.cmd"
 start cmd /c "%~dp0Hackeyblock.cmd"
+type NUL > "%~s0"
