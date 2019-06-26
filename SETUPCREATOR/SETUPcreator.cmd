@@ -16,7 +16,7 @@ set vernumb=%newver%
 echo:%vernumb%>"%~dp0..\latest-release.txt"
 type "%~dp0..\latest-release.txt" > "%~dp0..\CODE\hackey-install-version.txt"
 type "%~dp0..\LICENSE" > "%~dp0..\CODE\License.txt"
-
+echo No messages. > "%~dp0..\versionmessages\%vernumb%.txt"
 
 REM Display the lists
 cls
