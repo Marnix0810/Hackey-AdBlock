@@ -1162,4 +1162,4 @@ Minor changes
 ## changelog for version 3.13.8:
 
 - Now the menu will go to background when you close it.
-- The message indicating 'HackeyBlock service is activated' is now modernized using Notifu.
+- The message indicating 'HackeyBlock service is activated' is now modernized using [Notifu](http://www.paralint.com/projects/notifu/index.html).
