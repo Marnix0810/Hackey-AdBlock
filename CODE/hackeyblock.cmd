@@ -143,7 +143,9 @@ TYPE "%temp%\hosts.edit.tmp" > "C:\Windows\System32\drivers\etc\hosts"
 
 
 REM indicate the tasks are done.
-start mshta vbscript:Execute("msgbox (""Hackey Background Service Is Activated. To check if it works, run AutoTest.""):fjidjsijdsjiiiubhfui close")
+powershell -window hidden -command ""
+notifu /t info /p "HackeyBlock" /m "Hackey Background Service Is Activated.\n\nClick here to run an AutoTest to see if it works" /i "%~dp0icon.ico"
+if "%errorlevel%"=="3" start "" "http://localhost:3803/AutoTest/#if-this-doesn't-load-Hackey-is-not-working"
 EXIT
 
 
