@@ -1163,3 +1163,9 @@ Minor changes
 
 - Now the menu will go to background when you close it.
 - The message indicating 'HackeyBlock service is activated' is now modernized using [Notifu](http://www.paralint.com/projects/notifu/index.html).
+
+## changelog for version 3.13.9:
+
+- A bug fix regarding the error you get when opening the menu.
+- Some interface changes: version is now displayed with the version-information
+- For some users Hackey@startup did not work. Now when saving the startup timeout settings, this should be fixed.
