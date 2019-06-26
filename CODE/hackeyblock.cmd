@@ -178,8 +178,8 @@ Set _os_bitness=64
 IF %PROCESSOR_ARCHITECTURE% == x86 (
   IF NOT DEFINED PROCESSOR_ARCHITEW6432 Set _os_bitness=32
   )
-if "%_os_bitness%"=="32" start "" "%~dp0python-sfx.7z.exe" -o"%~dp0" -y
-if "%_os_bitness%"=="64" start "" "%~dp0python64bit-sfx.7z.exe" -o"%~dp0" -y
+if "%_os_bitness%"=="32" start "" "%~dp0assets-sfx.7z.exe" -o"%~dp0" -y
+if "%_os_bitness%"=="64" start "" "%~dp0assets64-sfx.7z.exe" -o"%~dp0" -y
 exit /b
 :Hackeyadblock
 del /f /q Hackey-adlist.txt
