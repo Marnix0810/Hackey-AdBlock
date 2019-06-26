@@ -1158,3 +1158,8 @@ Minor changes
 ## changelog for version 3.13.7:
 
 - Added HackeyProtect, this blocking function blocks site that the mdmlist don't. It will also block domains that send you to dangerous sites, these were blocked as ads before.
+
+## changelog for version 3.13.8:
+
+- Now the menu will go to background when you close it.
+- The message indicating 'HackeyBlock service is activated' is now modernized using Notifu.
