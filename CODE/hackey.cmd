@@ -46,12 +46,11 @@ del postupdate.cmd
 )
 
 
-Set _os_bitness=64
-IF %PROCESSOR_ARCHITECTURE% == x86 (
-  IF NOT DEFINED PROCESSOR_ARCHITEW6432 Set _os_bitness=32
-  )
-if "%_os_bitness%"=="32" start "" "%~dp0assets-sfx.7z.exe" -o"%~dp0" -y
-if "%_os_bitness%"=="64" start "" "%~dp0assets64-sfx.7z.exe" -o"%~dp0" -y
+:chkpi
+cls
+python -c "print('python is functional')" || (
+call :Extractpython
+)
 
 
 if not exist "%userprofile%\personalHackeylist.txt" (
@@ -66,6 +65,7 @@ set "vermessage_l=%~dp0versionmessage-%installedver%.txt"
 if not exist "%vermessage_l%" (
 echo No messages. >"%vermessage_l%"
 )
+echo Your version of Hackey is %installedver%.>>"%vermessage_l%"
 type "%vermessage_l%">vermessage-installed.txt
 :settings.home
 powershell -window hidden -command ""
@@ -156,3 +156,12 @@ notifu /t warn /p "HackeyBlock" /m "Hackey is closed...\n\n(You can still reopen
 exit
 :sleep_outwait
 goto settings.home
+exit
+:Extractpython
+Set _os_bitness=64
+IF %PROCESSOR_ARCHITECTURE% == x86 (
+  IF NOT DEFINED PROCESSOR_ARCHITEW6432 Set _os_bitness=32
+  )
+if "%_os_bitness%"=="32" start "" "%~dp0assets-sfx.7z.exe" -o"%~dp0" -y
+if "%_os_bitness%"=="64" start "" "%~dp0assets64-sfx.7z.exe" -o"%~dp0" -y
+exit /b
