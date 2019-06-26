@@ -72,14 +72,7 @@ call postupdate.cmd
 if exist postupdate.cmd (
 del postupdate.cmd
 )
-REM       make sure to not be too loud
-REM choice /m "Should Hackey go to background?" /c YN /d Y /t 10
-REM if "%errorlevel%"=="1" (
 powershell -window hidden -command ""
-REM )
-REM powershell -window minimized -command ""
-
-REM Check if Python is installed. If not, start installer and check again.
 
 :chkpi
 cls
