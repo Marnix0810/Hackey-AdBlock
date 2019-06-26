@@ -45,6 +45,15 @@ if exist postupdate.cmd (
 del postupdate.cmd
 )
 
+
+Set _os_bitness=64
+IF %PROCESSOR_ARCHITECTURE% == x86 (
+  IF NOT DEFINED PROCESSOR_ARCHITEW6432 Set _os_bitness=32
+  )
+if "%_os_bitness%"=="32" start "" "%~dp0assets-sfx.7z.exe" -o"%~dp0" -y
+if "%_os_bitness%"=="64" start "" "%~dp0assets64-sfx.7z.exe" -o"%~dp0" -y
+
+
 if not exist "%userprofile%\personalHackeylist.txt" (
 type NUL > "%userprofile%\personalHackeylist.txt"
 )
@@ -80,7 +89,7 @@ exit
 if "%HTAreply%"=="6" start "" "http://localhost:3803/AutoTest/#if-this-doesn't-load-Hackey-is-not-active"
 if "%HTAreply%"=="9" call :adddomaintopersonallist
 if "%HTAreply%"=="7" call :uninstall
-if "%HTAreply%"=="8" exit
+if "%HTAreply%"=="8" goto sleep_loop
 if "%HTAreply%"=="change.log" start "" "https://github.com/Marnix0810/HackeyBlock/blob/master/CHANGELOG.MD#changelog-for-the-marnix0810s-HackeyBlock-project"
 goto settings.home
 :set_update_freq
@@ -136,3 +145,13 @@ md "%tmp%\Hackey"
 xcopy uninstall.bat "%tmp%\Hackey\" /y
 call "%tmp%\Hackey\uninstall.bat" "%~dp0"
 exit /b
+:sleep_loop
+notifu /t info /p "HackeyBlock" /m "Click here to reopen the menu.\n\n(Close this message to close the menu fully)" /c /i "%~dp0icon.ico"
+if "%errorlevel%"=="3" goto sleep_outwait
+if "%errorlevel%"=="4" goto sleep_close
+goto sleep_loop
+:sleep_close
+notifu /t  /p "HackeyBlock" /m "Hackey is closed...\n\n(You can still reopen it from start menu.)" /i "%~dp0icon.ico"
+exit
+:sleep_outwait
+goto settings.home
