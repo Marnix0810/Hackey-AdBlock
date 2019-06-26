@@ -86,7 +86,7 @@ if "%HTAreply%"=="5" (
 start cmd /c "%~dp0stop-Hackey.cmd"
 exit
 )
-if "%HTAreply%"=="6" start "" "http://localhost:3803/AutoTest/#if-this-doesn't-load-Hackey-is-not-active"
+if "%HTAreply%"=="6" start "" "http://localhost:3803/AutoTest/#if-this-doesn't-load-Hackey-is-not-working"
 if "%HTAreply%"=="9" call :adddomaintopersonallist
 if "%HTAreply%"=="7" call :uninstall
 if "%HTAreply%"=="8" goto sleep_loop
@@ -146,12 +146,13 @@ xcopy uninstall.bat "%tmp%\Hackey\" /y
 call "%tmp%\Hackey\uninstall.bat" "%~dp0"
 exit /b
 :sleep_loop
+powershell -window hidden -command ""
 notifu /t info /p "HackeyBlock" /m "Click here to reopen the menu.\n\n(Close this message to close the menu fully)" /c /i "%~dp0icon.ico"
 if "%errorlevel%"=="3" goto sleep_outwait
 if "%errorlevel%"=="4" goto sleep_close
 goto sleep_loop
 :sleep_close
-notifu /t  /p "HackeyBlock" /m "Hackey is closed...\n\n(You can still reopen it from start menu.)" /i "%~dp0icon.ico"
+notifu /t warn /p "HackeyBlock" /m "Hackey is closed...\n\n(You can still reopen it from start menu.)" /i "%~dp0icon.ico"
 exit
 :sleep_outwait
 goto settings.home
