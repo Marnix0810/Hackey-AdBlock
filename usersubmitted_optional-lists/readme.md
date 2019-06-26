@@ -1,5 +1,5 @@
 You can mail me, and contribute your list to [the Github of
-Hackey](https://github.com/Marnix0810/HackeyBlock/). You could also make
+Hackey](https://github.com/Marnix0810/HackeyBlock/tree/master/usersubmitted_optional-lists). You could also make
 me the owner of the list by directly mailing it to me.
 
 My email for the Hackey lists is:
