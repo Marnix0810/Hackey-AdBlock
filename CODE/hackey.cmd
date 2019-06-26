@@ -56,6 +56,7 @@ call :Extractpython
 if not exist "%userprofile%\personalHackeylist.txt" (
 type NUL > "%userprofile%\personalHackeylist.txt"
 )
+:getvermes
 cd /d "%~dp0"
 set /p "installedver="<"Hackey-install-version.txt"
 del /f /q "%~dp0versionmessage-%installedver%.txt"
