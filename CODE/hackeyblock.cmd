@@ -21,18 +21,16 @@ if '%errorlevel%' NEQ '0' (
 :gotAdmin
     pushd "%CD%"
     CD /D "%~dp0"
-:--------------------------------------
+call "%~dp0loadset.cmd"
 SET Connected=false
 FOR /F "usebackq tokens=1" %%A IN (`PING google.com`) DO (
-    REM Check the current line for the indication of a successful connection.
     IF /I "%%A"=="Reply" SET Connected=true
 )
 If "%connected%"=="false" (
-start MSHTA "%~dp0files\HTAfiles\NOTCONNECTED.HTA"
 call :waitforconnection
 )
 powershell -window minimized -command ""
-ECHO This app was made by marnix0810
+ECHO This app was made by Marnix 0810
 REM questions about this code?
 REM mail to:
 REM programmer.marxin0810@gmail.com or
@@ -153,11 +151,11 @@ exit
 
 :select_update_DOW
 :set_update_freq
-setx Hackey-update-day ""
+call "%~dp0saveset.cmd" Hackey-update-day ""
 set "Hackey-update-day="
 powershell -window hidden -command ""
-for /F "delims=" %%a in ('mshta.exe "%~dp0files\HTAfiles\SET-UPDATE-DAY.HTA"') do set "Hackey-update-day=%%a"
-setx Hackey-update-day %Hackey-update-day%
+for /F "delims=" %%a in ('mshta.exe "%~dp0HTA\SET-UPDATE-DAY.HTA"') do set "Hackey-update-day=%%a"
+call "%~dp0saveset.cmd" Hackey-update-day %Hackey-update-day%
 exit /b
 
 :getdow
@@ -225,6 +223,7 @@ set /a blockedsitescounter+=1
 exit /b
 :waitforconnection
 powershell -window hidden -command ""
+notifu /t info /p "HackeyBlock" /m "Hackey Background Service Is Not Activated.\n\nYou do not have an internet connection, Hackey will be started automatically when it is restored." /i "%~dp0icon.ico"
 FOR /F "usebackq tokens=1" %%A IN (`PING google.com`) DO (
     REM Check the current line for the indication of a successful connection.
     IF /I "%%A"=="Reply" SET Connected=true

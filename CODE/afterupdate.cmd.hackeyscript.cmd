@@ -2,7 +2,7 @@ REM Standard content
 cd /d "%~dp0"
 powershell -window hidden -command ""
 type Change.log> changelog.txt
-Start /wait MSHTA "%~dp0files\HTAfiles\Afterupdate-standard.HTA"
+Start /wait MSHTA "%~dp0HTA\Afterupdate-standard.HTA"
 powershell -window minimized -command ""
 del /f /q startHackeythenleave.cmd
 if not exist "%~dp0icon.ico" (

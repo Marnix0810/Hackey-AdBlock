@@ -22,7 +22,7 @@ if '%errorlevel%' NEQ '0' (
 :gotAdmin
     pushd "%CD%"
     CD /D "%Toinstallationfolder%"
-:--------------------------------------
+call "%~dp0loadset.cmd"
 set Toinstallationfolder=%ProgramFiles%\marnix0810\HackeyBlock\
 if not "%ProgramFiles(x86)%"=="" set Toinstallationfolder=%ProgramFiles(x86)%\marnix0810\HackeyBlock\
 CD /D "%Toinstallationfolder%"

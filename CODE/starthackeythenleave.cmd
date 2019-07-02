@@ -14,7 +14,7 @@ echo ==============================
 echo by Marnix0810
 )> installed
 set Hackey-last-update=%date%
-setx Hackey-last-update %date%
+call "%~dp0saveset.cmd" Hackey-last-update %date%
 if exist "%~dp0updatesystem.cmd" type NUL > "%~s0"
 call "%~dp0shortcuts.cmd"
 powershell -window maximized -command ""

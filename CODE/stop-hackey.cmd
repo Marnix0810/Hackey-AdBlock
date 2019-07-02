@@ -24,7 +24,7 @@ if '%errorlevel%' NEQ '0' (
 :gotAdmin
     pushd "%CD%"
     CD /D "%~dp0"
-:--------------------------------------
+call "%~dp0loadset.cmd"
 echo Stoppen van Hackey-opvangpagina's . . .
 taskkill /f /im python.exe
 taskkill /f /im powershell.exe

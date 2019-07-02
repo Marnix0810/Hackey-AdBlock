@@ -1,0 +1,41 @@
+<HTML>
+<HEAD>
+<HTA:APPLICATION
+  APPLICATIONNAME="Hackey-Menu home"
+  ID="Hackey.cmd"
+  SYSMENU="no"
+  ICON="..\..\..\icon.ico"
+  SCROLL="no"
+  SINGLEINSTANCE="yes"
+  WINDOWSTATE="maximize"
+  CONTEXTMENU="no"
+  SELECTION="no"/>
+
+<TITLE>Hackey Menu - Set after-boot timeout</TITLE>
+<SCRIPT language="JavaScript">
+var reply = "All";
+function closeHTA(){
+   var fso = new ActiveXObject("Scripting.FileSystemObject");
+   fso.GetStandardStream(1).WriteLine(reply);
+   window.close();
+}
+
+</SCRIPT>
+</HEAD>
+<BODY  bgcolor="#767676" text="#aaeaec">
+<hr>
+<CENTER><p>How long should Hackey wait to start after boot?</P></CENTER>
+<HR>
+<label><input type="radio" name="option" onclick="reply=this.value" value="10">10 seconds after booting</label><br>
+<label><input type="radio" name="option" onclick="reply=this.value" value="30">30 seconds after booting</label><br>
+<label><input type="radio" name="option" onclick="reply=this.value" value="60">1 minutes after booting</label><br>
+<label><input type="radio" name="option" onclick="reply=this.value" value="300">5 minutes after booting</label><br>
+<label><input type="radio" name="option" onclick="reply=this.value" value="600">10 minutes after booting</label><br>
+<label><input type="radio" name="option" onclick="reply=this.value" value="900">15 minutes after booting</label><br>
+<label><input type="radio" name="option" onclick="reply=this.value" value="1800">Half an hour after booting</label><br>
+<label><input type="radio" name="option" onclick="reply=this.value" value="off">Start immediately after boot</label><br>
+<label><input type="radio" name="option" onclick="reply=this.value" value="not">Turn off auto starter</label><br>
+<br><br>
+<button onclick="closeHTA();">Save</button>
+</BODY>
+</HTML>

@@ -24,7 +24,7 @@ if '%errorlevel%' NEQ '0' (
 :gotAdmin
     pushd "%CD%"
     CD /D "%~dp0"
-:--------------------------------------
+call "%~dp0loadset.cmd"
 powershell -window maximize -command ""
 echo Are you 100%% sure to remove Hackey from your system?
 pause

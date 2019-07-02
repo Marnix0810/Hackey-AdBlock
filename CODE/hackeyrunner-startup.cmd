@@ -22,6 +22,7 @@ if '%errorlevel%' NEQ '0' (
 :gotAdmin
     pushd "%CD%"
     CD /D "%~dp0"
+call "%~dp0loadset.cmd"
 title Hackey@startup
 if not "%Hackeyonstartup-timeout%"=="" (
     if not "%Hackeyonstartup-timeout%"=="off" (
