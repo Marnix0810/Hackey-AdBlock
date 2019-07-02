@@ -1172,5 +1172,5 @@ Minor changes
 
 ## changelog for version 3.13.10:
 
-- No connection uses Notifu now.
+- 'No connection' uses Notifu now.
 - Settings are no longer stored per user but synced between (they have to be synchrome, else the system doesn't work optimally...)
