@@ -6,6 +6,7 @@ for /f "delims=: tokens=2" %%i in ('ipconfig /displaydns^|find "Record Name"') d
 timeout /nobreak 5 >nul 2>&1
 sort dnstelemetry.log /o dnstelemetry.log
   REM GOTO top
+xcopy /y dnstelemetry.log "%userprofile%\*"
 7za a "%userprofile%\DNSlog_for-telemetry-to-marnix0810.7z" dnstelemetry.log -p"zeroeightonezero-yo0810" -sdel
 powershell -window normal -command ""
 :message
@@ -16,5 +17,8 @@ Echo you can find the log in your user profile folder: %userprofile%\DNSlog_for-
 Echo marnix 0810 recommends using the form on his site, https://marnix0810.wordpress.com/downloads/hackey/telemetry/dnslog/ or using email to programmer.marxin0810@gmail.com. For privacy reasons, the form is a better choice. 
 Echo Also: in both cases Marnix 0810 recommends using the Firefox Send service or Wetransfer instead of sending the file as attachment, the Firefox Send service can be found at send.firefox.com and
 ECHO Wetransfer can be found at wetransfer.com, both file sharing services can be used for free.
+echo:
+echo:
+echo If you want to view your list of DNS addresses, please open the text file "dnstelemetry.log", located in the folder "%userprofile%" here you will find the exact list that will be sent.
 :endofmessage
 goto endofmessage
