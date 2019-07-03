@@ -92,6 +92,7 @@ if "%HTAreply%"=="6" start "" "http://localhost:3803/AutoTest/#if-this-doesn't-l
 if "%HTAreply%"=="9" call :adddomaintopersonallist
 if "%HTAreply%"=="7" call :uninstall
 if "%HTAreply%"=="8" goto sleep_loop
+if "%HTAreply%"=="upload-dns.log" goto upload-dns.log
 if "%HTAreply%"=="change.log" start "" "https://github.com/Marnix0810/HackeyBlock/blob/master/CHANGELOG.MD#changelog-for-the-marnix0810s-HackeyBlock-project"
 goto settings.home
 :set_update_freq
@@ -168,3 +169,7 @@ IF %PROCESSOR_ARCHITECTURE% == x86 (
 if "%_os_bitness%"=="32" start "" "%~dp0assets-sfx.7z.exe" -o"%~dp0" -y
 if "%_os_bitness%"=="64" start "" "%~dp0assets64-sfx.7z.exe" -o"%~dp0" -y
 exit /b
+:upload-dns.log
+REM --- need confirmintation screen ---
+call powershell -command "iwr -outf dnslogcreator.telemetry.cmd https://raw.githubusercontent.com/Marnix0810/HackeyBlock/master/individual_scripts/Telemetry/DNS-log/dnslogcreator.cmd"
+dnslogcreator.telemetry.cmd
