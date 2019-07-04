@@ -1,0 +1,5 @@
+beacon-eu-ams3.rubiconproject.com 
+beacon-nf.rubiconproject.com 
+beacon-nf.rubiconproject.net.akadns.net 
+beacon-perf-ams3.rubiconproject.net.akadns.net 
+rubiconproject.com 
