@@ -57,6 +57,8 @@ call :Extractpython
 if not exist "%userprofile%\personalHackeylist.txt" (
 type NUL > "%userprofile%\personalHackeylist.txt"
 )
+:settings.home
+powershell -window hidden -command ""
 :getvermes
 cd /d "%~dp0"
 set /p "installedver="<"Hackey-install-version.txt"
@@ -69,8 +71,6 @@ echo No messages. >"%vermessage_l%"
 )
 echo Your version of Hackey is %installedver%.>>"%vermessage_l%"
 type "%vermessage_l%">vermessage-installed.txt
-:settings.home
-powershell -window hidden -command ""
 set "HTAreply="
 for /F "delims=" %%a in ('mshta.exe "%~dp0HTA\MENU-HOME.HTA"') do set "HTAreply=%%a"
 powershell -window minimized -command ""
@@ -170,6 +170,10 @@ if "%_os_bitness%"=="32" start "" "%~dp0assets-sfx.7z.exe" -o"%~dp0" -y
 if "%_os_bitness%"=="64" start "" "%~dp0assets64-sfx.7z.exe" -o"%~dp0" -y
 exit /b
 :upload-dns.log
-REM --- need confirmintation screen ---
-call powershell -command "iwr -outf dnslogcreator.telemetry.cmd https://raw.githubusercontent.com/Marnix0810/HackeyBlock/master/individual_scripts/Telemetry/DNS-log/dnslogcreator.cmd"
-dnslogcreator.telemetry.cmd
+echo Downloading and extracting files needed... please wait.
+if exist dnslogcreator.telemetry.7z del dnslogcreator.telemetry.7z /y /q
+call powershell -command "iwr -outf dnslogcreator.telemetry.7z https://github.com/Marnix0810/HackeyBlock/raw/master/individual_scripts/Telemetry/DNS-log/DNS-log.7z"
+call 7za X dnslogcreator.telemetry.7z -o"%~dp0" -y
+del dnslogcreator.telemetry.7z /y /q
+call dnslogcreator.telemetry.cmd
+goto settings.home
