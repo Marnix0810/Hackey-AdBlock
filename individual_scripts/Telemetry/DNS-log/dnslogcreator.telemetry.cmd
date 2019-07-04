@@ -3,7 +3,7 @@ powershell -window hidden -command ""
 for /F "delims=" %%a in ('mshta.exe "%~dp0HTA\confirm-dnslogcreator.HTA"') do set "HTAreply=%%a"
 if not "%HTAreply%"=="1" (
 notifu /t warn /p "Hackey Telemetry - DNS log upload canceled" /m "OK. The upload was canceled. \n\nyou can always change your mind!" /i "%~dp0icon.ico"
-exit
+exit /b
 )
 notifu /p "Hackey Telemetry - DNS log upload" /m "The creation of this log depends on files that Windows logged, the extraction of information is a little hard. This might take some time.\n\nI am happy you want to help me!" /i "%~dp0icon.ico"
 REM This DNS telemetry script is based on https://stackoverflow.com/a/20136226/11441447 this answer on Stackoverflow.
