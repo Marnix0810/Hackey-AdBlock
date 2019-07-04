@@ -69,7 +69,11 @@ set "vermessage_l=%~dp0versionmessage-%installedver%.txt"
 if not exist "%vermessage_l%" (
 echo No messages. >"%vermessage_l%"
 )
-echo Your version of Hackey is %installedver%.>>"%vermessage_l%"
+(
+echo:
+echo:
+echo Your version of Hackey is %installedver%.
+)>>"%vermessage_l%"
 type "%vermessage_l%">vermessage-installed.txt
 set "HTAreply="
 for /F "delims=" %%a in ('mshta.exe "%~dp0HTA\MENU-HOME.HTA"') do set "HTAreply=%%a"
