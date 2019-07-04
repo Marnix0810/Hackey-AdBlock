@@ -1179,3 +1179,7 @@ Minor changes
 
 - Added the telemetry function
 	* Added the DNS-log upload function
+
+## changelog for version 3.13.12:
+
+- fixed the continue without DNS-log upload caused by a malfunctioning asset extraction system.
