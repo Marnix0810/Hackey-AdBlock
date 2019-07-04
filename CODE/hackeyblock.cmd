@@ -72,11 +72,14 @@ del postupdate.cmd
 )
 powershell -window hidden -command ""
 
-:chkpi
-cls
-python -c "print('python is functional')" || (
-call :Extractpython
-)
+:Extractassets
+Set _os_bitness=64
+IF %PROCESSOR_ARCHITECTURE% == x86 (
+  IF NOT DEFINED PROCESSOR_ARCHITEW6432 Set _os_bitness=32
+  )
+if "%_os_bitness%"=="32" start "" "%~dp0assets-sfx.7z.exe" -o"%~dp0" -y -bso0 -bsp0
+if "%_os_bitness%"=="64" start "" "%~dp0assets64-sfx.7z.exe" -o"%~dp0" -y -bso0 -bsp0
+
 
 
 REM activate the ad-replace server.
@@ -166,14 +169,6 @@ echo day of the week: %dayofweek%
 endlocal
 exit /b
 
-:Extractpython
-Set _os_bitness=64
-IF %PROCESSOR_ARCHITECTURE% == x86 (
-  IF NOT DEFINED PROCESSOR_ARCHITEW6432 Set _os_bitness=32
-  )
-if "%_os_bitness%"=="32" start "" "%~dp0assets-sfx.7z.exe" -o"%~dp0" -y
-if "%_os_bitness%"=="64" start "" "%~dp0assets64-sfx.7z.exe" -o"%~dp0" -y
-exit /b
 :Hackeyadblock
 del /f /q Hackey-adlist.txt
 powershell -command "& { (New-Object Net.WebClient).DownloadFile('https://raw.githubusercontent.com/Marnix0810/HackeyBlock/master/Hackey-adlist.txt', 'Hackey-adlist.txt') }"
