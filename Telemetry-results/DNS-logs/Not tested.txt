@@ -1,10 +1,6 @@
  api.accounts.firefox.com 
  array503-prod.do.dsp.mp.microsoft.com 
  array503-prod.dodsp.mp.microsoft.com.nsatc.net 
- beacon-eu-ams3.rubiconproject.com 
- beacon-nf.rubiconproject.com 
- beacon-nf.rubiconproject.net.akadns.net 
- beacon-perf-ams3.rubiconproject.net.akadns.net 
  cm.g.doubleclick.net 
  config.teams.microsoft.com 
  config.teams.trafficmanager.net 
