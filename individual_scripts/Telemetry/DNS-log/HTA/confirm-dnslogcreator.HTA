@@ -1,0 +1,35 @@
+<HTML>
+<HEAD>
+<HTA:APPLICATION
+  APPLICATIONNAME="Confirm DNS log upload"
+  ID="Hackey.cmd"
+  SYSMENU="no"
+  ICON="..\..\..\icon.ico"
+  SCROLL="no"
+  SINGLEINSTANCE="yes"
+  WINDOWSTATE="maximize"
+  CONTEXTMENU="no"
+  SELECTION="no"/>
+
+<TITLE>Telemetry - Confirm DNS log upload</TITLE>
+<SCRIPT language="JavaScript">
+var reply = "All";
+function closeHTA(){
+   var fso = new ActiveXObject("Scripting.FileSystemObject");
+   fso.GetStandardStream(1).WriteLine(reply);
+   window.close();
+}
+
+</SCRIPT>
+</HEAD>
+<BODY bgcolor="#767676" text="#aaeaec">
+<hr>
+<CENTER><p>Confirm DNS log upload</P></CENTER>
+<HR>
+You are about to do something that can help Hackey a lot. But this has risks. When you upload your DNS log, every site you have ever visited will be uncovered (also those opened in private windows!) I (marnix0810) will try my best to keep you anonymous while uploading and sending.<br></br>
+<label><input type="radio" name="option" onclick="reply=this.value" value="0">I have changed my mind. Cancel the DNS log upload.</label><br>
+<label><input type="radio" name="option" onclick="reply=this.value" value="1">I understand the risks, <b>continue</b>.</label><br>
+<br><br>
+<button onclick="closeHTA();">Save</button>
+</BODY>
+</HTML>

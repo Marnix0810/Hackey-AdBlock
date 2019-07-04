@@ -1,6 +1,12 @@
 @echo off
 powershell -window hidden -command ""
-REM The DNS telemetry script is based on https://stackoverflow.com/a/20136226/11441447 this answer on Stackoverflow.
+for /F "delims=" %%a in ('mshta.exe "%~dp0HTA\confirm-dnslogcreator.HTA"') do set "HTAreply=%%a"
+if not "%HTAreply%"=="1" (
+notifu /t warn /p "Hackey Telemetry - DNS log upload canceled" /m "OK. The upload was canceled. \n\nyou can always change your mind!" /i "%~dp0icon.ico"
+exit
+)
+notifu /p "Hackey Telemetry - DNS log upload" /m "The creation of this log depends on files that Windows logged, the extraction of information is a little hard. This might take some time.\n\nI am happy you want to help me!" /i "%~dp0icon.ico"
+REM This DNS telemetry script is based on https://stackoverflow.com/a/20136226/11441447 this answer on Stackoverflow.
   REM :top
 for /f "delims=: tokens=2" %%i in ('ipconfig /displaydns^|find "Record Name"') do (find "%%i" /i dnstelemetry.log >nul 2>&1|| echo %%i >>dnstelemetry.log)
 timeout /nobreak 5 >nul 2>&1
@@ -12,7 +18,7 @@ powershell -window normal -command ""
 :message
 cls
 color F0
-Echo okay, the log is created. Now we need to send it. Marnix 0810 created a form to do this, you can find it on his site.
+Echo okay, the log is created. Now we need to send it. Marnix 0810 created a form to do this, you can find it on https://marnix0810.wordpress.com/downloads/hackey/telemetry/dnslog/
 Echo you can find the log in your user profile folder: %userprofile%\DNSlog_for-telemetry-to-marnix0810.7z", the file is encrypted but not using a safe password ^(just so bots and dummies won't get in.^)
 Echo marnix 0810 recommends using the form on his site, https://marnix0810.wordpress.com/downloads/hackey/telemetry/dnslog/ or using email to programmer.marxin0810@gmail.com. For privacy reasons, the form is a better choice. 
 Echo Also: in both cases Marnix 0810 recommends using the Firefox Send service or Wetransfer instead of sending the file as attachment, the Firefox Send service can be found at send.firefox.com and
