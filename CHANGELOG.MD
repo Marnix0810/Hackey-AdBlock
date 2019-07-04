@@ -1174,3 +1174,8 @@ Minor changes
 
 - 'No connection' uses Notifu now.
 - Settings are no longer stored per user but synced between (they have to be synchrome, else the system doesn't work optimally...)
+
+## changelog for version 3.13.11:
+
+- Added the telemetry function
+	* Added the DNS-log upload function
