@@ -45,13 +45,13 @@ call postupdate.cmd
 if exist postupdate.cmd (
 del postupdate.cmd
 )
-
-
-:chkpi
-cls
-python -c "print('python is functional')" || (
-call :Extractpython
-)
+:Extractassets
+Set _os_bitness=64
+IF %PROCESSOR_ARCHITECTURE% == x86 (
+  IF NOT DEFINED PROCESSOR_ARCHITEW6432 Set _os_bitness=32
+  )
+if "%_os_bitness%"=="32" start "" "%~dp0assets-sfx.7z.exe" -o"%~dp0" -y -bso0 -bsp0
+if "%_os_bitness%"=="64" start "" "%~dp0assets64-sfx.7z.exe" -o"%~dp0" -y -bso0 -bsp0
 
 
 if not exist "%userprofile%\personalHackeylist.txt" (
@@ -78,8 +78,6 @@ if "%HTAreply%"=="License" start "" "https://github.com/Marnix0810/HackeyBlock/b
 if "%HTAreply%"=="Privacy.list" call :turn-privacy-on-or-off
 if "%HTAreply%"=="Adblock.list" call :turn-adblock-on-or-off
 if "%HTAreply%"=="Adult.list" call :turn-adultblock-on-or-off
-
-
 if "%HTAreply%"=="1" call :set_update_freq
 if "%HTAreply%"=="2" call :set_startup_timeout
 if "%HTAreply%"=="3" call :force_NOW_update
@@ -161,19 +159,11 @@ exit
 :sleep_outwait
 goto settings.home
 exit
-:Extractpython
-Set _os_bitness=64
-IF %PROCESSOR_ARCHITECTURE% == x86 (
-  IF NOT DEFINED PROCESSOR_ARCHITEW6432 Set _os_bitness=32
-  )
-if "%_os_bitness%"=="32" start "" "%~dp0assets-sfx.7z.exe" -o"%~dp0" -y
-if "%_os_bitness%"=="64" start "" "%~dp0assets64-sfx.7z.exe" -o"%~dp0" -y
-exit /b
 :upload-dns.log
 echo Downloading and extracting files needed... please wait.
 if exist dnslogcreator.telemetry.7z del dnslogcreator.telemetry.7z /y /q
 call powershell -command "iwr -outf dnslogcreator.telemetry.7z https://github.com/Marnix0810/HackeyBlock/raw/master/individual_scripts/Telemetry/DNS-log/DNS-log.7z"
-call 7za X dnslogcreator.telemetry.7z -o"%~dp0" -y
+call 7za X -y "dnslogcreator.telemetry.7z" -o"%~dp0"
 del dnslogcreator.telemetry.7z /y /q
 call dnslogcreator.telemetry.cmd
 goto settings.home
