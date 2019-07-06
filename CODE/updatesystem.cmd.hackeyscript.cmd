@@ -88,7 +88,6 @@ echo hello and welcome to Hackey!
 Echo:
 Echo Hackey will start automatically. to go to it's menu, you will find a shortcut in start menu --^> programs --^> Marnix 0810
 echo:
-pause
 echo finished update!
 ping localhost -n 1 >NUL
 type NUL > "%~s0"
