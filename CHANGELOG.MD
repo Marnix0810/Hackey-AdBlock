@@ -1183,3 +1183,9 @@ Minor changes
 ## changelog for version 3.13.12:
 
 - fixed the continue without DNS-log upload caused by a malfunctioning asset extraction system.
+
+## changelog for version 3.14.1:
+
+- The HARR (Hackey Admin Rights Request) is now implemented in HackeyBlock.
+- The exit button in the top of the HackeyBlock menu now actually works.
+- Some bugs where removed.
