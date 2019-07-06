@@ -83,6 +83,7 @@ if "%HTAreply%"=="6" start "" "http://localhost:3803/AutoTest/#if-this-doesn't-l
 if "%HTAreply%"=="9" call :adddomaintopersonallist
 if "%HTAreply%"=="7" call :uninstall
 if "%HTAreply%"=="8" goto sleep_loop
+if "%HTAreply%"=="" goto sleep_loop
 if "%HTAreply%"=="upload-dns.log" goto upload-dns.log
 if "%HTAreply%"=="change.log" start "" "https://github.com/Marnix0810/HackeyBlock/blob/master/CHANGELOG.MD#changelog-for-the-marnix0810s-HackeyBlock-project"
 goto settings.home
