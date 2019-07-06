@@ -3,4 +3,7 @@ assets64-sfx.7z.exe
 Hackey Admin Rights Request.exe
 HARR-prcesr.HARRset
 HARR-Readme.txt
+HARR-Readme.md
+HARR-Readme.html
+HARR-License.txt
 HARR.cmd
