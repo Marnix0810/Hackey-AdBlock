@@ -56,7 +56,7 @@ pause
 
 
 REM Start file editings.
-xcopy "%userprofile%\MEGA\Documents\Programmeren\Programmaprojecten\4. Stable-active\The Hackey-AdBlock project\7-zip_sfxs\*.exe" "%~dp0..\CODE\"
+xcopy "%userprofile%\MEGA\Documents\Programmeren\Programmaprojecten\4. Stable-active\The Hackey-AdBlock project\filesnotincludedingithub\*.*" "%~dp0..\CODE\"
 cd /d "%~dp0..\CODE"
 
 REM create setup.
