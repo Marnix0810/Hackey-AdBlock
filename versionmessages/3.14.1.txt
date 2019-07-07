@@ -1,4 +1,1 @@
-I am afraid the 'optional lists'-function will not launch with version 3.15.##, no one has uploaded a list yet...
-
-
-Please spread the word! HackeyBlock needs more users and uploaded lists!
+WARNING: update using the online installer or mannually download the offline installer of ver. 3.14.3, this version has a big bug in the new HARR system.
