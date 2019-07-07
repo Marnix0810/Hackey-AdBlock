@@ -1189,3 +1189,7 @@ Minor changes
 - The HARR (Hackey Admin Rights Request) is now implemented in HackeyBlock.
 - The exit button in the top of the HackeyBlock menu now actually works.
 - Some bugs where removed.
+
+## changelog for version 3.14.2:
+
+- HARR is now updated to ver. 1.5, the admin rights requester should work better now.
