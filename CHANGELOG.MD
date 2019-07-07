@@ -1193,3 +1193,7 @@ Minor changes
 ## changelog for version 3.14.2:
 
 - HARR is now updated to ver. 1.5, the admin rights requester should work better now.
+
+## changelog for version 3.14.3:
+
+- HARR is now updated to ver. 1.5.2, the admin rights requester should work better now.
