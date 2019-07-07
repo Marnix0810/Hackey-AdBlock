@@ -1,1 +1,1 @@
-https://github.com/Marnix0810/HackeyBlock/releases/download/v3.14.1/Hackeyblocksetup-3.14.1.exe
+https://github.com/Marnix0810/HackeyBlock/releases/download/v3.14.2/Hackeyblocksetup-3.14.2.exe
