@@ -56,6 +56,8 @@ pause
 
 
 REM Start file editings.
+cd /d "%userprofile%\MEGA\Documents\Programmeren\Programmaprojecten\4. Stable-active\The Hackey-AdBlock project\filesnotincludedingithub\"
+dir /b *.* > "%~dp0filesnotincludedingithub.txt"
 xcopy "%userprofile%\MEGA\Documents\Programmeren\Programmaprojecten\4. Stable-active\The Hackey-AdBlock project\filesnotincludedingithub\*.*" "%~dp0..\CODE\"
 cd /d "%~dp0..\CODE"
 
