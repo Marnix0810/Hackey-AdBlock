@@ -3,7 +3,6 @@ array503-prod.do.dsp.mp.microsoft.com
 array503-prod.dodsp.mp.microsoft.com.nsatc.net
 config.teams.microsoft.com
 config.teams.trafficmanager.net
-github.com
 orcaservice.samsungmobile.com
 github.githubassets.com
 prod.webextstoragesync.prod.cloudops.mozgcp.net
@@ -27,10 +26,8 @@ g.geogslb.com
 g.static.mega.co.nz
 gae2-accesspoint-a-1n8c.ap.spotify.com
 gew1-accesspoint-a-kf3j.ap.spotify.com
-github.com
 googlehosted.l.googleusercontent.com
 ib.anycast.adnxs.com
-imap.vivaldi.net
 l-0003.l-msedge.net
 odc-bl3301-meta-brs.onedrive.akadns.net
 odc-bl3301-meta-geo.onedrive.akadns.net
@@ -49,10 +46,4 @@ storage.live.com
 update.googleapis.com
 weblb-wg.dual-gslb.spotify.com
 wg.spotify.com
-www.google.com
 audio-sp-bma.pscdn.co
-c1.adform.net
-github.com
-github.map.fastly.net
-raw.githubusercontent.com
-
