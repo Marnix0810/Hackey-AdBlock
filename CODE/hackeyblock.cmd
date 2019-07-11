@@ -1,6 +1,6 @@
 @ECHO OFF
 color F0
-call powershell -window maximize -command ""
+CD /D "%~dp0"
 if not "%Adminrequested%"=="1" (
 call HARR "%~s0"
 )
