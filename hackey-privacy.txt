@@ -5,3 +5,4 @@ ssl.google-analytics.com
 www.cloudfront.net
 www.facebook.net
 adeventtracker.spotify.com
+track.adform.net
