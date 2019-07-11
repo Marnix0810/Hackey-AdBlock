@@ -1,17 +1,13 @@
 @ECHO OFF
 color F0
-type nul> startHackeythenleave.cmd
-del /f /q startHackeythenleave.cmd
-call powershell -window maximize -command ""
-
-
+CD /D "%~dp0"
 if not "%Adminrequested%"=="1" (
 call HARR "%~s0"
 )
-
-:gotAdmin
-    pushd "%CD%"
-    CD /D "%~dp0"
+type nul> startHackeythenleave.cmd
+del /f /q startHackeythenleave.cmd
+pushd "%CD%"
+CD /D "%~dp0"
 ECHO This app was made by Marnix 0810
 call "%~dp0loadset.cmd"
 REM check 4 updates
