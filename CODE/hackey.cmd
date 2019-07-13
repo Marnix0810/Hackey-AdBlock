@@ -62,7 +62,6 @@ echo Your version of Hackey is %installedver%.
 type "%vermessage_l%">vermessage-installed.txt
 set "HTAreply="
 for /F "delims=" %%a in ('mshta.exe "%~dp0HTA\MENU-HOME.HTA"') do set "HTAreply=%%a"
-powershell -window minimized -command ""
 if "%HTAreply%"=="License" start "" "https://github.com/Marnix0810/HackeyBlock/blob/master/LICENSE"
 if "%HTAreply%"=="Privacy.list" call :turn-privacy-on-or-off
 if "%HTAreply%"=="Adblock.list" call :turn-adblock-on-or-off
@@ -157,3 +156,11 @@ call 7za X -y "dnslogcreator.telemetry.7z" -o"%~dp0"
 del dnslogcreator.telemetry.7z /y /q
 call dnslogcreator.telemetry.cmd
 goto settings.home
+exit
+:getdow
+@echo off
+setlocal
+for /f "delims=" %%a in ('wmic path win32_localtime get dayofweek /format:list ') do for /f "delims=" %%d in ("%%a") do set %%d
+echo day of the week: %dayofweek%
+endlocal
+exit /b
