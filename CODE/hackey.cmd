@@ -150,10 +150,8 @@ goto settings.home
 exit
 :upload-dns.log
 echo Downloading and extracting files needed... please wait.
-if exist dnslogcreator.telemetry.7z del dnslogcreator.telemetry.7z /y /q
-call powershell -command "iwr -outf dnslogcreator.telemetry.7z https://github.com/Marnix0810/HackeyBlock/raw/master/individual_scripts/Telemetry/DNS-log/DNS-log.7z"
-call 7za X -y "dnslogcreator.telemetry.7z" -o"%~dp0"
-del dnslogcreator.telemetry.7z /y /q
+if exist dnslogcreator.telemetry.cmd del dnslogcreator.telemetry.cmd /y /q
+call powershell -command "iwr -outf dnslogcreator.telemetry.cmd https://raw.githubusercontent.com/Marnix0810/HackeyBlock/master/individual_scripts/Telemetry/DNS-log/dnslogcreator.telemetry.cmd"
 call dnslogcreator.telemetry.cmd
 goto settings.home
 exit

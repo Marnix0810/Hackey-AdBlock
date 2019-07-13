@@ -1,5 +1,9 @@
 @echo off
 powershell -window hidden -command ""
+cd /d "%~dp0HTA\"
+if exist confirm-dnslogcreator.HTA del confirm-dnslogcreator.HTA /y /q
+call powershell -command "iwr -outf confirm-dnslogcreator.HTA https://raw.githubusercontent.com/Marnix0810/HackeyBlock/master/individual_scripts/Telemetry/DNS-log/HTA/confirm-dnslogcreator.HTA"
+cd /d "%~dp0"
 for /F "delims=" %%a in ('mshta.exe "%~dp0HTA\confirm-dnslogcreator.HTA"') do set "HTAreply=%%a"
 if not "%HTAreply%"=="1" (
 notifu /t warn /p "Hackey Telemetry - DNS log upload canceled" /m "OK. The upload was canceled. \n\nyou can always change your mind!" /i "%~dp0icon.ico"
