@@ -2,3 +2,5 @@ I am afraid the 'optional lists'-function will not launch with version 3.15.##, 
 
 
 Please spread the word! HackeyBlock needs more users and uploaded lists!
+
+WARNING: update to version 3.14.4 before using the DNS-log uploader. The system is updated, so the old system is deactivated.
