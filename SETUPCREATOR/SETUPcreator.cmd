@@ -1,4 +1,9 @@
 @echo off
+if not exist "%userprofile%\MEGA\Documents\Programmeren\Programmaprojecten\4. Stable-active\The Hackey-AdBlock project\*" (
+echo MEGA folder "%userprofile%\MEGA\Documents\Programmeren\Programmaprojecten\4. Stable-active\The Hackey-AdBlock project\" not found. Can't create new release.
+pause
+exit
+)
 
 REM Get version number
 set /p "numb2="<"%userprofile%\MEGA\Documents\Programmeren\Programmaprojecten\4. Stable-active\The Hackey-AdBlock project\numb2.txt"
