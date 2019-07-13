@@ -1197,3 +1197,8 @@ Minor changes
 ## changelog for version 3.14.3:
 
 - HARR is now updated to ver. 1.5.2, the admin rights requester should work better now.
+
+## changelog for version 3.14.4:
+
+- The cmd box should be hiding itself better now.
+- I updated the system that uploads the DNS-logs, the download of aditional parts will be a little faster now.
