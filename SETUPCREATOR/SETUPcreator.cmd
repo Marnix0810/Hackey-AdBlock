@@ -16,6 +16,7 @@ if "%errorlevel%"=="1" (
 cls
 echo Default version number would be: %numb1%.%numb2%
 set /p "newver=Set non-default version name/number:"
+set nondefver=1
 )
 set vernumb=%newver%
 echo:%vernumb%>"%~dp0..\latest-release.txt"
@@ -84,10 +85,12 @@ echo the only thing you have to do is upload this release to GitHub and link Wor
 pause
 start "" "https://github.com/Marnix0810/Hackey-AdBlock/releases/new"
 cls
+if "%nondefver%"=="1" (
 echo enter direct download link to the setup file.
 set /p updurl=Url: 
 echo:%updurl%>"%~dp0..\updurl.txt"
 cls
+)
 echo:
 echo released ver. %newver%.
 :loop4ever1

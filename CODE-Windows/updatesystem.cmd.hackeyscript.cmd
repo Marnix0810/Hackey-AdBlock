@@ -39,7 +39,7 @@ echo Restoring onblocked patrons of hostsfile.
 copy C:\Windows\System32\drivers\etc\hosts_before-Hackey.bkup C:\Windows\System32\drivers\etc\hosts /y
 del /q /f "installed"
 (
-echo TYPE "%Toinstallationfolder%updatesystem.cmd.Hackeyscript" ^>  "%Toinstallationfolder%updatesystem.cmd"
+echo TYPE "%Toinstallationfolder%updatesystem.cmd.Hackeyscript.cmd" ^>  "%Toinstallationfolder%updatesystem.cmd"
 echo CALL updatesystem.cmd
 echo exit /b
 )> Hackeyblock.cmd
@@ -49,8 +49,16 @@ echo deleting old version.
 del /f /q /s "%Toinstallationfolder%*.*"
 cls
 echo locating installer for HackeyBlock
+del /f /q latest-version.txt >NUL
+call powershell -command "iwr -outf latest-version.txt https://raw.githubusercontent.com/Marnix0810/HackeyBlock/master/latest-release.txt"
+set /p "latestver="<"latest-version.txt"
+set /p updurl=https://github.com/Marnix0810/HackeyBlock/releases/download/v%latestver%/Hackeyblocksetup-%latestver%.exe
+if "%locman%"=="1" (
+cls
+echo locating installer for HackeyBlock using emergency download system.
 call powershell -command "iwr -outf updurl.txt https://raw.githubusercontent.com/Marnix0810/HackeyBlock/master/updurl.txt"
 set /p "updurl="<"updurl.txt"
+)
 echo downloading updater for HackeyBlock.
 call powershell -command "iwr -outf Hackeyupdate.exe %updurl%"
 start /wait Hackeyupdate.exe
@@ -59,25 +67,12 @@ Echo checking if update went well...
 if not exist "%Toinstallationfolder%installed" (
 echo E: unknown error while updating.
 echo retry is needed, files are deleted and to make sure Hackey keeps working, you should install the update... sorry!
+set locman=1
 goto ret1
 )
 cls
 echo Update went well!
 :don1
-cls
-echo please wait...
-call "%Toinstallationfolder%shortcuts.cmd"
-cls
-echo hello and welcome to Hackey!
-Echo:
-Echo Hackey will start automatically. to go to it's menu, you will find a shortcut in start menu --^> programs --^> Marnix 0810
-echo:
-echo finished update!
-ping localhost -n 1 >NUL
-type NUL > "%~s0"
-start cmd /c "%Toinstallationfolder%HackeyBlock_menu.exe"
-start cmd /c "%Toinstallationfolder%Hackeyblock.cmd"
-exit
 :don2
 timeout /t 5 >NUL
 exit
