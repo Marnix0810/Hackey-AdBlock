@@ -96,7 +96,7 @@ set "Hackeyonstartup-timeout="
 powershell -window hidden -command ""
 for /F "delims=" %%a in ('mshta.exe "%~dp0HTA\setstartuptimeout.HTA"') do set "Hackeyonstartup-timeout=%%a"
 call "%~dp0saveset.cmd" Hackeyonstartup-timeout %Hackeyonstartup-timeout%
-powershell "$s=(New-Object -COM WScript.Shell).CreateShortcut('%appdata%\Microsoft\Windows\Start Menu\Programs\Startup\HackeyBlock sevice starter.lnk');$s.TargetPath='%~dp0Hackeyrunner-startup.cmd';$s.Save()"
+powershell "$s=(New-Object -COM WScript.Shell).CreateShortcut('%appdata%\Microsoft\Windows\Start Menu\Programs\Startup\HackeyBlock service starter.lnk');$s.TargetPath='%~dp0Hackeyrunner-startup.cmd';$s.Save()"
 exit /b
 :autoupdate
 :force_NOW_update
