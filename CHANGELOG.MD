@@ -1207,3 +1207,7 @@ Minor changes
 
 - Enchanced shortcuts
 - Enchanced the HARR integration (call to HARR)
+
+## changelog for version 3.14.6:
+
+- Updated the update system (location system)
