@@ -4,7 +4,7 @@ cls
 color F0
 call powershell -window maximize -command ""
 if not "%Adminrequested%"=="1" (
-call HARR "%~s0"
+call "%~dp0HARR.cmd" "%~s0"
 )
 
     pushd "%CD%"

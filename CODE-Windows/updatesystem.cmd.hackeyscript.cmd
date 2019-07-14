@@ -1,6 +1,6 @@
 @ECHO OFF
 if not "%Adminrequested%"=="1" (
-call HARR "%~s0"
+call "%~dp0HARR.cmd" "%~s0"
 )
 
 :gotAdmin
