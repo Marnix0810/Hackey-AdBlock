@@ -1202,3 +1202,8 @@ Minor changes
 
 - The cmd box should be hiding itself better now.
 - I updated the system that uploads the DNS-logs, the download of aditional parts will be a little faster now.
+
+## changelog for version 3.14.5:
+
+- Enchanced shortcuts
+- Enchanced the HARR integration (call to HARR)
