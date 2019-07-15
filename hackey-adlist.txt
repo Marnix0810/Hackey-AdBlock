@@ -9,6 +9,7 @@ ads.pubmatic.com
 ads.taboola.com
 ads.zedo.com
 advertising.com
+ci6.googleusercontent.com
 branding.revenuestripe.com
 c.evidon.com
 a1.adform.net
