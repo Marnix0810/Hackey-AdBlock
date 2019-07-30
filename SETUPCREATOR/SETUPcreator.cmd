@@ -1,15 +1,15 @@
 @echo off
-if not exist "%userprofile%\MEGA\Documents\Programmeren\Programmaprojecten\4. Stable-active\The Hackey-AdBlock project\*" (
-echo MEGA folder "%userprofile%\MEGA\Documents\Programmeren\Programmaprojecten\4. Stable-active\The Hackey-AdBlock project\" not found. Can't create new release.
+if not exist "%userprofile%\Onedrive\The Hackey-AdBlock project\*" (
+echo MEGA folder "%userprofile%\Onedrive\The Hackey-AdBlock project\" not found. Can't create new release.
 pause
 exit
 )
 
 REM Get version number
-set /p "numb2="<"%userprofile%\MEGA\Documents\Programmeren\Programmaprojecten\4. Stable-active\The Hackey-AdBlock project\numb2.txt"
+set /p "numb2="<"%userprofile%\Onedrive\The Hackey-AdBlock project\numb2.txt"
 set /a numb2+=1
-echo:%numb2%>"%userprofile%\MEGA\Documents\Programmeren\Programmaprojecten\4. Stable-active\The Hackey-AdBlock project\numb2.txt"
-set /p "numb1="<"%userprofile%\MEGA\Documents\Programmeren\Programmaprojecten\4. Stable-active\The Hackey-AdBlock project\numb1.txt"
+echo:%numb2%>"%userprofile%\Onedrive\The Hackey-AdBlock project\numb2.txt"
+set /p "numb1="<"%userprofile%\Onedrive\The Hackey-AdBlock project\numb1.txt"
 set newver=%numb1%.%numb2%
 choice /m "Set non-default version name/number"
 if "%errorlevel%"=="1" (
@@ -62,15 +62,15 @@ pause
 
 
 REM Start file editings.
-cd /d "%userprofile%\MEGA\Documents\Programmeren\Programmaprojecten\4. Stable-active\The Hackey-AdBlock project\filesnotincludedingithub\"
+cd /d "%userprofile%\Onedrive\The Hackey-AdBlock project\filesnotincludedingithub\"
 dir /b *.* > "%~dp0filesnotincludedingithub.txt"
-xcopy "%userprofile%\MEGA\Documents\Programmeren\Programmaprojecten\4. Stable-active\The Hackey-AdBlock project\filesnotincludedingithub\*.*" "%~dp0..\CODE-Windows\"
+xcopy "%userprofile%\Onedrive\The Hackey-AdBlock project\filesnotincludedingithub\*.*" "%~dp0..\CODE-Windows\"
 cd /d "%~dp0..\CODE-Windows"
 
 REM create setup.
-call "%userprofile%\MEGA\Documents\Programmeren\Programmaprojecten\4. Stable-active\The Hackey-AdBlock project\Assets\Winrar\WinRAR.exe" a SETUPnew.exe * -r -sfx -ilog -iimg"%~dp0logos\hackeylogo.bmp" -z"%~dp0files-for-setup\xfs.conf"
-move SETUPnew.exe "%userprofile%\MEGA\Documents\Programmeren\Programmaprojecten\4. Stable-active\The Hackey-AdBlock project\Setups\SETUPnew.exe"
-ren "%userprofile%\MEGA\Documents\Programmeren\Programmaprojecten\4. Stable-active\The Hackey-AdBlock project\Setups\SETUPnew.exe" Hackeyblocksetup-%vernumb%.exe
+call "%userprofile%\Onedrive\The Hackey-AdBlock project\Assets\Winrar\WinRAR.exe" a SETUPnew.exe * -r -sfx -ilog -iimg"%~dp0logos\hackeylogo.bmp" -z"%~dp0files-for-setup\xfs.conf"
+move SETUPnew.exe "%userprofile%\Onedrive\The Hackey-AdBlock project\Setups\SETUPnew.exe"
+ren "%userprofile%\Onedrive\The Hackey-AdBlock project\Setups\SETUPnew.exe" Hackeyblocksetup-%vernumb%.exe
 del /f /q "%~dp0..\CODE-Windows\change.log"
 del /f /q "%~dp0..\CODE-Windows\hackey-install-version.txt"
 cd /d "%~dp0"
@@ -79,7 +79,7 @@ pause
 
 @echo off
 cls
-echo:%userprofile%\MEGA\Documents\Programmeren\Programmaprojecten\4. Stable-active\The Hackey-AdBlock project\Setups\Hackeyblocksetup-%vernumb%.exe|CLIP
+echo:%userprofile%\Onedrive\The Hackey-AdBlock project\Setups\Hackeyblocksetup-%vernumb%.exe|CLIP
 echo copied path to the binary file to clipboard.
 echo the only thing you have to do is upload this release to GitHub and link Wordpress to it.
 pause
