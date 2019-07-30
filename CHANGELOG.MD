@@ -1211,3 +1211,7 @@ Minor changes
 ## changelog for version 3.14.6:
 
 - Updated the update system (location system)
+
+## changelog for version 3.14.7:
+
+- Made the hiding, and so the interface better.
