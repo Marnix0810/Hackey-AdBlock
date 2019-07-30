@@ -1,3 +1,4 @@
+@powershell -window hidden -command ""
 @ECHO OFF
 color F0
 CD /D "%~dp0"
@@ -43,7 +44,6 @@ if not exist "%userprofile%\personalHackeylist.txt" (
 type NUL > "%userprofile%\personalHackeylist.txt"
 )
 :settings.home
-powershell -window hidden -command ""
 :getvermes
 cd /d "%~dp0"
 set /p "installedver="<"Hackey-install-version.txt"

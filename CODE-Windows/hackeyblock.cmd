@@ -1,3 +1,4 @@
+@powershell -window hidden -command ""
 @ECHO OFF
 color F0
 CD /D "%~dp0"
@@ -73,7 +74,7 @@ REM activate the ad-replace server.
 del /f /q "%~dp0servstatus.log"
 (
 echo @echo off
-echo echo server started. ^> "%~dp0servstatus.log" 
+echo echo server started. ^> "%~dp0servstatus.log"
 echo :retry
 echo cd /D "%~dp0"
 echo python -m http.server 3803 --directory "%~dp0Hackeyredirectfromads"
