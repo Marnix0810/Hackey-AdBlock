@@ -20,8 +20,8 @@ set nondefver=1
 )
 set vernumb=%newver%
 echo:%vernumb%>"%~dp0..\latest-release.txt"
-type "%~dp0..\latest-release.txt" > "%~dp0..\CODE-Windows\hackey-install-version.txt"
-type "%~dp0..\LICENSE" > "%~dp0..\CODE-Windows\License.txt"
+type "%~dp0..\latest-release.txt" > "%~dp0..\CODE\hackey-install-version.txt"
+type "%~dp0..\LICENSE" > "%~dp0..\CODE\License.txt"
 echo No messages. > "%~dp0..\versionmessages\%vernumb%.txt"
 
 REM Display the lists
@@ -55,8 +55,8 @@ TYPE CON
 echo submitted!
 
 REM Display the changelog
-@type "%~dp0..\CHANGELOG.MD" > "%~dp0..\CODE-Windows\change.log"
-@type "%~dp0..\CODE-Windows\change.log"
+@type "%~dp0..\CHANGELOG.MD" > "%~dp0..\CODE\change.log"
+@type "%~dp0..\CODE\change.log"
 @echo everything okay?
 pause
 
@@ -64,17 +64,17 @@ pause
 REM Start file editings.
 cd /d "%userprofile%\Onedrive\The Hackey-AdBlock project\filesnotincludedingithub\"
 dir /b *.* > "%~dp0filesnotincludedingithub.txt"
-xcopy "%userprofile%\Onedrive\The Hackey-AdBlock project\filesnotincludedingithub\*.*" "%~dp0..\CODE-Windows\"
-cd /d "%~dp0..\CODE-Windows"
+xcopy "%userprofile%\Onedrive\The Hackey-AdBlock project\filesnotincludedingithub\*.*" "%~dp0..\CODE\"
+cd /d "%~dp0..\CODE"
 
 REM create setup.
 call "%userprofile%\Onedrive\The Hackey-AdBlock project\Assets\Winrar\WinRAR.exe" a SETUPnew.exe * -r -sfx -ilog -iimg"%~dp0logos\hackeylogo.bmp" -z"%~dp0files-for-setup\xfs.conf"
 move SETUPnew.exe "%userprofile%\Onedrive\The Hackey-AdBlock project\Setups\SETUPnew.exe"
 ren "%userprofile%\Onedrive\The Hackey-AdBlock project\Setups\SETUPnew.exe" Hackeyblocksetup-%vernumb%.exe
-del /f /q "%~dp0..\CODE-Windows\change.log"
-del /f /q "%~dp0..\CODE-Windows\hackey-install-version.txt"
+del /f /q "%~dp0..\CODE\change.log"
+del /f /q "%~dp0..\CODE\hackey-install-version.txt"
 cd /d "%~dp0"
-for /f "delims=" %%i in (filesnotincludedingithub.txt) do (del /f /q "%~dp0..\CODE-Windows\%%i")
+for /f "delims=" %%i in (filesnotincludedingithub.txt) do (del /f /q "%~dp0..\CODE\%%i")
 pause
 
 @echo off
