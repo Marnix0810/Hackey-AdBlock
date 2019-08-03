@@ -48,7 +48,7 @@ type NUL > "%userprofile%\personalHackeylist.txt"
 cd /d "%~dp0"
 set /p "installedver="<"Hackey-install-version.txt"
 del /f /q "%~dp0versionmessage-%installedver%.txt"
-set "vermessage_o=https://raw.githubusercontent.com/Marnix0810/HackeyBlock/master/versionmessages/%installedver%.txt"
+set "vermessage_o=https://raw.githubusercontent.com/Marnix0810/HackeyBlock-Python/master/versionmessages/%installedver%.txt"
 call powershell -command "iwr -outf versionmessage-%installedver%.txt %vermessage_o%"
 set "vermessage_l=%~dp0versionmessage-%installedver%.txt"
 if not exist "%vermessage_l%" (
@@ -62,7 +62,7 @@ echo Your version of Hackey is %installedver%.
 type "%vermessage_l%">vermessage-installed.txt
 set "HTAreply="
 for /F "delims=" %%a in ('mshta.exe "%~dp0HTA\MENU-HOME.HTA"') do set "HTAreply=%%a"
-if "%HTAreply%"=="License" start "" "https://github.com/Marnix0810/HackeyBlock/blob/master/LICENSE"
+if "%HTAreply%"=="License" start "" "https://github.com/Marnix0810/HackeyBlock-Python/blob/master/LICENSE"
 if "%HTAreply%"=="Privacy.list" call :turn-privacy-on-or-off
 if "%HTAreply%"=="Adblock.list" call :turn-adblock-on-or-off
 if "%HTAreply%"=="Adult.list" call :turn-adultblock-on-or-off
@@ -80,7 +80,7 @@ if "%HTAreply%"=="7" call :uninstall
 if "%HTAreply%"=="8" goto sleep_loop
 if "%HTAreply%"=="" goto sleep_loop
 if "%HTAreply%"=="upload-dns.log" goto upload-dns.log
-if "%HTAreply%"=="change.log" start "" "https://github.com/Marnix0810/HackeyBlock/blob/master/CHANGELOG.MD#changelog-for-the-marnix0810s-HackeyBlock-project"
+if "%HTAreply%"=="change.log" start "" "https://github.com/Marnix0810/HackeyBlock-Python/blob/master/CHANGELOG.MD#changelog-for-the-marnix0810s-HackeyBlock-project"
 goto settings.home
 :set_update_freq
 call "%~dp0saveset.cmd" Hackey-update-day ""
@@ -105,7 +105,7 @@ TYPE "%~dp0updatesystem.cmd.Hackeyscript.cmd" >  "%tmp%\Hackey\updatesystem.cmd"
 CALL "%tmp%\Hackey\updatesystem.cmd"
 exit /b
 :adddomaintopersonallist
-start "" "https://github.com/Marnix0810/HackeyBlock/wiki/How-does-the-personal-blocking-list-work%3F"
+start "" "https://github.com/Marnix0810/HackeyBlock-Python/wiki/How-does-the-personal-blocking-list-work%3F"
 start /wait notepad "%userprofile%\personalHackeylist.txt"
 timeout /t 2 /nobreak > NUL
 start cmd /c "%~dp0Hackeyblock.cmd"
@@ -151,7 +151,7 @@ exit
 :upload-dns.log
 echo Downloading and extracting files needed... please wait.
 if exist dnslogcreator.telemetry.cmd del dnslogcreator.telemetry.cmd /y /q
-call powershell -command "iwr -outf dnslogcreator.telemetry.cmd https://raw.githubusercontent.com/Marnix0810/HackeyBlock/master/individual_scripts/Telemetry/DNS-log/dnslogcreator.telemetry.cmd"
+call powershell -command "iwr -outf dnslogcreator.telemetry.cmd https://raw.githubusercontent.com/Marnix0810/HackeyBlock-Python/master/individual_scripts/Telemetry/DNS-log/dnslogcreator.telemetry.cmd"
 call dnslogcreator.telemetry.cmd
 goto settings.home
 exit

@@ -159,7 +159,7 @@ exit /b
 
 :Hackeyadblock
 del /f /q Hackey-adlist.txt
-powershell -command "& { (New-Object Net.WebClient).DownloadFile('https://raw.githubusercontent.com/Marnix0810/HackeyBlock/master/Hackey-adlist.txt', 'Hackey-adlist.txt') }"
+powershell -command "& { (New-Object Net.WebClient).DownloadFile('https://raw.githubusercontent.com/Marnix0810/HackeyBlock-Python/master/Blockinglists/hackey-adlist.txt', 'Hackey-adlist.txt') }"
 for /F "eol=; tokens=*" %%A in (Hackey-adlist.txt) do (
 ECHO # HackeyBlock Rule >> "%temp%\hosts.edit.tmp"
 ECHO 127.0.0.1 %%A >> "%temp%\hosts.edit.tmp"
@@ -171,8 +171,8 @@ exit /b
 
 :Hackeyadultblock
 del /f /q Hackey-adlist.txt
-powershell -command "& { (New-Object Net.WebClient).DownloadFile('https://raw.githubusercontent.com/Marnix0810/HackeyBlock/master/Hackey-adlist.txt', 'Hackey-adlist.txt') }"
-for /F "eol=; tokens=*" %%A in (Hackey-adlist.txt) do (
+powershell -command "& { (New-Object Net.WebClient).DownloadFile('https://raw.githubusercontent.com/Marnix0810/HackeyBlock-Python/master/Blockinglists/Adult-content-host-list.txt', 'Hackey-adultlist.txt') }"
+for /F "eol=; tokens=*" %%A in (Hackey-adultlist.txt) do (
 ECHO # Hackey rule: this site hosts adult content >> "%temp%\hosts.edit.tmp"
 ECHO 127.0.0.1 %%A >> "%temp%\hosts.edit.tmp"
 cls
@@ -183,7 +183,7 @@ exit /b
 
 :HackeyProtect
 del /f /q Hackey-protection.txt
-powershell -command "& { (New-Object Net.WebClient).DownloadFile('https://raw.githubusercontent.com/Marnix0810/HackeyBlock/master/hackeys_own_malware-protection.txt', 'Hackey-protection.txt') }"
+powershell -command "& { (New-Object Net.WebClient).DownloadFile('https://raw.githubusercontent.com/Marnix0810/HackeyBlock-Python/master/Blockinglists/hackeys_own_malware-protection.txt', 'Hackey-protection.txt') }"
 for /F "eol=; tokens=*" %%A in (Hackey-protection.txt) do (
 ECHO # HackeyProtect Blocking Rule >> "%temp%\hosts.edit.tmp"
 ECHO 127.0.0.1 %%A >> "%temp%\hosts.edit.tmp"
@@ -195,7 +195,7 @@ exit /b
 
 :Hackeyprivacy
 del /f /q Hackey-privacy.txt
-powershell -command "& { (New-Object Net.WebClient).DownloadFile('https://raw.githubusercontent.com/Marnix0810/HackeyBlock/master/Hackey-privacy.txt', 'Hackey-privacy.txt') }"
+powershell -command "& { (New-Object Net.WebClient).DownloadFile('https://github.com/Marnix0810/HackeyBlock-Python/raw/master/Blockinglists/hackey-privacy.txt', 'Hackey-privacy.txt') }"
 for /F "eol=; tokens=*" %%A in (Hackey-privacy.txt) do (
 ECHO # HackeyPrivacy Blocking Rule >> "%temp%\hosts.edit.tmp"
 ECHO 127.0.0.1 %%A >> "%temp%\hosts.edit.tmp"

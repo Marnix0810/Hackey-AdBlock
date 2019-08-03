@@ -18,7 +18,8 @@ echo Default version number would be: %numb1%.%numb2%
 set /p "newver=Set non-default version name/number:"
 set nondefver=1
 )
-set vernumb=%newver%
+set vernumb=Win%newver%
+set newver=%vernumb%
 echo:%vernumb%>"%~dp0..\latest-release.txt"
 type "%~dp0..\latest-release.txt" > "%~dp0..\CODE\hackey-install-version.txt"
 type "%~dp0..\LICENSE" > "%~dp0..\CODE\License.txt"
