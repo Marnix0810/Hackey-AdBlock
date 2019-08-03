@@ -8,14 +8,14 @@ Well, nowadays every site is offered by a domain name, stored on a DNS-server. H
 
 ## Some examples:
 **An example web page without Hackey on:**
-![](https://marnix0810.files.wordpress.com/2019/06/hackey-adblock-example1.png)
-[Go to image](https://marnix0810.files.wordpress.com/2019/06/hackey-adblock-example1.png)
+![](https://marnix0810.github.io/HackeyBlock/IMG/example1.png)
+[Go to image](https://marnix0810.github.io/HackeyBlock/IMG/example1.png)
 
 ***
 
 **An example web page with Hackey on:**
-![](https://marnix0810.files.wordpress.com/2019/06/hackey-adblock-example2.png)
-[Go to image](https://marnix0810.files.wordpress.com/2019/06/hackey-adblock-example2.png)
+![](https://marnix0810.github.io/HackeyBlock/IMG/example2.png)
+[Go to image](https://marnix0810.github.io/HackeyBlock/IMG/example2.png)
 
 ## What is the HARR-utility?
 (The HARR utility was designed for Hackey. You can find it's github repository [here](https://github.com/Marnix0810/HARR/))
