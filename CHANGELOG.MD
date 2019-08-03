@@ -1215,3 +1215,7 @@ Minor changes
 ## changelog for version 3.14.7:
 
 - Made the hiding, and so the interface better.
+
+## changelog for version Win3.14.8:
+
+- Making changes to make place for HackeyBlock Python Edition, this can cause some trouble when updating.

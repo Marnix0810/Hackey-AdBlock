@@ -84,7 +84,7 @@ echo:%userprofile%\Onedrive\The Hackey-AdBlock project\Setups\Hackeyblocksetup-%
 echo copied path to the binary file to clipboard.
 echo the only thing you have to do is upload this release to GitHub and link Wordpress to it.
 pause
-start "" "https://github.com/Marnix0810/Hackey-AdBlock/releases/new"
+start "" "https://github.com/Marnix0810/HackeyBlock-Windows/releases/new"
 cls
 if "%nondefver%"=="1" (
 echo enter direct download link to the setup file.
