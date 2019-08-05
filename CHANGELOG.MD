@@ -1219,3 +1219,7 @@ Minor changes
 ## changelog for version Win3.14.8:
 
 - Making changes to make place for HackeyBlock Python Edition, this can cause some trouble when updating.
+
+## changelog for version Win3.14.9:
+
+- Fixed some trouble... Yup we are gonna have more...
