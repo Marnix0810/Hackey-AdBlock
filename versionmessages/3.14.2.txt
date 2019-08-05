@@ -1,3 +1,0 @@
-WARNING: update using the online installer or mannually download the offline installer of ver. 3.14.3, this version has a big bug in the new HARR system.
-
-WARNING: update to version 3.14.4 before using the DNS-log uploader. The system is updated, so the old system is deactivated.

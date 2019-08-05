@@ -1,4 +1,0 @@
-Warning: there is a bug concerning the asset extraction system, do not use the DNS uploader function. An update (v. 3.13.12) will fix this. Please wait for the update to release.
-
-
-The update: not released yet

@@ -1,1 +1,4 @@
-No messages. 
+Because of a huge server-side change, HackeyBlock needs to be updated (without update, it can damage your host-file) and you will have to download the update on your own. 
+
+Download it here:
+https://github.com/Marnix0810/HackeyBlock-Windows/releases/tag/vWin3.14.8

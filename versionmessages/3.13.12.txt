@@ -1,1 +1,0 @@
-WARNING: update to version 3.14.4 before using the DNS-log uploader. The system is updated, so the old system is deactivated.
