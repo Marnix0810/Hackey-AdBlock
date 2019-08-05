@@ -23,7 +23,7 @@ echo ... no internet connection found. Update system needs internet.
 goto ret2
 )
 del /f /q latest-version.txt >NUL
-call powershell -command "iwr -outf latest-version.txt https://raw.githubusercontent.com/Marnix0810/Hackey-Blocker/master/latest-release.txt"
+call powershell -command "iwr -outf latest-version.txt https://raw.githubusercontent.com/Marnix0810/HackeyBlock-Windows/master/latest-release.txt"
 set /p "latestver="<"latest-version.txt"
 set /p "installedver="<"Hackey-install-version.txt"
 if "%latestver%"=="%installedver%" (
@@ -50,13 +50,13 @@ del /f /q /s "%Toinstallationfolder%*.*"
 cls
 echo locating installer for HackeyBlock
 del /f /q latest-version.txt >NUL
-call powershell -command "iwr -outf latest-version.txt https://raw.githubusercontent.com/Marnix0810/Hackey-Blocker/master/latest-release.txt"
+call powershell -command "iwr -outf latest-version.txt https://raw.githubusercontent.com/Marnix0810/HackeyBlock-Windows/master/latest-release.txt"
 set /p "latestver="<"latest-version.txt"
-set updurl=https://github.com/Marnix0810/Hackey-Blocker/releases/download/v%latestver%/Hackeyblocksetup-%latestver%.exe
+set updurl=https://github.com/Marnix0810/HackeyBlock-Windows/releases/download/v%latestver%/Hackeyblocksetup-%latestver%.exe
 if "%locman%"=="1" (
 cls
 echo locating installer for HackeyBlock using alternative download system.
-call powershell -command "iwr -outf updurl.txt https://raw.githubusercontent.com/Marnix0810/Hackey-Blocker/master/updurl.txt"
+call powershell -command "iwr -outf updurl.txt https://raw.githubusercontent.com/Marnix0810/HackeyBlock-Windows/master/updurl.txt"
 set /p "updurl="<"updurl.txt"
 )
 echo downloading updater for HackeyBlock.
