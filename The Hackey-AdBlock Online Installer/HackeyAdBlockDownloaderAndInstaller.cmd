@@ -1,19 +1,19 @@
 @ECHO OFF
 color F0
-title Hackey-AdBlock Downloader And Installer
+title HackeyBlock WE Downloader And Installer
 call powershell -window maximize -command ""
 ECHO This app was made by marnix0810
 :ret1
 cls
 echo locating installer for HackeyBlock
 del /f /q latest-version.txt >NUL
-call powershell -command "iwr -outf latest-version.txt https://raw.githubusercontent.com/Marnix0810/HackeyBlock/master/latest-release.txt"
+call powershell -command "iwr -outf latest-version.txt https://raw.githubusercontent.com/Marnix0810/HackeyBlock-Windows/master/latest-release.txt"
 set /p "latestver="<"latest-version.txt"
-set updurl=https://github.com/Marnix0810/HackeyBlock/releases/download/v%latestver%/Hackeyblocksetup-%latestver%.exe
+set updurl=https://github.com/Marnix0810/HackeyBlock-Windows/releases/download/v%latestver%/Hackeyblocksetup-%latestver%.exe
 if "%locman%"=="1" (
 cls
 echo locating installer for HackeyBlock using alternative download system.
-call powershell -command "iwr -outf updurl.txt https://raw.githubusercontent.com/Marnix0810/HackeyBlock/master/updurl.txt"
+call powershell -command "iwr -outf updurl.txt https://raw.githubusercontent.com/Marnix0810/HackeyBlock-Windows/master/updurl.txt"
 set /p "updurl="<"updurl.txt"
 )
 echo downloading installer for HackeyBlock.

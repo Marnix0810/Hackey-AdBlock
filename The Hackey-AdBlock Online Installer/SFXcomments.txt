@@ -1,5 +1,3 @@
-;Het onderstaande commentaar bevat SFX-scriptopdrachten
-
 Setup=HackeyAdBlockDownloaderAndInstaller.cmd
 TempMode="Do you want to install HackeyBlock by Marnix 0810?","HackeyBlock Downloader And Installer"
 Silent=1
