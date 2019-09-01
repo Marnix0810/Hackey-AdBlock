@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "HackeyBlock"
-#define MyAppVersion "Win3.14.9"
+#define MyAppVersion "Win3.14.10"
 #define MyAppPublisher "Marnix 0810"
 #define MyAppURL "https://marnix0810.github.io/Hackey-Blocker"
 #define MyAppExeName "hackey.cmd"
@@ -18,17 +18,21 @@ AppPublisher={#MyAppPublisher}
 AppPublisherURL={#MyAppURL}
 AppSupportURL={#MyAppURL}
 AppUpdatesURL={#MyAppURL}
-DefaultDirName={autopf}\{#MyAppName}
+DefaultDirName={autopf}\marnix0810\{#MyAppName}
 DisableProgramGroupPage=yes
 LicenseFile=C:\Users\marni\Documents\GitHub\HackeyBlock-Windows\CODE\License.txt
 ; Uncomment the following line to run in non administrative install mode (install for current user only.)
 ;PrivilegesRequired=lowest
 OutputDir=C:\Users\marni\OneDrive\The Hackey-AdBlock project\Setups
-OutputBaseFilename=HackeyBlock-setup_v#.#.#
+OutputBaseFilename=HackeyBlock-setup_Win3.#.#
 SetupIconFile=C:\Users\marni\Documents\GitHub\HackeyBlock-Windows\SETUPCREATOR\logos\hl.ico
 Compression=lzma
 SolidCompression=yes
 WizardStyle=modern
+MinVersion=10
+VersionInfoCompany=Marnix 0810
+VersionInfoCopyright=2019 (c) Marnix 0810
+VersionInfoProductName=HackeyBlock
 
 [Languages]
 Name: "english"; MessagesFile: "compiler:Default.isl"
@@ -43,9 +47,8 @@ Source: "C:\Users\marni\Documents\GitHub\HackeyBlock-Windows\CODE\*"; DestDir: "
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]
-Name: "{autoprograms}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"
-Name: "{autodesktop}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"; Tasks: desktopicon
+Name: "{autoprograms}\HackeyBlock Menu"; Filename: "{app}\{#MyAppExeName}"; IconFilename: "icon.ico"
+Name: "{autodesktop}\HackeyBlock Menu"; Filename: "{app}\{#MyAppExeName}"; Flags: preventpinning; IconFilename: "icon.ico"; Tasks: desktopicon
 
 [Run]
-Filename: "{app}\{#MyAppExeName}"; Description: "{cm:LaunchProgram,{#StringChange(MyAppName, '&', '&&')}}"; Flags: shellexec postinstall skipifsilent
-
+Filename: "{app}\starthackeythenleave.cmd"; Flags: shellexec postinstall skipifsilent skipifdoesntexist runminimized nowait; Description: "{cm:LaunchProgram,{#StringChange(MyAppName, '&', '&&')}}"
