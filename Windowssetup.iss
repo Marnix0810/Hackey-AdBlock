@@ -47,8 +47,8 @@ Source: "C:\Users\marni\Documents\GitHub\HackeyBlock-Windows\CODE\*"; DestDir: "
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]
-Name: "{autoprograms}\HackeyBlock Menu"; Filename: "{app}\{#MyAppExeName}"; IconFilename: "icon.ico"
-Name: "{autodesktop}\HackeyBlock Menu"; Filename: "{app}\{#MyAppExeName}"; Flags: preventpinning; IconFilename: "icon.ico"; Tasks: desktopicon
+Name: "{autoprograms}\HackeyBlock Menu"; Filename: "{app}\{#MyAppExeName}"; IconFilename: "{app}\icon.ico"
+Name: "{autodesktop}\HackeyBlock Menu"; Filename: "{app}\{#MyAppExeName}"; Flags: preventpinning; IconFilename: "{app}\icon.ico"; Tasks: desktopicon
 
 [Run]
 Filename: "{app}\starthackeythenleave.cmd"; Flags: shellexec postinstall skipifsilent skipifdoesntexist runminimized nowait; Description: "{cm:LaunchProgram,{#StringChange(MyAppName, '&', '&&')}}"
