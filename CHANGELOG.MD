@@ -1,4 +1,4 @@
-# Changelog for the Marnix0810's Hackey-AdBlock Project
+# Changelog for the Marnix0810's HackeyBlock Project
 
 ## changelog for version 22335/2019-03-21 18:18:53,69:
 - unblocked some false-positive hosts
@@ -1223,3 +1223,8 @@ Minor changes
 ## changelog for version Win3.14.9:
 
 - Fixed some trouble... Yup we are gonna have more...
+
+## changelog for version Win3.14.10:
+
+- Changed location of blocking-lists
+- Changed setup creator: This will now be done using Inno Setup.
