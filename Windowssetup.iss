@@ -24,7 +24,7 @@ LicenseFile=C:\Users\marni\Documents\GitHub\HackeyBlock-Windows\CODE\License.txt
 ; Uncomment the following line to run in non administrative install mode (install for current user only.)
 ;PrivilegesRequired=lowest
 OutputDir=C:\Users\marni\OneDrive\The Hackey-AdBlock project\Setups
-OutputBaseFilename=HackeyBlock-setup_Win3.#.#
+OutputBaseFilename=HackeyBlock-setup-{#MyAppVersion}
 SetupIconFile=C:\Users\marni\Documents\GitHub\HackeyBlock-Windows\SETUPCREATOR\logos\hl.ico
 Compression=lzma
 SolidCompression=yes
