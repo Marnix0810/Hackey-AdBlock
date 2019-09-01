@@ -159,7 +159,7 @@ exit /b
 
 :Hackeyadblock
 del /f /q Hackey-adlist.txt
-powershell -command "& { (New-Object Net.WebClient).DownloadFile('https://raw.githubusercontent.com/Marnix0810/Hackey-Blocker/master/Blockinglists/hackey-adlist.txt', 'Hackey-adlist.txt') }"
+powershell -command "& { (New-Object Net.WebClient).DownloadFile('https://raw.githubusercontent.com/Marnix0810/HackeyBlock-Blocking-lists/master/hackey-adlist.txt', 'Hackey-adlist.txt') }"
 for /F "eol=; tokens=*" %%A in (Hackey-adlist.txt) do (
 ECHO # HackeyBlock Rule >> "%temp%\hosts.edit.tmp"
 ECHO 127.0.0.1 %%A >> "%temp%\hosts.edit.tmp"
@@ -171,7 +171,7 @@ exit /b
 
 :Hackeyadultblock
 del /f /q Hackey-adlist.txt
-powershell -command "& { (New-Object Net.WebClient).DownloadFile('https://raw.githubusercontent.com/Marnix0810/Hackey-Blocker/master/Blockinglists/Adult-content-host-list.txt', 'Hackey-adultlist.txt') }"
+powershell -command "& { (New-Object Net.WebClient).DownloadFile('https://raw.githubusercontent.com/Marnix0810/HackeyBlock-Blocking-lists/master/Adult-content-host-list.txt', 'Hackey-adultlist.txt') }"
 for /F "eol=; tokens=*" %%A in (Hackey-adultlist.txt) do (
 ECHO # Hackey rule: this site hosts adult content >> "%temp%\hosts.edit.tmp"
 ECHO 127.0.0.1 %%A >> "%temp%\hosts.edit.tmp"
@@ -183,7 +183,7 @@ exit /b
 
 :HackeyProtect
 del /f /q Hackey-protection.txt
-powershell -command "& { (New-Object Net.WebClient).DownloadFile('https://raw.githubusercontent.com/Marnix0810/Hackey-Blocker/master/Blockinglists/hackeys_own_malware-protection.txt', 'Hackey-protection.txt') }"
+powershell -command "& { (New-Object Net.WebClient).DownloadFile('https://raw.githubusercontent.com/Marnix0810/HackeyBlock-Blocking-lists/master/hackeys_own_malware-protection.txt', 'Hackey-protection.txt') }"
 for /F "eol=; tokens=*" %%A in (Hackey-protection.txt) do (
 ECHO # HackeyProtect Blocking Rule >> "%temp%\hosts.edit.tmp"
 ECHO 127.0.0.1 %%A >> "%temp%\hosts.edit.tmp"

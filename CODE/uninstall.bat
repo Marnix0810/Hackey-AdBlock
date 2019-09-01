@@ -1,5 +1,13 @@
 @ECHO OFF
 color F0
+if exist "%~dp0unins000.exe" (
+start "" "%~dp0unins000.exe"
+exit
+)
+if exist "%~dp1unins000.exe" (
+start "" "%~dp1unins000.exe"
+exit
+)
 call powershell -window maximize -command ""
 IF "%PROCESSOR_ARCHITECTURE%" EQU "amd64" (
 >nul 2>&1 "%SYSTEMROOT%\SysWOW64\cacls.exe" "%SYSTEMROOT%\SysWOW64\config\system"
