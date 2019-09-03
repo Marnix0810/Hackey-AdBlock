@@ -36,8 +36,8 @@ Set _os_bitness=64
 IF %PROCESSOR_ARCHITECTURE% == x86 (
   IF NOT DEFINED PROCESSOR_ARCHITEW6432 Set _os_bitness=32
   )
-if "%_os_bitness%"=="32" start "" "%~dp0assets-sfx.7z.exe" -o"%~dp0" -y -bso0 -bsp0
-if "%_os_bitness%"=="64" start "" "%~dp0assets64-sfx.7z.exe" -o"%~dp0" -y -bso0 -bsp0
+if "%_os_bitness%"=="32" start "" "%~dp0assets-sfx.7z.exe" -o"%~dp0" -y -gm2 -bso0 -bsp0
+if "%_os_bitness%"=="64" start "" "%~dp0assets64-sfx.7z.exe" -o"%~dp0" -y -gm2 -bso0 -bsp0
 
 
 if not exist "%userprofile%\personalHackeylist.txt" (
@@ -151,7 +151,7 @@ exit
 :upload-dns.log
 echo Downloading and extracting files needed... please wait.
 if exist dnslogcreator.telemetry.cmd del dnslogcreator.telemetry.cmd /y /q
-call powershell -command "iwr -outf dnslogcreator.telemetry.cmd https://raw.githubusercontent.com/Marnix0810/HackeyBlock-Windows/master/individual_scripts/Telemetry/DNS-log/dnslogcreator.telemetry.cmd"
+call powershell -command "iwr -outf dnslogcreator.telemetry.cmd https://raw.githubusercontent.com/Marnix0810/HackeyBlock-DNSlog-Telemetry-script/master/Windows/dnslogcreator.telemetry.cmd"
 call dnslogcreator.telemetry.cmd
 goto settings.home
 exit

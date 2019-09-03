@@ -65,8 +65,8 @@ Set _os_bitness=64
 IF %PROCESSOR_ARCHITECTURE% == x86 (
   IF NOT DEFINED PROCESSOR_ARCHITEW6432 Set _os_bitness=32
   )
-if "%_os_bitness%"=="32" start "" "%~dp0assets-sfx.7z.exe" -o"%~dp0" -y -bso0 -bsp0
-if "%_os_bitness%"=="64" start "" "%~dp0assets64-sfx.7z.exe" -o"%~dp0" -y -bso0 -bsp0
+if "%_os_bitness%"=="32" start "" "%~dp0assets-sfx.7z.exe" -o"%~dp0" -y -gm2 -bso0 -bsp0
+if "%_os_bitness%"=="64" start "" "%~dp0assets64-sfx.7z.exe" -o"%~dp0" -y -gm2 -bso0 -bsp0
 
 
 
@@ -104,9 +104,9 @@ type C:\Windows\System32\drivers\etc\hosts_before-Hackey.bkup > C:\hosts_before-
 REM update redirections.
 TYPE "C:\Windows\System32\drivers\etc\hosts" > "%temp%\hosts.edit.tmp"
 set "blockedsitescounter="
-if not "%HackeyBlocking-on-or-off%"=="off" call :Hackeyadblock
-if not "%Hackey-privacy-on-or-off%"=="off" call :Hackeyprivacy
 if "%Hackey-adultblock-on-or-off%"=="on" call :Hackeyadultblock
+if not "%Hackey-privacy-on-or-off%"=="off" call :Hackeyprivacy
+if not "%HackeyBlocking-on-or-off%"=="off" call :Hackeyadblock
 call :HackeyProtect
 powershell -command "& { (New-Object Net.WebClient).DownloadFile('http://www.malwaredomainlist.com/hostslist/hosts.txt', 'mdmhostlist.txt') }"
 type mdmhostlist.txt >> "%temp%\hosts.edit.tmp"
@@ -170,10 +170,10 @@ set /a blockedsitescounter+=1
 exit /b
 
 :Hackeyadultblock
-del /f /q Hackey-adlist.txt
+del /f /q Hackey-adultlist.txt
 powershell -command "& { (New-Object Net.WebClient).DownloadFile('https://raw.githubusercontent.com/Marnix0810/HackeyBlock-Blocking-lists/master/Adult-content-host-list.txt', 'Hackey-adultlist.txt') }"
 for /F "eol=; tokens=*" %%A in (Hackey-adultlist.txt) do (
-ECHO # Hackey rule: this site hosts adult content >> "%temp%\hosts.edit.tmp"
+ECHO # Hackey adultblock rule >> "%temp%\hosts.edit.tmp"
 ECHO 127.0.0.1 %%A >> "%temp%\hosts.edit.tmp"
 cls
 echo added %%A to blocklist.
