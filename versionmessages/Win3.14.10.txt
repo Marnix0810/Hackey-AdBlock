@@ -4,5 +4,5 @@ Also: Check out my new 'everyone-can-write-and-read'-social media site FNew, and
 
 
 Warning: The anti-tracking and adult-content list do NOT work at all, this problem has been around for a while and I did not notice it, I am so sorry.
-I am working on this at the moment, in fact, I even asked Stackoverflow in to help:
+I am working on this at the moment, in fact, I even called Stackoverflow in to help:
 http://bit.ly/Marnix0810-HackeyBlock-error12
