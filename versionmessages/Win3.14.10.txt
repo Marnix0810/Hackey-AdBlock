@@ -1,3 +1,8 @@
 Hello and welcome to HackeyBlock WE 3.14.10. This is the first version to be created using Inno Setup, if you have any feedback, please let me know trhough The Marnix 0810 Site (marnix0810.wordpress.com) or FNew (marnix0810.github.io/FNew).
 
 Also: Check out my new 'everyone-can-write-and-read'-social media site FNew, and its desktop apps.
+
+
+Warning: The anti-tracking and adult-content list do NOT work at all, this problem has been around for a while and I did not notice it, I am so sorry.
+I am working on this at the moment, in fact, I even asked Stackoverflow in to help:
+http://bit.ly/Marnix0810-HackeyBlock-error12
