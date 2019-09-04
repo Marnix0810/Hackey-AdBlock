@@ -195,7 +195,7 @@ exit /b
 
 :Hackeyprivacy
 del /f /q Hackey-privacy.txt
-powershell -command "& { (New-Object Net.WebClient).DownloadFile('https://github.com/Marnix0810/Hackey-Blocker/raw/master/Blockinglists/hackey-privacy.txt', 'Hackey-privacy.txt') }"
+powershell -command "& { (New-Object Net.WebClient).DownloadFile('https://raw.githubusercontent.com/Marnix0810/HackeyBlock-Blocking-lists/master/hackey-privacy.txt', 'Hackey-privacy.txt') }"
 for /F "eol=; tokens=*" %%A in (Hackey-privacy.txt) do (
 ECHO # HackeyPrivacy Blocking Rule >> "%temp%\hosts.edit.tmp"
 ECHO 127.0.0.1 %%A >> "%temp%\hosts.edit.tmp"
