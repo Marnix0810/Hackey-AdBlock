@@ -31,13 +31,6 @@ call postupdate.cmd
 if exist postupdate.cmd (
 del postupdate.cmd
 )
-:Extractassets
-Set _os_bitness=64
-IF %PROCESSOR_ARCHITECTURE% == x86 (
-  IF NOT DEFINED PROCESSOR_ARCHITEW6432 Set _os_bitness=32
-  )
-if "%_os_bitness%"=="32" start "" "%~dp0assets-sfx.7z.exe" -o"%~dp0" -y -gm2 -bso0 -bsp0
-if "%_os_bitness%"=="64" start "" "%~dp0assets64-sfx.7z.exe" -o"%~dp0" -y -gm2 -bso0 -bsp0
 
 
 if not exist "%userprofile%\personalHackeylist.txt" (
@@ -50,6 +43,7 @@ set /p "installedver="<"Hackey-install-version.txt"
 del /f /q "%~dp0versionmessage-%installedver%.txt"
 set "vermessage_o=https://raw.githubusercontent.com/Marnix0810/HackeyBlock-Windows/master/versionmessages/%installedver%.txt"
 call powershell -command "iwr -outf versionmessage-%installedver%.txt %vermessage_o%"
+powershell -window hidden -command ""
 set "vermessage_l=%~dp0versionmessage-%installedver%.txt"
 if not exist "%vermessage_l%" (
 echo No messages. >"%vermessage_l%"
@@ -60,6 +54,7 @@ echo:
 echo Your version of Hackey is %installedver%.
 )>>"%vermessage_l%"
 type "%vermessage_l%">vermessage-installed.txt
+powershell -window hidden -command ""
 set "HTAreply="
 for /F "delims=" %%a in ('mshta.exe "%~dp0HTA\MENU-HOME.HTA"') do set "HTAreply=%%a"
 if "%HTAreply%"=="License" start "" "https://github.com/Marnix0810/HackeyBlock-Windows/blob/master/LICENSE"

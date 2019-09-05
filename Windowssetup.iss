@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "HackeyBlock"
-#define MyAppVersion "Win3.14.10"
+#define MyAppVersion "Win3.14.11"
 #define MyAppPublisher "Marnix 0810"
 #define MyAppURL "https://marnix0810.github.io/Hackey-Blocker"
 #define MyAppExeName "hackey.cmd"
