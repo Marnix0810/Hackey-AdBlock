@@ -122,14 +122,14 @@ call "%~dp0saveset.cmd" HackeyBlock-on-or-off ""
 set "HackeyBlock-on-or-off="
 powershell -window hidden -command ""
 for /F "delims=" %%a in ('mshta.exe "%~dp0HTA\HackeyBlock-on-or-off.HTA"') do set "HackeyBlock-on-or-off=%%a"
-call "%~dp0saveset.cmd" HackeyBlock-on-or-off %Hackey-privacy-on-or-off%
+call "%~dp0saveset.cmd" HackeyBlock-on-or-off %HackeyBlock-on-or-off%
 exit /b
 :turn-adultblock-on-or-off
 call "%~dp0saveset.cmd" Hackey-adultblock-on-or-off ""
 set "Hackey-adultblock-on-or-off="
 powershell -window hidden -command ""
 for /F "delims=" %%a in ('mshta.exe "%~dp0HTA\Hackey-adultblock-on-or-off.HTA"') do set "Hackey-adultblock-on-or-off=%%a"
-call "%~dp0saveset.cmd" Hackey-adultblock-on-or-off %Hackey-privacy-on-or-off%
+call "%~dp0saveset.cmd" Hackey-adultblock-on-or-off %Hackey-adultblock-on-or-off%
 exit /b
 :uninstall
 md "%tmp%\Hackey"
