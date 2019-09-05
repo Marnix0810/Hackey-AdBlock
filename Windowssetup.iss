@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "HackeyBlock"
-#define MyAppVersion "Win3.14.11"
+#define MyAppVersion "Windows-3.14.11b"
 #define MyAppPublisher "Marnix 0810"
 #define MyAppURL "https://marnix0810.github.io/Hackey-Blocker"
 #define MyAppExeName "hackey.cmd"
@@ -20,7 +20,7 @@ AppSupportURL={#MyAppURL}
 AppUpdatesURL={#MyAppURL}
 DefaultDirName={autopf}\marnix0810\{#MyAppName}
 DisableProgramGroupPage=yes
-LicenseFile=C:\Users\marni\Documents\GitHub\HackeyBlock-Windows\CODE\License.txt
+LicenseFile=C:\Users\marni\Documents\GitHub\HackeyBlock-Windows\LICENSE
 ; Uncomment the following line to run in non administrative install mode (install for current user only.)
 ;PrivilegesRequired=lowest
 OutputDir=C:\Users\marni\OneDrive\The Hackey-AdBlock project\Setups
@@ -45,6 +45,8 @@ Source: "C:\Users\marni\Documents\GitHub\HackeyBlock-Windows\CODE\hackey.cmd"; D
 Source: "C:\Users\marni\OneDrive\The Hackey-AdBlock project\filesnotincludedingithub\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
 Source: "C:\Users\marni\Documents\GitHub\HackeyBlock-Windows\CODE\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
+Source: "LICENSE"; DestDir: "{app}"; DestName: "License.txt"
+Source: "CHANGELOG.MD"; DestDir: "{app}"; DestName: "Change.log"
 
 [Icons]
 Name: "{autoprograms}\HackeyBlock Menu"; Filename: "{app}\{#MyAppExeName}"; IconFilename: "{app}\icon.ico"
