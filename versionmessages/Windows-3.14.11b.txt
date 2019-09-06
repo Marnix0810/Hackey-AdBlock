@@ -1,2 +1,13 @@
 Welcome to maybe the most stable version of HackeyBlock ever!
 
+Update 2019-09-05:
+I made a hard decision, but I am sadly announcing the following:
+
+The Hackey PYE Project will not start, instead the original Windows version will just stop support, fading out.
+The plans are to fully stop supporting HackeyBlock around end 2020. This may happen earlier or later.
+ I am sorry to say this, but the HackeyBlock project seems to be too hard to maintain.
+After the EOS (end of support) of HackeyBlock, other projects like FNew, Neveroffline and 
+MuZikDL will have more time to be developed further.
+The HARR project will continue, but will only be updated to fix error reports.
+
+See https://wp.me/paHONi-eg or https://marnix0810.wordpress.com/2019/09/06/end-of-support-for-hackeyblock/ for more information
