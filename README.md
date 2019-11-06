@@ -1,4 +1,10 @@
 # About HackeyBlock
+
+## Update 2019-11-06:
+
+The blocking lists will continue to be updated for use by other projects.
+
+
 ## Update 2019-09-05:
 
 I made a hard decision, but I am sadly announcing the following:
